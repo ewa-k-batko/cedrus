@@ -55,6 +55,10 @@ if ($this instanceof Manager_Controller) {
     $link->setUrl('/formsan#param')->setTitle('Parametry')->setClass('param-page');
     $nav->append($link);
     
+     $link = new Model_Link_Container();
+    $link->setUrl('/formsan/pdf')->setTitle('Pdf')->setClass('pdf-page');
+    $nav->append($link);
+    
     /**
      * navigation end
      */

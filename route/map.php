@@ -39,6 +39,9 @@ switch ($route) {
     case '/formsanajax':
         return 'formsan/config/ajax';
         break;
+     case '/formsan/pdf':
+        return 'formsan/config/pdf';
+        break;
     default:
         return 'common/config/error404';
         break;
