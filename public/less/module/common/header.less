@@ -1,0 +1,185 @@
+@import '../../bootstrap/config.less';
+@import '../../bootstrap/component.less';
+
+.header{
+    &-brand {
+        position: absolute; 
+        left: 0;
+        top: 0;
+        z-index: 4;
+        background-color: @c-white;
+        height: 90px;
+        width: 100%;
+        @media @media-rs-max  {
+            border-bottom: 3px solid @c-brown;
+        }
+        @media @media-xs  {
+            height: 50px;
+        }
+        @media @media-rs  {
+            height: 70px;
+        }
+        &-img .header-logo {
+            position: relative;
+            z-index: 5;
+            background-color: @c-white;
+            @media @media-rs-max  {
+                top: 4px;
+            }
+        }
+    }
+    &-domain {
+        left: 0;
+        top: 0;
+        position: fixed;
+        opacity: 0.8;
+        z-index: 1;
+        background-color: @c-darkn-brown;
+        height:88px;
+        width: 100%;
+        @media @media-xs  {
+            height: 48px;
+        }
+        @media @media-rs  {
+            height: 68px;
+        }
+        &-img .header-logo.header-logo {
+            z-index: 0;
+            @media @media-rs-max  {
+                top: 4px;
+            }
+        }
+    }
+    &-logo {
+        height: 75px;
+        width: auto;
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        @media @media-xs  {
+            height: 35px;
+        }
+        @media @media-rs  {
+            height: 55px;
+        }
+        @media @media-sm  {
+            height: 60px;
+             top:14px;
+             left: 0;
+        }        
+        @media @media-md  {
+            height: 65px;
+            left: 0;
+        }
+    }
+    &-text {
+        position: absolute;
+        z-index: 4;
+        color: @c-green; 
+        font-weight: normal;
+        font-size: 20px;
+        top: 38px;
+        left:30%;
+        right: 70%;
+        margin: 0 auto;
+        @media @media-xs  {
+            font-size: 12px;
+            top: 14px;
+            left: 120px;
+            width: 80px;
+        }
+        @media @media-rs  {
+            font-size: 16px;
+            top: 22px;
+            left: 190px;
+            width: 100px;            
+        }
+        @media @media-sm  {
+            font-size: 13px;
+            top: 14px;
+            left: 120px;
+            width: 200px;
+            z-index: 11;
+        }        
+        @media @media-md  {
+            font-size: 16px;
+             top: 33px;
+        }
+    }
+    &-phone {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        color: @c-green;
+        font-size: 24px;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 35px; 
+        transition: all 200ms;
+        @media @media-rs-max  {
+            display: none;
+        }
+        @media @media-sm {
+            right: 0;
+            font-size: 18px;
+            transition:  none;
+        }
+        &:before {
+            content: "";
+            background-position: 0 0;
+            background-image: ~"url(@{svg_dir}phone-icon.svg)";
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 28px;
+            height: 28px;
+            display: inline-block;
+            vertical-align: top;
+            .rotate(135);
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        .no-touch &:hover  {
+            .scale(1.1);
+            right: 30px; 
+            @media @media-sm {
+                right: 0; 
+                .scale(1);
+            }
+        }
+    }
+    &-mail,
+    &-home {
+        position: absolute;
+        top: 5px;   
+        background-position: 0 0;    
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 28px;
+        height: 28px;
+        overflow: hidden;
+        padding-left:28px;
+        @media @media-rs-max  {
+            display: none;
+        }
+        @media @media-sm {
+            width: 20px;
+            height: 20px;
+            padding-left:20px;
+            top: 10px;
+        }
+    }
+    &-home {
+        background-image: ~"url(@{svg_dir}home-icon.svg)";
+        right: 390px;
+        @media @media-sm {
+            right: 190px;            
+        }
+    }
+    &-mail {
+        background-image: ~"url(@{svg_dir}mail-icon.svg)";
+        right: 350px;
+        @media @media-sm {
+            right: 160px;
+        }
+    }
+}

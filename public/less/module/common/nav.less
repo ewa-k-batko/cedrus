@@ -1,0 +1,136 @@
+@import '../../bootstrap/config.less';
+@import '../../bootstrap/component.less';
+
+.main-service-nav { 
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    z-index: 10;
+    color: @c-white;
+    @media @media-sm {
+        right: 0;   
+    }
+    .opacity(0.8);
+
+    @media @media-rs-max {
+        right: -820px;        
+        padding: 20px;
+        top: 71px;
+        background-color: @c-darkn-brown;
+
+        &.active.active {
+            right: 0; 
+        }
+        &.deactive.deactive {
+            right: -820px; 
+        }
+    }
+    @media @media-rs {
+        margin-right: -20px;
+        width: 115%;
+    }
+    @media @media-xs {
+        width: 100%;
+        border-radius: 0;
+        top: 49px;
+    }
+    .nav {   
+        &-item {
+            background-color: @c-darkn-brown;
+            padding: 0 10px;
+            .box-shadow(@c-grey;0.2; 0.2; 0.4;0.4);
+            border-radius: 3px;
+            display: inline-block;
+            margin-left: 10px;
+            .opacity(0.9);
+            @media @media-rs-max {
+                border-radius: 0;
+                .box-shadow(transparent;0);
+                border-bottom: 1px solid @c-grey;
+                &:last-child {
+                    border-bottom: none; 
+                }
+            }
+            @media @media-sm {
+                margin-left: 5px;
+                padding: 0 5px;
+            }
+            @media @media-rs-max {
+                display: block;
+                margin-bottom: 10px;
+            }
+            &.active:hover,
+                &.active {
+                .opacity(0.6);
+            }
+            &:hover .nav-title {
+                color: @c-white;
+                @media @media-rs-max {
+                    color: @c-grey;
+                }
+            }
+        }
+        &-link {
+            display: block;
+            line-height: 25px;
+            .opacity(1);
+            text-decoration: none;
+        }
+        &-title {
+            color: @c-grey;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 600;
+
+            @media @media-rs-max {
+                color: @c-white;
+                 font-weight: 400;
+            }
+
+            @media @media-sm {
+                font-size: 12px; 
+                font-weight: 400;
+                letter-spacing: 0;
+                
+            }
+        }
+    }
+}
+
+.nav-switch-mobile {
+    display: none;
+    @media @media-rs-max {
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 28px;
+        padding-left: 28px;
+        overflow: hidden;
+        background-image: ~"url(@{svg_dir}menu-icon.svg)";
+        background-position: 0 0;    
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    @media @media-xs  {
+        right: 30px;
+        top: 10px; 
+    }
+
+    @media @media-rs  {        
+        right: 10px;
+        top: 20px;
+    }
+
+    /*
+    @todo sprobowac wlaczyc
+    &:active ~ .main-service-nav,
+        &:hover ~ .main-service-nav {
+        right: 0!important;
+    
+    
+    }*/
+
+}

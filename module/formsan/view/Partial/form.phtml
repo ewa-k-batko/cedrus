@@ -1,0 +1,44 @@
+<form ng-submit="submit(field)" name="main-form" method="post" enctype="multipart/form-data">
+    <legend>{{form.legend}}</legend>
+    <fieldset>
+        <div ng-repeat="e in items" >
+            <label class="label-control"> {{e.label}}: </label>
+            <input ng-if="e.type === 'text'" class="form-control" type="{{e.type}}"  ng-model="field[e.name]">
+            <textarea ng-if="e.type === 'textarea'" class="form-control" ng-model="field[e.name]"></textarea>
+
+            <div ng-if="e.type === 'radio-group'"  ng-repeat="r in e.elements">
+                <p>
+                    <label>{{r.label}}</label>
+                    <input type="radio" value="{{r.value}}" ng-model="field[e.name]">
+                </p>
+            </div>
+
+            <div ng-if="e.type === 'check-group'"  ng-repeat="c in e.elements">
+                <p>
+                    <label>{{c.label}}</label>
+                    <input type="checkbox" value="{{c.value}}" ng-model="field[e.name]">
+                </p>
+            </div>
+
+            <!--<select ng-if="e.type === 'select'" ng-model="field[e.name]">                    
+                <option ng-repeat="o in e.elements" value="{{o.id}}" ng-model="e.selected">{{o.name}}</option>
+            </select>-->
+            
+            <select ng-if="e.type === 'select'" ng-model="field[e.name]"
+                    ng-options="option.name for option in e.elements track by option.id"
+                    ng-model="e.selected"></select>
+
+
+            <!-- @todo             
+            <input ng-if="e.type === 'hidden'" type="{{e.type}}" value="{{e.value}}" ng-model="field[e.name]">-->
+            
+        </div>
+
+        <!--<div ng-repeat="h in params">
+            <input type="hidden" value="{{h.value}}" ng-model="field[h.name]"> 
+        </div>-->
+
+        <input class="btn btn-default" type="reset" value="Wyczyść" name="wyslij">
+        <input class="btn btn-primary" type="submit" value="Wykonaj" name="wyslij">
+    </fieldset>
+</form>

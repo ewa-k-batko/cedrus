@@ -1,0 +1,4 @@
+<label class="label" for="captcha-input"><b class="require">*</b>Przepisz kod z obrazka:</label>
+<img class="captcha-img" width="<?php echo $this->captcha->getWidth();?>" height="<?php echo $this->captcha->getHeight();?>" alt="<?php echo $this->captcha->getImgAlt();?>" src="<?php echo $this->captcha->getImgUrl() . $this->captcha->getId() . $this->captcha->getSuffix();?>">
+<input name="captcha-input" id="captcha-input" class="input-txt" type="text" required="" autocomplete="off" maxlength="50" placeholder="przepisz kod obrazka">
+<input name="captcha-id" id="captcha-id" type="hidden" value="<?php echo $this->captcha->getId();?>">

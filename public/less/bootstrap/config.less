@@ -1,0 +1,87 @@
+/* grid */
+@fluid-container: 0;
+@grid-columns:  12;
+@grid-gutter-width: 30px;
+@grid-gutter-xs: 5;
+@grid-gutter-md: 3;
+
+
+@screen-lg-container: 1200px;
+@screen-lg-max: 2199px;
+@screen-lg-min: 1001px;
+@screen-md-container: 1000px;
+@screen-md-max: 1000px;
+@screen-md-min: 771px;
+@screen-sm-container: 770px;
+@screen-sm-max: 770px;
+@screen-sm-min: 481px;
+@screen-rs-container: 480px;
+@screen-rs-max: 480px;
+@screen-rs-min: 321px;
+@screen-xs-container: 320px;
+@screen-xs-max: 320px;
+@screen-xs-min: 0;
+
+@grid-float-breakpoint: @screen-sm-max;
+
+/* grid media */
+@media-xs: ~"only screen and (max-width:@{screen-xs-max})";
+@media-rs: ~"only screen and (min-width: @{screen-rs-min}) and (max-width: @{screen-rs-max})";
+@media-sm: ~"only screen and (min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
+@media-md: ~"only screen and (min-width: @{screen-md-min}) and (max-width: @{screen-md-max})";
+@media-lg: ~"only screen and (min-width: @{screen-lg-min})";
+
+@media-md-min: ~"only screen and (min-width:@{screen-md-min})";
+@media-md-max: ~"only screen and (max-width:@{screen-md-max})";
+
+@media-sm-min: ~"only screen and (min-width:@{screen-sm-min})";
+@media-sm-max: ~"only screen and (max-width:@{screen-sm-max})";
+
+@media-rs-min: ~"only screen and (min-width:@{screen-rs-min})";
+@media-rs-max: ~"only screen and (max-width:@{screen-rs-max})";
+
+/*colors*/
+@c-grey: #ccc;
+@c-darkn-grey: #666;
+@c-very-darkn-grey: #999;
+@c-white: #fff;
+@c-brown: #660000;
+@c-darkn-brown: #330000;
+@c-green: #339933;
+@c-pink: #cc0066;
+/*@c-gradient: #b3b3b3;*/
+
+/* fonts */
+/* p span a */
+@txt_size_xs: 12px;
+@txt_line_xs: @txt_size_xs + 2;
+@txt_size_rs: 13px;
+@txt_line_rs: @txt_size_rs + 2;
+@txt_size_sm: 14px;
+@txt_line_sm: @txt_size_sm + 2;
+@txt_size_md: 16px;
+@txt_line_md: @txt_size_md + 2;
+@txt_size_lg: 18px;
+@txt_line_lg: @txt_size_lg + 4;
+
+/* h1 - h6 */
+@head_size_xs: 18px;
+@head_line_xs: @head_size_xs + 4;
+@head_size_rs: 20px;
+@head_line_rs: @head_size_rs + 6;
+@head_size_sm: 24px;
+@head_line_sm: @head_size_sm + 10;
+@head_size_md: 28px;
+@head_line_md: @head_size_md + 14;
+@head_size_lg: 32px;
+@head_line_lg: @head_size_lg + 18;
+
+
+/* path */
+@img_path: 'c:/wamp/www/cedrus/public/img/';
+@img_dir: '../img/';
+@svg_path: 'c:/wamp/www/cedrus/public/svg/';
+@svg_dir: '../../svg/';
+
+
+

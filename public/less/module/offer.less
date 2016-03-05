@@ -1,0 +1,308 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+@import (reference) '../partial/tag.less';
+@import (reference) '../partial/bit.less';
+
+.offer {
+    &-head{
+        /*padding: 20px;*/
+        &:extend(.bit-white all);
+
+    }
+    &-nav {
+        /* padding: 20px;*/
+        &:extend(.bit-white all);
+        &-list {
+            margin-top: 20px;
+        }
+        .nav-item {
+            line-height: 35px;
+            padding: 0 20px;
+            border: 1px solid @c-grey;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-align: center;
+            position: relative;
+            &:before {
+                &:extend(.tag-sub);
+                height: 30px;
+                width: 30px;
+                top: 3px;
+                left: 5px;
+                background-position: center center;
+                background-repeat: no-repeat;
+
+                @media @media-rs-max {
+                    display: none;
+                }                
+                @media @media-md {
+                    display: none;
+                } 
+            }
+            &.active,
+            &:hover {            
+                background-color: @c-grey;
+            }
+            &.active {
+                .nav-title {
+                    color: @c-green; 
+                }
+            }
+            &.tree-leaves:before {
+                background-image: data-uri('image/jpeg;base64', "@{img_path}tree-leaves.png");
+            }
+            &.tree-coniferous:before {
+                background-image: data-uri('image/jpeg;base64', "@{img_path}tree-coniferous.png");
+            }
+            &.bush-leaves:before {
+                background-image: data-uri('image/jpeg;base64', "@{img_path}bush-leaves.png");
+            }
+            &.bush-coniferous:before {
+                background-image: data-uri('image/jpeg;base64', "@{img_path}bush-coniferous.png");
+            }
+            &.heathers:before {
+                background-image: data-uri('image/jpeg;base64', "@{img_path}heathers.png");
+            }
+            &.perennial:before {            
+                background-image: data-uri('image/jpeg;base64', "@{img_path}perennial.png");
+            }
+        }
+        .nav-link {
+            text-decoration: none;
+            display: block;
+            &:hover {
+                .text-shadow(@c-very-darkn-grey);
+            }
+        }
+
+        /* do przerobienia rozmiaty forntow na extend*/
+        .nav-title {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: @c-brown;        
+            @media @media-md {
+                font-size: 16px;
+            }
+            @media @media-xs {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &-print-link {
+        @media @media-rs-max {
+            display: none;
+        }
+        display: block;
+        overflow: hidden;
+        width:0;
+        height: 28px;
+        padding-left: 28px;
+        background-image: ~"url(@{svg_dir}printer-icon.svg)";
+        background-position: 0 0;    
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+        float: right;
+    }
+}
+
+.plant {
+   /* &:extend(.bit-white all);*/
+   
+    border-radius:  6px;
+    border: 1px solid  @c-grey;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    color: @c-brown;
+    font-size: 16px;
+    &.small-view {
+        font-size: 14px; 
+    }
+    &-details {        
+        .small-view & {
+            padding-left: 115px;
+        }
+        .middle-view & {
+            padding-left: 320px;
+        }        
+        .large-view & {
+            padding-left: 0; 
+        }
+    }
+    &-detail {
+        display: block;
+        overflow: hidden;
+    }
+    &-title {
+        overflow: hidden;
+        color: @c-green;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 24px;
+        padding-right: 100px;
+        .small-view & {
+            font-size: 14px; 
+            padding-left: 115px;
+            margin-top: -10px;
+            padding-right: 60px;
+            height: 26px;
+            line-height: 13px;
+        }
+        .middle-view & {
+            margin-left: 320px;             
+            height: 50px;
+        }
+        .large-view & {
+            padding-left: 0;
+            margin-top: 410px;
+            height: auto;
+            min-height: 50px;            
+            @media @media-sm-max {
+                margin-top: 320px;
+            }
+        }
+        a {
+            color: @c-green;
+            text-decoration: none;            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &-thumb {
+        position: absolute;
+        top:0;
+        left: 0;
+        overflow: hidden;
+        display: block;
+
+        .offer-list &  {
+            border-right: 1px solid @c-very-darkn-grey; 
+        }
+
+        .small-view & { 
+            width: 120px;
+        }
+        .middle-view & {
+            width: 300px;
+        }
+        .large-view & {
+            width: 100%;
+            height: 400px;
+
+            @media @media-sm-max {
+                height: 300px
+            }
+        }
+    }
+    &-image {
+        width: 100%;
+        height: auto;
+        /* @media @media-sm-max {
+             height: 300px;
+             width: 100%;
+         }*/
+    }
+    &-label {
+        float: left;
+        font-size: 14px;
+        /*color: @c-brown;*/        
+        width: 140px;        
+        .plant-price & {
+            width: 40px;
+        } 
+        .small-view & {
+            width: 60px;
+            @media @media-rs-max {
+                display: none;
+            }
+        }
+    }
+    &-value {
+        float: left;
+        overflow: hidden;
+        height: 20px;        
+        line-height: 20px; 
+        font-weight: 600;
+        .small-view & {
+            height: 16px;        
+            line-height: 15px;
+        }       
+        .plant-species & {
+            text-transform: uppercase;
+        }
+        .large-view & {
+            height: auto;
+        }
+    }    
+    &-price {
+        color: @c-pink;
+        font-size: 22px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        .small-view & {
+            top: 10px;  
+            font-size: 16px;          
+        }
+        .large-view & {
+            top: 410px;
+            @media @media-sm-max {
+                top: 320px;
+            }
+        }        
+        @media @media-rs-max { 
+            .plant-label {
+                display: none;
+            }
+        }
+    }
+    /* .large-view & {
+         top: 410px;
+         right: 40px;
+     }*/
+    .small-view & {
+        &-id,
+        &-height,
+        &-max,
+        &-bloom {
+            display: none; 
+        } 
+    }
+
+    /*@media @media-sm-max {
+        .large-view,
+        .middle-view {
+          &:extend(.small-view all);  
+        }
+    }*/
+
+
+
+
+}
+
+.view-switch {
+    @media @media-rs-max  {
+        display: none;
+    }
+    margin-top: 20px;
+    overflow: hidden;
+    .view-link {
+        display: block;
+        margin-left: 10px;
+        overflow: hidden;
+        width:0;
+        height: 28px;
+        padding-left: 28px;
+        float: left;
+        background-image: ~"url(@{svg_dir}menu-icon.svg)";
+        background-position: 0 0;    
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+}

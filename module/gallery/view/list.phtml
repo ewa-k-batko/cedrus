@@ -1,0 +1,29 @@
+<section class="gallery container-fluid"> 
+    <div class="bit-white"> 
+        <div class="gallery-head">
+            <h2 class="head-title review-title">Galeria inwestycji.</h2>
+            <p class="p-text review-description">Zebrane materiały fotograficzne dotyczące inwestycji. </p>
+        </div>
+    </div>
+    <ul class="gallery-list row">
+        <?php foreach ($this->list as $key => $src): ?>
+            <li class="gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3 clear-xs-1 clear-rs-1 clear-sm-2 clear-md-3 clear-lg-4">
+                <div class="gallery-thumb">
+                    <img class="gallery-img" data-pos="<?php echo $key;?>" <?php if(isset($this->list[$key-1])):?>  data-prev="<?php echo Manager_Config::iphotUrl() . $this->path . $this->list[$key-1];?>"<?php endif;?> <?php if(isset($this->list[$key+1])):?> data-next="<?php echo Manager_Config::iphotUrl() . $this->path . $this->list[$key+1];?>"<?php endif;?> src="<?php echo Manager_Config::iphotUrl() . $this->path; ?><?php echo $src; ?>"/>
+                </div>
+            </li> 
+        <?php endforeach; ?>
+    </ul>
+    
+</section>
+
+<!--<a class="up-to-up" href="#">do góry</a>-->
+
+<?php $this->ob(); ?>
+<script src="/js/mig/mig.gallery.js"></script>
+    <script type="text/javascript">
+    // <![CDATA[   
+    mig.gallery(window, {});
+    // ]]>
+    </script>
+    <?php $this->clean(); ?>

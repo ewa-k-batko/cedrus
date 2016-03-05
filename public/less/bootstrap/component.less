@@ -1,0 +1,252 @@
+.box-shadow(@c: @c-darkn-grey; @x: 2; @y: 2; @b: 2; @a: 2;) {
+    box-shadow: unit(@x, px) unit(@y, px) unit(@b, px) unit(@a, px) @c;
+}
+.text-shadow(@c: @c-darkn-brown; @h: 1; @v: 1; @b: 1;) {
+    text-shadow: unit(@h, px) unit(@v, px) unit(@b, px) @c;
+}
+.opacity (@a) {
+    opacity: (@a);
+    @z: percentage(@a);
+    filter: Alpha(opacity=@z);
+}
+.rotate(@x) {
+    -ms-transform: rotate(unit(@x, deg)); /* IE 9 */
+    -webkit-transform: rotate(unit(@x, deg)); /* Chrome, Safari, Opera */
+    transform: rotate(unit(@x, deg));
+}
+.scale(@x){
+    -ms-transform: scale(@x); /* IE 9 */
+    -webkit-transform: scale(@x); /* Chrome, Safari, Opera */
+    transform: scale(@x);
+}
+.gradient-linear(@color:@c-grey;@size:10) {
+    background:  @c-grey;
+    
+    /*background: -moz-linear-gradient (bottom, darken(@color, percentage(@size)), transparent); 
+    background: -webkit-gradient (linear, center bottom, center bottom, darken(@color, percentage(@size)), color-stop(transparent)); 
+    background: -o-linear-gradient(bottom, darken(@color, percentage(@size)) 0%, transparent);
+    background: -ms-linear-gradient(bottom, darken(@color, percentage(@size)) 0%, transparent); 
+    background: linear-gradient(bottom, darken(@color, percentage(@size)) 0%, transparent); 
+*/
+
+/*
+    background: -moz-linear-gradient(bottom, #b3b3b3, transparent);
+   
+    background: -webkit-gradient(linear, center bottom, center bottom, from(#b3b3b3), color-stop(transparent));
+    
+    background: -o-linear-gradient(bottom, #b3b3b3 0%, transparent);
+    
+    background: -ms-linear-gradient(bottom, #b3b3b3 0%, transparent);
+    
+    background: linear-gradient(bottom, #b3b3b3 0%, transparent);
+    */
+}
+
+
+
+
+
+
+
+/* do uusniecia */
+.c-grey() {
+    color: @c-grey;
+}
+
+.c-white() {
+    color: @c-white;
+}
+
+.c-brown() {
+    color: @c-brown;
+}
+
+.c-green() {
+    color: @c-green;
+}
+
+.b-grey() {
+    background-color: @c-grey;
+}
+
+.b-white() {
+    background-color: @c-white;
+}
+
+.b-brown() {
+    background-color: @c-brown;
+}
+
+.b-green() {
+    background-color: @c-green;
+}
+
+.f-hide() {
+    display: none;
+}
+
+.f-show(@h) {
+    display: @h;
+}
+
+.f-show-box() {
+    display: block;
+}
+
+
+
+.f-back(@c: n; @i: n; @r: no-repeat; @p: 0 0; @s: n; @a: n; @o: n; @cl: n) {
+    background-repeat: @r;
+    & when (iscolor(@c)) {
+        background-color: @c;
+    }
+    & when (isurl(@i)), (isstring(@i)) {
+        background-image: @i;
+    }
+    & when (length(@p) = 2) {
+        background-position: @p;
+    }
+    & when not(@s = n) {
+        background-size: @s;
+    }
+    & when not(@a = n) {
+        background-attachment: @a;
+    }
+    & when not(@o = n) {
+        background-origin: @o;
+    }
+    & when not(@cl = n) {
+        background-clip: @cl;
+    }
+}
+
+
+
+
+
+/* @todo zrobic liste */
+.f-box(@w: n; @h: n; @m: n; @p: n; @mt: n; @ml: n; @mr: n; @mb: n;) {
+    & when not (@w = n) {
+        @name: width;
+        @size: length(@w);
+        /*.bord(@r: @size);
+    
+        & when (@size = 1) {
+           // @n-w = extract(@w, 1);
+            //@name: extract(@w, 2);
+            //@name: @name + "-width";
+            //@w: @n-w;
+            z-index: @size;
+             @name:  unit(@size, px);
+        }*/
+
+        & when (get-unit(@w) = px), (ispercentage(@w)), (@w = auto) {
+            @name: @w;
+        }
+        /*& when not (ispercentage(@w)) and (isnumber(@w)) {
+          @name: unit(@w, px);
+        }*/
+    }
+    & when not (@h = n) {
+        & when (get-unit(@h) = px), (ispercentage(@h)), (@h = auto) {
+            height: @h;
+        }
+        & when not (ispercentage(@h)) and (isnumber(@h)) {
+            height: unit(@h, px);
+        }
+    }
+    & when not (@m = n) {
+        margin: @m;
+    }
+    & when not (@p = n) {
+        padding: @p;
+    }
+}
+
+/* todo */
+.f-border(@w: n; @c: n; @s: solid; @r: n; ) {
+    & when (isnumber(@w)) {
+        border-width: unit(@w, px);
+        border-style: @s;
+    }
+
+    & when (iscolor(@c)) {
+        border-color: @c;
+    }
+    & when (isnumber(@r)) {
+        border-radius: unit(@r, px);
+    }
+}
+
+.f-position(@t: px; @l: px; @r: px; @b: px; @z: px; @p: absolute) {
+    position: @p;
+    & when not (@t = px) {
+        & when (get-unit(@t) = px), (ispercentage(@t)) {
+            top: @t;
+        }
+        & when not (ispercentage(@t)) {
+            top: unit(@t, px);
+        }
+    }
+    & when not (@l = px) {
+        & when (get-unit(@l) = px), (ispercentage(@l)) {
+            left: @l;
+        }
+        & when not (ispercentage(@l)) {
+            left: unit(@l, px);
+        }
+    }
+    & when not (@r = px) {
+        & when (get-unit(@r) = px), (ispercentage(@r)) {
+            right: @r;
+        }
+        & when not (ispercentage(@r)) {
+            right: unit(@r, px);
+        }
+    }
+    & when not (@b = px) {
+        & when (get-unit(@b) = px), (ispercentage(@b)) {
+            bottom: @b;
+        }
+        & when not (ispercentage(@b)) {
+            bottom: unit(@b, px);
+        }
+    }
+    & when not (@z = px) {
+        z-index: @z;
+    }
+}
+
+.f-font(@s: 11; @c: px; @w: px; @h: px; @l: px) {
+    font-size: unit(@s, px);
+    & when (iscolor(@c)) {
+        color: @c;
+    }
+    & when (isnumber(@w)) {
+        font-weight: @w;
+    }
+    & when not (@h = px) {
+        line-height: unit(@h, px);
+    }
+    & when not (@l = px) {
+        letter-spacing: unit(@l, px);
+    }
+}
+
+.f-text(@a: n; @d: n; @t: n) {
+    & when not (@a = n) {
+        text-align: @a;
+    }
+    & when not (@d = n) {
+        text-decoration: @d;
+    }
+    & when not (@t = n) {
+        text-transform: @t;
+    }
+
+}
+
+.f-content(@c: ""; @d: block) {
+    content: @c;
+    display: @d;
+}

@@ -1,0 +1,23 @@
+.bit-box(@c-back: @c-white;@c-shadow: @c-darkn-grey;@radius: 5;) {
+    background-color: @c-back;
+    border-radius:  unit(@radius, px);
+    .box-shadow(@c-shadow); 
+    padding: 20px;
+}
+.bit-white {
+    .bit-box();
+    @media @media-sm-max {
+        border-radius:0;
+        .box-shadow(transparent;0);
+    }
+}
+.bit-grey {
+    .bit-box(@c-very-darkn-grey;@c-darkn-grey;6);
+    overflow: hidden;
+    position: relative;
+    @media @media-sm-max {
+        border-radius:0;
+        .box-shadow(transparent;0);
+    }
+}
+

@@ -1,0 +1,59 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+
+.p-text {
+    color: @c-brown;
+    line-height: @txt_line_xs;
+    font-size: @txt_size_xs;    
+    @media @media-rs-min {
+        line-height: @txt_line_rs;
+        font-size: @txt_size_rs;        
+    }
+    @media @media-sm-min {
+        line-height: @txt_line_sm;
+        font-size: @txt_size_sm;       
+    }
+    @media @media-md-min {
+        line-height: @txt_line_md;
+        font-size: @txt_size_md;       
+    } 
+    @media @media-lg {
+        line-height: @txt_line_lg;
+        font-size: @txt_size_lg;
+    }
+    a {
+        color: @c-brown;
+    }
+    b {
+        font-weight: 600;
+    }
+}
+.s-text {
+    color: @c-brown;
+    line-height: @txt_line_xs;
+    font-size: @txt_size_xs;    
+    @media @media-rs-min {
+        line-height: @txt_line_rs - 1;
+        font-size: @txt_size_rs - 1;        
+    }
+    @media @media-sm-min {
+        line-height: @txt_line_sm - 1;
+        font-size: @txt_size_sm - 1;       
+    }
+    @media @media-md-min {
+        line-height: @txt_line_md - 4;
+        font-size: @txt_size_md - 4;       
+    } 
+    @media @media-lg {
+        line-height: @txt_line_lg - 4;
+        font-size: @txt_size_lg - 4;
+    }
+    a {
+        color: @c-brown;
+    }
+}
+
+.p-error {
+    &:extend(.p-text);
+    color: @c-pink;
+}

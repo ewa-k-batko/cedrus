@@ -1,0 +1,13 @@
+
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="x in list">
+        <a style="cursor:pointer;" ng-click="getElement(x.id)"
+         data-id="{{ x.id}}"
+         data-name="{{ x.name}}"
+         data-desc="{{ x.description}}"
+         data-url="{{ x.url}}">
+         <span class="small">{{ x.id}}</span>. <span class="lead">{{ x.name}}</span>
+        </a>
+    </li>
+</ul>  

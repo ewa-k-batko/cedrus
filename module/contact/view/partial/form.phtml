@@ -1,0 +1,59 @@
+<h3 class="contact-form-title">Formularz kontaktowy</h3>
+<?php if ($this->result == -1): ?>
+    <p class="p-error">Wystąpił błąd/y podczas wysyłania wiadomości.</p>
+<?php else: ?>
+    <?php if (!isset($this->form['surname'])): ?>
+        <p class="contact-form-legend">Wypełnij poniższy formularz. Wkrótce się z Tobą skontaktujemy.</p>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php if ($this->details): ?>
+    <p class="p-error"><?php echo $this->details; ?>.</p>
+<?php endif; ?>
+
+<form encType="application/x-www-form-urlencoded" class="contact-form" method="post" action="/kontakt"> 
+    <input id="lang" type="hidden" value="pl" name="lang">
+    <?php if ($this->csrf instanceof Zend\Form\Element\Csrf): ?>
+        <?php $this->partial('common/view/partial/csrf.phtml', array('csrf' => $this->csrf)); ?>     
+    <?php endif; ?>
+    <fieldset class="contact-form-fieldset">
+        <ul> <fieldset class="contact-form-fieldset">
+                <li class="contact-form-field">
+                    <label class="label" for="surname"><b class="require">*</b>,<b class="require">**</b>Nadawca:</label>
+                    <input value="<?php if (isset($this->form['surname'])): ?><?php echo $this->form['surname']; ?><?php endif; ?>" id="surname" class="input-txt" type="text" required="" autocomplete="off" maxlength="30" placeholder="nadawca" name="surname">
+                    <?php if (isset($this->errors['surname'])): ?>
+                        <span class="error-field">Brak nadawcy (min. 3 znaki)</span>
+                    <?php endif; ?>    
+                </li>
+                <!--<input id="phone" class="form-control " type="text" required="" autocomplete="off" pattern="[0-9]{1,30}" placeholder="telefon" name="phone">-->
+                <li class="contact-form-field">
+                    <label  class="label" for="mail"><b class="require">*</b>,<b class="require">**</b>E-mail:</label>
+                    <input value="<?php if (isset($this->form['mail'])): ?><?php echo $this->form['mail']; ?><?php endif; ?>" id="mail" class="input-txt" type="enail" required="" autocomplete="off" maxlength="50" placeholder="e-mail" name="mail">
+                    <?php if (isset($this->errors['mail'])): ?>
+                        <span class="error-field">Błędny adres e-mail</span>
+                    <?php endif; ?>
+                </li>
+                <li class="contact-form-field">
+                    <label  class="label" for="surname"><b class="require">*</b>Wiadomość:</label>
+                    <textarea id="message" class="textarea" rows="1" required="" name="message"><?php if (isset($this->form['message'])): ?><?php echo $this->form['message']; ?><?php endif; ?></textarea>
+                    <?php if (isset($this->errors['message'])): ?>
+                        <span class="error-field">Brak wiadomości (min. 10 znaków)</span>
+                    <?php endif; ?>
+                </li>            
+                <?php if ($this->captcha instanceof Zend\Captcha\Image): ?>
+                    <li class="contact-form-field captcha-field">
+                        <?php $this->partial('common/view/partial/captcha.phtml', array('captcha' => $this->captcha)); ?> 
+                        <?php if (isset($this->errors['captcha'])): ?>
+                            <span class="error-field">Przepisz poprawnie kod z obrazka</span>
+                        <?php endif; ?>
+                    </li>
+                <?php endif; ?>
+                <li  class="contact-form-button">
+                    <input class="reset button" type="reset" value="anuluj">
+                    <input class="submit button" type="submit" value="wyślij">
+                </li>
+        </ul>
+        <p class="s-text"><b class="require">*</b>Wszystkie pola są wymagane.</p>
+        <p class="s-text"><b class="require">**</b>Zapewniamy że udostępniony przez Ciebie adres e-mail oraz nadawca nie jest przez nas gromadzony a tym samym przetwarzany w zbiorze danych osobowych.(<a href="http://www.giodo.gov.pl/320/id_art/978/j/pl/" target="_blank">Definicja zbioru danych osobowych.</a>)</p>
+    </fieldset>
+</form>

@@ -1,0 +1,206 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+@import (reference) '../partial/bit.less';
+
+.front-page {
+    .container-fluid > .container-fluid {           
+        max-width: 95%;
+    }
+}
+.review {
+    &-about {
+        color:@c-white;
+        /*position: absolute;*/
+        bottom:0;
+        font-size: 22px;
+        padding: 33% 20px 16px;
+        width: 100%;
+        @media @media-xs {
+            font-size: 14px;
+        }
+    }
+    &-text {         
+        &:extend(.bit-white all);            
+        margin: 0 -5px;
+    }
+    &-description {
+        padding: 20px 0;
+    }
+}
+/* contact front page */
+.contact-front-page {
+    padding: 20px 40px;
+    margin-bottom: 10px; 
+
+    @media @media-xs {
+        padding: 10px 15px;
+    }
+    .item {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    /*.p-text {
+        font-size:16px;
+        &.contact-text-label {
+            font-size: 14px;
+        }
+    }*/
+}
+
+.no-touch.svg .gradient {
+    background: -moz-linear-gradient(bottom, #b3b3b3, transparent);
+    /*Moz*/
+    background: -webkit-gradient(linear, center bottom, center bottom, from(#b3b3b3), color-stop(transparent));
+    /*Webkit*/
+    background: -o-linear-gradient(bottom, #b3b3b3 0%, transparent);
+    /*Opera*/
+    background: -ms-linear-gradient(bottom, #b3b3b3 0%, transparent);
+    /*IE 10+*/
+    background: linear-gradient(bottom, #b3b3b3 0%, transparent);
+    /*W3C*/
+    background-size: 100% 20%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+@media @media-xs { 
+
+    .review-photo-1 {
+        background-image: ~"url(@{img_dir}review-photo-4-n-320.jpg)";
+        /*height: 185px;*/
+    }
+    .review-photo-2 {
+        background-image: ~"url(@{img_dir}review-photo-2-n-320.jpg)";
+        /*height: 179px;*/
+    }
+    .review-photo-3 {
+        background-image: ~"url(@{img_dir}review-photo-6-320.jpg)";
+        /*height: 237px;*/
+    }
+    .review-photo-4 {
+        background-image: ~"url(@{img_dir}review-photo-5.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-5 {
+        background-image: ~"url(@{img_dir}review-photo-1.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-6 {
+        background-image: ~"url(@{img_dir}review-photo-3.jpg)";
+        /*height: 237px;*/
+    }
+}
+
+@media @media-rs {    
+    .review-photo-1 {
+        background-image: ~"url(@{img_dir}review-photo-4-n-480.jpg)";
+        /*height: 278px;*/
+    }
+    .review-photo-2 {
+        background-image: ~"url(@{img_dir}review-photo-2-n-480.jpg)";
+        /*height: 269px;*/
+    }
+    .review-photo-3 {
+        background-image: ~"url(@{img_dir}review-photo-6-480.jpg)";
+        /*height: 356px;*/
+    }
+    .review-photo-4 {
+        background-image: ~"url(@{img_dir}review-photo-5.jpg)";
+        /* height: 700px;*/
+    }
+    .review-photo-5 {
+        background-image: ~"url(@{img_dir}review-photo-1.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-6 {
+        background-image: ~"url(@{img_dir}review-photo-3.jpg)";
+        /*height: 700px;*/
+    }
+}
+
+@media @media-sm {
+    .review-photo-1 {
+        background-image: ~"url(@{img_dir}review-photo-4-n-640.jpg)";
+        /*height: 370px;*/
+    }
+    .review-photo-2 {
+        background-image: ~"url(@{img_dir}review-photo-2-n-640.jpg)";
+        /*height: 358px;*/
+    }
+    .review-photo-3 {
+        background-image: ~"url(@{img_dir}review-photo-6-640.jpg)";
+        /*height: 475px;*/
+    }
+    .review-photo-4 {
+        background-image: ~"url(@{img_dir}review-photo-5.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-5 {
+        background-image: ~"url(@{img_dir}review-photo-1.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-6 {
+        background-image: ~"url(@{img_dir}review-photo-3.jpg)";
+        /* height: 700px;*/
+    }
+}
+@media @media-md {
+    .review-photo-1 {
+        background-image: ~"url(@{img_dir}review-photo-4-n-950.jpg)";
+        /* height: 450px;*/
+    }
+    .review-photo-2 {
+        background-image: ~"url(@{img_dir}review-photo-2-n-950.jpg)";
+        /*height: 531px;*/
+    }
+    .review-photo-3 {
+        background-image: ~"url(@{img_dir}review-photo-6-950.jpg)";
+        /*height: 500px;*/
+    }
+    .review-photo-4 {
+        background-image: ~"url(@{img_dir}review-photo-5.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-5 {
+        background-image: ~"url(@{img_dir}review-photo-1.jpg)";
+        /*height: 700px;*/
+    }
+    .review-photo-6 {
+        background-image: ~"url(@{img_dir}review-photo-3.jpg)";
+        /*height: 700px;*/
+    }
+}
+@media @media-lg {}
+
+
+.review-photo-1 {
+    background-image: ~"url(@{img_dir}review-photo-4-n.jpg)";
+    /*height: 550px;
+    
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+.review-photo-2 {
+    background-image: ~"url(@{img_dir}review-photo-2-n.jpg)";
+}
+.review-photo-3 {
+    background-image: ~"url(@{img_dir}review-photo-6.jpg)";
+    /*height: 500px;*/
+}
+.review-photo-4 {
+    background-image: ~"url(@{img_dir}review-photo-5.jpg)";
+    /*height: 700px;*/
+}
+.review-photo-5 {
+    background-image: ~"url(@{img_dir}review-photo-1.jpg)";
+    /* height: 700px;*/
+}
+.review-photo-6 {
+    background-image: ~"url(@{img_dir}review-photo-3.jpg)";
+    /* height: 700px;*/
+}
+
+
+
+

@@ -1,0 +1,191 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+.margin-gap( @n ) {
+    margin-left:  (@grid-gutter-width / @n);
+    margin-right: (@grid-gutter-width / @n);
+}
+.padding-gap( @n ) {
+    padding-left:  (@grid-gutter-width / @n);
+    padding-right: (@grid-gutter-width / @n);
+}
+/*.init-column(@s){
+    .list-column(@n, @i:1) when (@i =< @n) {
+        & when (@i >= @s) {
+            .col-@{fix}-@{i} {
+                &:extend(.col-xs-1);
+            }
+        }
+        .list-column(@n, (@i + 1));
+    }
+    .list-column(@grid-columns);
+}*/
+
+.init-column( @s, @n:@grid-columns, @i:1) when (@i =< @n) {
+    & when (@i >= @s) {
+        .col-@{fix}-@{i} {
+            &:extend(.col-xs-1);
+        }
+    }
+    .init-column(@s, @n, (@i + 1) );
+}
+
+
+.generate-column(@n, @i: 1) when (@i =< @n) {
+    & when (@i = 1) {
+        .col-@{fix}-pull-0 {
+            right: auto;
+        }
+        .col-@{fix}-push-0 {
+            left: auto;
+        }
+        .col-@{fix}-offset-0 {
+            margin-left: 0;
+        }
+        .hidden-@{fix}.hidden-@{fix} {
+            display: none;
+        }
+    }
+   // .list-column(@n;) {       
+        .col-@{fix}-@{i} {
+            width: (@i * 100% / @n);
+        } 
+        .col-@{fix}-pull-@{i} {
+            right: percentage((@i / @grid-columns));
+        }        
+        .col-@{fix}-push-@{i} {
+            left: percentage((@i / @grid-columns));
+        }
+        .col-@{fix}-offset-@{i} {
+            margin-left: percentage((@i / @grid-columns));
+        }
+    //}    
+    //.list-column(@n);
+    .generate-column(@n, (@i + 1));
+}
+
+
+@list_fix: xs, rs, sm, md, lg; 
+@size_fix: length(@list_fix);
+@list_media_fix: @media-xs, @media-rs-min, @media-sm-min, @media-md-min, @media-lg;
+
+
+
+
+/* generate columns */
+.helper-generate-column( @size_fix, @n, @z: 1  ) when (@z =< @size_fix) { 
+    @fix: extract(@list_fix, @z);
+    @media-fix: extract(@list_media_fix, @z);
+
+    & when (@z = 1) {
+        /////////
+        /*.list-column(@n, @i:1) when (@i =< @n) {
+            & when (@i = 1) {
+                .col-xs-1 {
+                    .init-column(3);
+                } 
+            }
+            & when (@i > 1) {
+                .col-@{fix}-@{i} {
+                    &:extend(.col-xs-1);
+                }
+            }     
+            .list-column(@n, (@i + 1));
+        }
+        .list-column(@grid-columns);*/
+
+        .init-column(2);
+        ////////////////
+        .generate-column(@n);
+    }    
+    & when (@z > 1) {
+        @media @media-fix {
+            .init-column(1);
+            .generate-column(@n);
+        }
+    } 
+
+    .helper-generate-column(@size_fix, @n, (@z + 1)  );
+}
+
+
+.col-xs-1 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    .padding-gap(3);
+}
+
+.helper-generate-column(@size_fix, @grid-columns );
+
+/* rest */
+.clearfix,
+.row,
+.container,
+.container-fluid {
+    &:before,
+        &:after {
+        display: table;
+        content: " ";  
+    }
+    &:after {
+        clear: both; 
+    } 
+}
+.row {
+    .margin-gap(-3);
+    @media @media-sm-max {
+        .margin-gap(-2); 
+    }
+}
+.container {  
+    .padding-gap(3);
+    /*@media @media-sm-min {
+        .padding-gap(2);
+    }*/
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    max-width: @screen-xs-container;
+    @media @media-rs-max {
+        max-width: @screen-rs-container;
+    }    
+    @media @media-sm-max {
+        .padding-gap(2);
+        max-width: @screen-sm-container;
+    }
+    @media @media-md-max {
+        max-width: @screen-md-container;
+    }
+    @media @media-lg {
+        max-width: @screen-lg-container;
+    }
+    &-fluid {
+        .padding-gap(2);
+        margin-right: auto;
+        margin-left: auto;
+        @media @media-sm-max {
+            .padding-gap(3);
+        }
+    }
+}
+.pull-right.pull-right {
+    float: right;
+}
+.pull-left.pull-left {
+    float: left;
+}
+.hide.hide {
+    display: none;
+}
+.show.show {
+    display: block;
+}
+.clearfix {
+    display: block;
+    zoom: 1;
+    &:after {
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+}

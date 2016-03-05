@@ -1,0 +1,28 @@
+<?php if ($this->switchMenu): ?>
+    <a href="#" class="nav-switch-mobile js-nav-swith">Pokaż menu</a>
+<?php endif; ?>
+<ul class="nav-list <?php echo $this->cssClass; ?> js-nav-list" data-title="<?php echo $this->title; ?>">
+    <?php foreach ($this->list as $i => $item): ?>
+        <li class="nav-item <?php echo $item->getClass(); ?>">
+            <?php if ($item->isActive()): ?>
+                <span class="nav-link"><span class="nav-title"><?php echo $item->getTitle(); ?></span></span>
+            <?php else: ?>
+                <a class="nav-link" href="<?php echo $item->getUrl(); ?>"><span class="nav-title"><?php echo $item->getTitle(); ?></span></a>
+                <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<?php if ($this->switchMenu): ?>
+    <?php $this->ob(); ?>
+    <script src="/js/mig/mig.nav.service.js"></script>
+    <script type="text/javascript">
+    // <![CDATA[
+        mig.nav.service(window, {
+            switcher: '.js-nav-swith',
+            menu: '.js-nav-list',
+            screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?>
+        });
+    // ]]>
+    </script>
+    <?php $this->clean(); ?>
+<?php endif; ?>

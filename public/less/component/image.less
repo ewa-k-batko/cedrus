@@ -1,0 +1,80 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+
+.img{
+
+    &-fluid {
+        position: relative;
+     /*  background-attachment: fixed;  */
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: @c-darkn-grey;
+        width: 100%;
+        cursor: w-resize;
+        transition: background-size 1000ms ease 200ms;        
+        
+        &:hover,
+        &:active {
+           background-size:auto;
+        }
+         /* height:90%;
+       height: 100%;height: 60%;max-width: @screen-lg-container;
+          height: 70%;
+   height: 600px;
+        height: @screen-xs-container * 0.5;
+        @media @media-rs {
+            height: @screen-rs-container * 0.5;
+        }
+        @media @media-sm {
+            height: @screen-sm-container * 0.5;
+        }
+        @media @media-md {
+            height: @screen-md-container * 0.4;
+        }
+        @media @media-lg {
+            height: @screen-lg-container * 0.4;
+        }
+        */
+        /*min-height: @screen-xs-container * 0.2 */;
+
+
+        @media @media-md-min {
+            .no-touch.svg & {
+              
+                background-attachment: fixed; 
+                /*background-size: cover;contain  background-attachment: fixed;*/
+
+            } 
+        }
+
+
+
+
+
+
+
+
+    }
+
+    &-responsive {
+        display: block;
+        /*max-width: 100%;*/
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        &:hover {
+             .scale(1.2);
+        }
+    }
+    &-offer {
+        /*background-attachment: local;*/
+        /*background-position: center center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: auto;
+        width: 100%;*/
+    }
+
+}
+

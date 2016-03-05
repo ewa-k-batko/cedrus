@@ -1,0 +1,44 @@
+@import '../../bootstrap/config.less';
+@import '../../bootstrap/component.less';
+
+.no-touch.svg {
+    .body-page {
+        /*background: -moz-linear-gradient(top, darken(@c-grey, 10%), transparent); 
+        background: -webkit-gradient(linear, center top, center bottom, from(darken(@c-grey, 10%)), color-stop(transparent)); 
+        background: -o-linear-gradient(top, darken(@c-grey, 10%) 0%, transparent); 
+        background: -ms-linear-gradient(top, darken(@c-grey, 10%) 0%, transparent); 
+        background: linear-gradient(top, darken(@c-grey, 10%) 0%, transparent);*/ 
+
+        /*.gradient-linear(@c-grey);*/
+
+     
+        background: -moz-linear-gradient(top, #b3b3b3, transparent);
+        /*Moz*/
+        background: -webkit-gradient(linear, center top, center bottom, from(#b3b3b3), color-stop(transparent));
+        /*Webkit*/
+        background: -o-linear-gradient(top, #b3b3b3 0%, transparent);
+        /*Opera*/
+        background: -ms-linear-gradient(top, #b3b3b3 0%, transparent);
+        /*IE 10+*/
+        background: linear-gradient(top, #b3b3b3 0%, transparent);
+        /*W3C*/
+
+    }
+}
+body{
+    background-color: @c-grey;
+    .no-touch.svg & {
+        background-attachment: fixed;
+        background-position: 30% 30%;
+        background-repeat: repeat;
+        background-image: data-uri('image/jpeg;base64', "@{img_path}back-body.png");
+    }
+}
+.content {
+   /* max-width: @screen-lg-container;*/
+    margin: 0 auto 12px auto;
+    .aside,
+    .main {
+        margin-top: 20px;
+    }
+}

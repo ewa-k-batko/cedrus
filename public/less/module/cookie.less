@@ -1,0 +1,42 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+@import (reference) '../partial/bit.less';
+@import (reference) '../component/text.less';
+.cookie {
+    margin-top: 20px;
+    &:extend(.bit-white all);
+    &-title {
+        margin: 20px 0;
+    }
+    
+    &-title {
+        &:before {
+            display: none;
+        }
+    }
+    &-subtitle {
+        margin: 20px 0;        
+        &:before {
+            display: none;
+        }
+    }
+    &-text {
+        padding-bottom: 20px;
+        
+        .p-text {
+            margin: 10px 0;
+        }
+    }
+    
+    &-list {
+        margin: 20px 0;
+        &-item {
+            margin: 10px 0;
+        }
+        
+        &-link {
+            &:extend(.s-text all);
+        }
+    }
+    
+}

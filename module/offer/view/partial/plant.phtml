@@ -1,0 +1,48 @@
+<?php if ($this->plant instanceof Model_Plant_Container): ?>
+    <<?php echo $this->htag; ?> class="plant-title">
+    <a class="plant-url" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
+        <span itemprop="name"><?php echo $this->plant->getName(); ?></span>
+    </a>
+    </<?php echo $this->htag; ?>>
+    <?php if ($this->plant->getGallery()->getItems()->count() > 0): ?><!-- @todo dopisac warunki-->
+        <a class="plant-thumb" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
+            <figure>
+                <?php $photo = $this->plant->getGallery()->getItems()->next(); ?>
+                <img  class="plant-image img-responsive" src="<?php echo $photo->getFile()->getUrl(); ?>" itemprop="image">
+                <?php if ($photo->getDescription()): ?>
+                    <figcaption><?php echo $photo->getDescription(); ?></figcaption>
+                <?php endif; ?>
+            </figure>
+        </a>
+    <?php endif; ?>    
+    <<?php echo $this->dtag; ?> class="plant-details" name="<?php echo $this->plant->getName(); ?>">
+    <span class="plant-detail plant-id">
+        <<?php echo $this->ltag; ?> class="plant-label">identyfikator:</<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value" itemprop="productID"> <?php echo $this->plant->getId(); ?></<?php echo $this->vtag; ?>> 
+    </span> 
+    <span class="plant-detail plant-genus">
+        <<?php echo $this->ltag; ?> class="plant-label">gatunek:</<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value" itemprop="additionalType"> <?php echo $this->plant->getGenus(); ?></<?php echo $this->vtag; ?>> 
+    </span> 
+    <span class="plant-detail plant-species">
+        <<?php echo $this->ltag; ?> class="plant-label">odmiana: </<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value" itemprop="isRelatedTo"><?php echo $this->plant->getSpecies(); ?></<?php echo $this->vtag; ?>> 
+    </span> 
+    <span class="plant-detail plant-height">
+        <<?php echo $this->ltag; ?> class="plant-label">wysokość sadzonki: </<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value"> <?php echo $this->plant->getHeight(); ?></<?php echo $this->vtag; ?>> 
+    </span>
+    <span class="plant-detail plant-max">
+        <<?php echo $this->ltag; ?> class="plant-label">dorasta do:</<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value" itemprop="height"> <?php echo $this->plant->getHeightMax(); ?></<?php echo $this->vtag; ?>> 
+    </span>
+    <span class="plant-detail plant-bloom">
+        <<?php echo $this->ltag; ?> class="plant-label">czas kwitnienia: </<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value"> <?php echo $this->plant->getPeriodBloom(); ?></<?php echo $this->vtag; ?>> 
+    </span>
+    <span class="plant-detail plant-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <<?php echo $this->ltag; ?> class="plant-label">cena:</<?php echo $this->ltag; ?>> 
+        <<?php echo $this->vtag; ?> class="plant-value" itemprop="price"><?php echo $this->plant->getPrice(); ?> <cite itemprop="priceCurrency" content="PLN"><?php echo Model_Plant_Container::CURRENCY; ?></cite></<?php echo $this->vtag; ?>>
+    </span> 
+    </<?php echo $this->dtag; ?>>
+<?php endif; ?>

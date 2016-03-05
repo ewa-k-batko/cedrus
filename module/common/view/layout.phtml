@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+        <title><?php echo $this->metatags->getTitle(); ?></title>
+        <meta name="description" content="<?php echo $this->metatags->getDescription(); ?>"/>
+        <meta name="keywords" content="<?php echo $this->metatags->getKeywords(); ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="noarchive"/>
+        <meta name="msapplication-TileColor" content="#4fc243">
+        <meta name="msapplication-TileImage" content="/img/favicon.png">
+        <link rel="icon" href="/img/mirage-sadzonka.favicon.png">
+        <meta name="application-name" content="Mirage - szkółka ogrodnicza">
+        <?php echo $this->scripts->loadCss(); ?>
+        <?php echo $this->scripts->loadJs(Manager_Helper_Scripts::SLOT_HEAD); ?>       
+    </head>
+    <body<?php if ($this->pageId): ?> class="<?php echo $this->pageId; ?>"<?php endif; ?>>
+        <div class="body-page container-fluid">
+            <div class="panel"> 
+                <?php if ($this->brand): ?>
+                    <div class="panel-brand">
+                        <?php echo $this->brand->render(); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ($this->breadcrumbs): ?>
+                    <div class="breadcrumbs">
+                        <nav class="breadcrumbs-list">
+                            <?php echo $this->breadcrumbs->render(); ?>
+                        </nav>
+                    </div>
+                <?php endif; ?>                
+                <div class="panel-body"> 
+                    <?php if ($this->header): ?>
+                        <header class="header-page">
+                            <?php echo $this->header->render(); ?>                        
+                        </header>
+                    <?php endif; ?>
+                    <?php if ($this->nav): ?>
+                        <nav class="nav">
+                            <?php echo $this->nav->render(); ?>
+                        </nav>
+                    <?php endif; ?>                    
+                </div>
+            </div>
+            <?php if ($this->fluid): ?>
+                <div class="container-fluid">
+                    <?php echo $this->fluid->render(); ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($this->main || $this->aside): ?>
+                <div class="content<?php if ($this->main || $this->aside): ?> container<?php endif; ?>"> 
+                    <div class="row">
+                        <?php if ($this->main): ?>
+                            <div class="main col-xs-12 col-md-8">
+                                <?php echo $this->main->render(); ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($this->aside): ?>
+                            <aside class="aside col-xs-12 col-md-4">                                
+                                <?php echo $this->aside->render(); ?>
+                            </aside>
+                        <?php endif; ?>
+                    </div>
+                </div> 
+            <?php endif; ?>
+            <div class="footer-photo img-fluid"></div>
+            <?php if ($this->footer): ?>
+                <footer>
+                    <div class="footer container-fluid">
+                        <?php echo $this->footer->render(); ?>
+                    </div>
+                </footer>
+            <?php endif; ?>
+        </div>      
+
+<!-- scripts -->
+<?php echo $this->scripts->loadJs(Manager_Helper_Scripts::SLOT_FOOT); ?>
+<?php if ($this->scripts->isJQuery()): ?>
+<script type="text/javascript">
+// <![CDATA[
+window.$j = jQuery.noConflict();
+// ]]>
+</script>
+<?php endif; ?>
+<?php if ($this->header): ?>
+<?php echo $this->header->flusher(); ?>
+<?php endif; ?>
+<?php if ($this->nav): ?>
+<?php echo $this->nav->flusher(); ?>
+<?php endif; ?>
+<?php if ($this->fluid): ?>
+<?php echo $this->fluid->flusher(); ?>
+<?php endif; ?>
+<?php if ($this->main): ?>
+<?php echo $this->main->flusher(); ?>
+<?php endif; ?>
+<?php if ($this->aside): ?>
+<?php echo $this->aside->flusher(); ?>
+<?php endif; ?>
+<?php if ($this->footer): ?>
+<?php echo $this->footer->flusher(); ?>
+<?php endif; ?>
+    </body>
+</html>

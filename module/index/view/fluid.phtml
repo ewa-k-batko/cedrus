@@ -1,0 +1,47 @@
+<section itemscope itemtype="http://data-vocabulary.org/Review" class="row review">   
+        <!-- <span itemprop="rating" class="hide">5</span> img-fluid-->
+        <div class="review-photo-1 img-fluid">
+            <div class="review-about gradient">
+                <time itemprop="dtreviewed" datetime="2014-12-05">5 listopada,</time>
+                <span itemprop="reviewer">"Mirage" o swojej działalności:</span>
+            </div>
+        </div>
+        <div class="review-text row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-9">
+                <h2 itemprop="itemreviewed" class="head-title review-title">Szkółka ogrodnicza</h2>
+                <p itemprop="description" class="p-text review-description">Zajmujemy się produkcją i sprzedażą drzew i krzewów ozdobnych.</p>
+            </div>
+        </div>
+        <div class="review-photo-2 img-fluid">
+            <div class="review-about gradient">                
+                <span>W naszym ogrodzie znajdziesz: </span>
+            </div>
+        </div>
+        <div class="review-text row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-9">
+                <h3 class="head-title review-title">Oferujemy w sprzedaży:</h3>
+                <p itemprop="summary" class="p-text review-description">Wysokiej jakości drzewa i krzewy iglaste, liściaste, szczepione, wrzosowe oraz byliny.</p>
+            </div>
+        </div>
+        <div class="review-photo-3 img-fluid">
+            <div class="review-about gradient">                
+                <span>Katalog z naszą ofertą na wiosnę 2015 roku znajdziecie Państwo wkrótce pod adresem http://<?php echo Manager_Config::DOMAIN; ?>/oferta</span>
+            </div>
+        </div>
+        <div class="review-text contact-front-page" itemscope itemtype="http://schema.org/Organization">
+            <h3 class="head-title col-md-offset-1">Kontakt</h3>       
+            <ul class="row">
+                <li class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+                    <?php $this->partial('contact/view/partial/company.phtml'); ?>
+                </li>
+                <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+                    <?php $this->partial('contact/view/partial/address.phtml'); ?>                    
+                </li>
+                <li itemprop="location"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3"> 
+                    <?php $this->partial('contact/view/partial/geolocation.phtml'); ?>
+                    <br><br>
+                    <?php $this->partial('contact/view/partial/logo.phtml'); ?>
+                </li>
+            </ul>
+        </div>    
+</section>

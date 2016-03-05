@@ -1,0 +1,16 @@
+<div itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+    <div class="offer-head">
+        <h3 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>:</h3>
+    </div>
+    <section class="plant large-view">
+        <?php if ($this->plant instanceof Model_Plant_Container): ?>
+            <?php
+            $this->partial('offer/view/partial/plant.phtml', array('plant' => $this->plant,
+                'htag' => 'h1',
+                'dtag' => 'dl',
+                'ltag' => 'dt',
+                'vtag' => 'dd'));
+            ?>
+        <?php endif; ?>
+    </section>
+</div>

@@ -1,0 +1,173 @@
+@import '../bootstrap/config.less';
+@import '../bootstrap/component.less';
+@import (reference) '../partial/tag.less';
+.head {
+    &-title {           
+        font-weight: 400;
+        position: relative;        
+        color: @c-brown;
+        line-height: @head_line_xs;
+        font-size: @head_size_xs;
+        @media @media-rs-min {
+            line-height: @head_line_rs;
+            font-size: @head_size_rs;        
+        }
+        @media @media-sm-min {
+            padding-left: 35px;
+            line-height: @head_line_sm;
+            font-size: @head_size_sm;       
+        }
+        @media @media-md-min {
+            padding-left: 40px;
+            line-height: @head_line_md;
+            font-size: @head_size_md;       
+        } 
+        @media @media-lg {
+            line-height: @head_line_lg;
+            font-size: @head_size_lg;
+        }
+        &:after {
+            &:extend(.tag-sub);           
+            border-radius: 8px;
+            border: 2px solid @c-pink; 
+            background-color: @c-pink;
+            @media @media-rs-max {
+                display: none;
+            }
+            @media @media-sm-min {
+                top: 12px;
+                left: 4px;
+                width: 8px;
+                height: 8px;
+            }
+            @media @media-md-min {
+                top: 16px;
+                left: 5px;
+            } 
+            @media @media-lg {
+                top: 21px;
+                left:6px;
+            }
+
+
+        }
+        &:before {
+            &:extend(.tag-sub);            
+            .rotate(45);
+            border: 2px solid @c-green;
+             
+            @media @media-rs-max {
+                display: none;
+            }
+            @media @media-sm-min {
+                top: 8px; 
+                left: 0;
+                width: 16px;
+                height: 16px;
+            }
+            @media @media-md-min {
+                top: 11px; 
+                width: 18px;
+                height: 18px;
+            } 
+            @media @media-lg {
+                top: 15px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+.aside {
+    &-title {            
+        font-weight: 400;
+        position: relative;        
+        color: @c-green;
+
+        line-height: @head_line_xs - 16;
+        font-size: @head_size_xs - 2;
+        @media @media-rs-min {
+            line-height: @head_line_rs - 12;
+            font-size: @head_size_rs ;        
+        }
+        @media @media-sm-min {
+            padding-left: 25px;
+            line-height: @head_line_sm - 20;
+            font-size: @head_size_sm - 4;       
+        }
+        @media @media-md-min {
+            padding-left: 30px;
+            line-height: @head_line_md - 20;
+            font-size: @head_size_md - 8;       
+        } 
+        @media @media-lg {
+            line-height: @head_line_lg - 22;
+            font-size: @head_size_lg - 10;
+        }        
+
+        &:after {
+            &:extend(.tag-sub);
+            border: 2px solid @c-green;
+            background-color: @c-green;
+            border-radius: 8px;           
+
+            @media @media-rs-max {
+                display: none;
+            }
+            @media @media-sm-min {
+                top: 3px;
+                left: 3px;
+                width: 2px;
+                height: 2px;
+            }
+            @media @media-md-min {
+                top: 8px;
+                left:4px;
+                width: 4px;
+                height: 4px;
+            } 
+            @media @media-lg {
+                top: 10px;
+                left:4px;
+                width: 6px;
+                height: 6px;
+            }
+
+
+        }
+        &:before {
+            &:extend(.tag-sub);
+            border: 1px solid @c-pink;
+            .rotate(45);
+
+            @media @media-rs-max {
+                display: none;
+            }
+            @media @media-sm-min {
+                top: 0;
+                left: 0;
+                width: 10px;
+                height: 10px;
+            }
+            @media @media-md-min {
+                top: 4px;
+                left: 0;
+                width: 12px;
+                height: 12px;
+            } 
+            @media @media-lg {
+                top: 6px;
+                left: 0;
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+    &-link {
+        color: @c-green;
+        text-decoration: none;
+        &:hover {
+            .text-shadow(@c-grey;1);
+        }
+    }
+}

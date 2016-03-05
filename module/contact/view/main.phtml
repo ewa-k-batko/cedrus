@@ -1,0 +1,43 @@
+<section class="contact">
+    <h1 class="head-title">Kontakt z firmą "Mirage":</h1>
+    <?php if ($this->result == 1): ?>
+        <p class="p-text">Dziękujemy za przesłanie wiadomości, wkrótce się z Państwem skontaktujemy.</p>
+    <?php else: ?> 
+        <?php  $this->partial('contact/view/partial/form.phtml', array('captcha' => $this->captcha, 
+          'csrf' => $this->csrf,
+          'errors' => $this->errors,
+          'result' =>$this->result,
+          'details' => $this->details));  ?>
+    <?php endif; ?>
+
+    <div class="contact-maps">
+        <h4 class="aside-title hide js-map-title-shop">Lokalizacja punktu sprzedaży: Siercza 485</h4>
+        <iframe class="map-body hide js-map-shop"></iframe>
+        <h4 class="aside-title hide js-map-title-company">Lokalizacja siedziby: Pawlikowice 182</h4>
+        <iframe class="map-body hide js-map-company"></iframe>
+    </div>
+
+    <div class="review-photo-2 img-fluid"></div>
+</section>
+
+<?php $this->ob(); ?>
+<script src="/js/mig/mig.map.google.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+    mig.map.google(window, {
+        list: [
+            {
+                src: 'https://www.google.com/maps/embed/v1/place?q=49.976750%2C%2020.049963&key=AIzaSyDqBXYMbnEMms6qKZiLmIEBnGtF5SVH6Vs',
+                name: 'shop'
+            },
+            {
+                src: 'https://www.google.com/maps/embed/v1/place?q=49.966016%2C%2020.054213&key=AIzaSyDqBXYMbnEMms6qKZiLmIEBnGtF5SVH6Vs',
+                name: 'company'
+            }
+        ],
+        limitDevice: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?>,
+        width: 600
+    });
+// ]]>
+</script>
+<?php $this->clean(); ?>

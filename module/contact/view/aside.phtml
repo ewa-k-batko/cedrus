@@ -1,0 +1,13 @@
+<div itemscope itemtype="http://schema.org/Organization" class="contact"> 
+    <?php $this->render('contact/view/partial/company.phtml'); ?>
+    <p class="p-text contact-text-label">Dane kontaktowe:</p>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <?php $this->render('contact/view/partial/address.phtml'); ?>
+    </div>
+    <div itemprop="location"> 
+        <?php $this->render('contact/view/partial/geolocation.phtml'); ?>        
+    </div>
+    <div class="text-center">
+        <?php $this->partial('contact/view/partial/logo.phtml', array('showDomain' => true)); ?> 
+    </div>
+</div>
