@@ -1,3 +1,17 @@
-Kreator pdf
+<h1>Kreator pdf</h1>
 
-<a href="<?php echo $this->file;?>" target="_blank">plik pdf</a>
+<a href="/<?php echo $this->file;?>?<?php echo time();?>" target="_blank">wygenerowany plik pdf</a>
+
+<h4>Raport</h4>
+
+<?php echo $this->report;?>
+
+<br><br>
+<h4>Błędy</h4>
+
+<?php echo $this->error;?>
+<br><br>
+<a href="/formsan/pdf/">wygeneruj ponownie plik pdf</a>
+<br>
+<br>
+<br>

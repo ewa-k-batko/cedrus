@@ -18,6 +18,7 @@ class Model_Db_Mysql {
         if ($param == null) {
             try {
                 self::$_db = new mysqli($base['server'], $base['user'], $base['password']);
+                //mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'", self::$_db);
                 self::$_baseName = $base['database'];
                 if (mysqli_connect_errno()) {
                     $this->_error = true;
@@ -28,6 +29,9 @@ class Model_Db_Mysql {
                     $this->showErrorsDB($e->getMessage());
                 }
                 return false;
+            }
+            if (false === self::$_db->set_charset("utf8")) {
+                return $this->throwErrorDB(null, 'Błąd nadania kodowania: ' . $base['charset'] . ' dla bazy DB.');
             }
             if (false === self::$_db->select_db(self::$_baseName)) {
                 $this->_error = true;
@@ -82,11 +86,6 @@ class Model_Db_Mysql {
 
         //latin2 - ISO 8859-2 Central European
         //utf8 - UTF-8 Unicode
-
-
-        if (false === self::$_db->set_charset($base['charset'])) {
-            return $this->throwErrorDB(null, 'Błąd nadania kodowania: ' . $base['charset'] . ' dla bazy DB.');
-        }
     }
 
 //mysql::__constructor__
