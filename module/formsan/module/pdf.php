@@ -100,7 +100,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $this->out['file'] = self::PDF_FILE_PATH;
 
 
-        $this->template = 'formsan/view/pdf.phtml';
+        $this->template = 'Formsan/View/Pdf.phtml';
         parent::execute();
     }
 

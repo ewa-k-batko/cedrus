@@ -18,7 +18,8 @@ function __autoload($class_name) {
     $pathClass = ROOT_PATH;
     for ($i = 0; $i < $size; $i++) {
         // $tmp[$i] = str_replace(array('Manager', 'Model', 'Module'), array('manager', 'model', 'module'), $tmp[$i]);
-        $pathClass .= strtolower($tmp[$i]) . '/';
+        //$pathClass .= strtolower($tmp[$i]) . '/';
+        $pathClass .= $tmp[$i] . '/';
     }
     $pathClass = rtrim($pathClass, '/') . '.php';
     $dev = true;
@@ -70,7 +71,7 @@ class Manager_Controller {
     /**
      * @var int|Manager_Config|Manager_Storage
      */
-    private $config, $storage, $events, $errors, $layout;
+    private $config, $storage, $events, $errors, $layout, $orderEvent;
     /**
      * @var
      */
@@ -78,7 +79,7 @@ class Manager_Controller {
     /**
      * @var array
      */
-    private static $instance, $orderEvent;
+    private static $instance;
 
     /**
      *
@@ -100,18 +101,7 @@ class Manager_Controller {
         return self::$instance;
     }
 
-    /**
-     * @param Manager_Event $event
-     * @return $this
-     * @throws Exception
-     */
-    private function add(Manager_Event $event) {
-        if (in_array($event->getName(), self::$orderEvent)) {
-            $this->events[$event->getName()] = $event;
-            return $this;
-        }
-        throw new Exception('brak takiej nazwy eventu w konfiguracji');
-    }
+    
 
     /** czy nie usunac ?? */
     /* private function get($name) {
@@ -133,20 +123,13 @@ class Manager_Controller {
             $route = $request->getModule();
         }
         return $route;
-    }
-
-    /**
-     * @param $name
-     */
-    private function config($name) {
-        include $this->config->configModule($name);
-    }
+    }    
 
     /**
      *
      */
     private function load() {
-        foreach (self::$orderEvent as $name) {
+        foreach ($this->orderEvent as $name) {
             if (!isset($this->events[$name])) {
                 continue;
             }
@@ -202,23 +185,33 @@ class Manager_Controller {
         }
         ob_start(null, 0, PHP_OUTPUT_HANDLER_FLUSHABLE ^ PHP_OUTPUT_HANDLER_REMOVABLE);
         try {
-            $page = $this->config->getRouteMapEvents($this->route());
-            $this->config($page);
+           // $page = $this->config->getRouteMapEvents($this->route());
+            //$this->config($page);
+            
+            $cnf = Route_Map::get($this->route());
+           // $cnf->get($this);
+            
+           $this->config($cnf);            
+            
             $this->load();
             $this->renderLayout();
         } catch (Manager_Exception_NotFound $e) {
             $this->errors++;
-            $this->changeRooteMap('common/config/error404');
+            //$this->changeRooteMap('Common/Config/Error404');
+            $this->changeRooteMap(new Module_Common_Config_Error404());
+            
         } catch (Manager_Exception_Unavailable $e) {
             $this->errors++;
-            $this->changeRooteMap('common/config/error503');
+            $this->changeRooteMap(new Module_Common_Config_Error503());
         } catch (Manager_Config_Exception $e) {
             if (Manager_Config::isDev()) {
                 echo $e->getMessage();
             }
         } catch (Exception $e) {
             $this->errors++;
-            $this->changeRooteMap('common/config/error503');
+            $this->changeRooteMap(new Module_Common_Config_Error503());
+            
+            
         }
 
         ob_end_flush();
@@ -227,6 +220,43 @@ class Manager_Controller {
             //echo microtime() - $time . '<br>';
             //echo round(memory_get_peak_usage(true) / 1024, 2) . '|' . round(memory_get_usage(true) / 1024, 2) . ' kB';
         }
+    }
+    
+    /**
+     * @param $name
+     */
+    public function config($cnf) {
+        $cnf->get($this);
+        //include $this->config->configModule($name);
+    }
+    
+    public function setLayout($layout){
+        $this->layout = $layout;
+    }
+    
+    public function setOrderEvent($orderEvent){
+        $this->orderEvent = $orderEvent;
+    }
+    
+    public function setStorage($storage){
+        $this->storage = $storage;
+    }
+    
+    public function getStorage(){
+        return $this->storage;
+    }
+    
+    /**
+     * @param Manager_Event $event
+     * @return $this
+     * @throws Exception
+     */
+    public function add(Manager_Event $event) {
+        if (in_array($event->getName(), $this->orderEvent)) {
+            $this->events[$event->getName()] = $event;
+            return $this;
+        }
+        throw new Exception('brak takiej nazwy eventu w konfiguracji');
     }
 
 }

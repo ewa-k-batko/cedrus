@@ -34,7 +34,7 @@ class Formsan_Module_Ajax extends Module_Abstract {
             $this->out['ajax'] = array('err' => 2, 'message' => $e->getMessage());
         }
 
-        $this->template = 'formsan/view/common/ajax.phtml';
+        $this->template = 'Formsan/View/Common/Ajax.phtml';
         parent::execute();
     }
 

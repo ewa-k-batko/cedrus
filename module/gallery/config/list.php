@@ -1,24 +1,29 @@
 <?php
 
-if ($this instanceof Manager_Controller) {
-    $this->config('common/config/basic');
-    $this->storage->scripts->setCss('/css/gallery.css');
-    $this->storage->pageId = 'gallery-page';
+class Module_Gallery_Config_List extends Module_Config {
 
-    $link = new Model_Link_Container();
-    $link->setTitle('Galeria kwiatów');
-    $this->storage->breadcrumbs->set(1, $link);
-    $this->storage->metatags->setTitle('Galeria - ');
-    $this->storage->metatags->setDescription('Galeria z ogrodu.', 'append');
-    $this->storage->metatags->setKeywords('zdjęcia, w wolnej chwili,');
+    public function get(Manager_Controller $mac) {
 
-    //$this->config('offer/config/nav');
+        $mac->config(new Module_Common_Config_Basic());
+        
+        $storage = $mac->getStorage();
+        $storage->scripts->setCss('/css/gallery.css');
+        $storage->pageId = 'gallery-page';
 
-    $event = new Manager_Event();
-    $event->setName('fluid')->setClass('Gallery_Module_List');
-    $this->add($event);
+        $link = new Model_Link_Container();
+        $link->setTitle('Galeria kwiatów');
+        $storage->breadcrumbs->set(1, $link);
+        $storage->metatags->setTitle('Galeria - ');
+        $storage->metatags->setDescription('Galeria z ogrodu.', 'append');
+        $storage->metatags->setKeywords('zdjęcia, w wolnej chwili,');
 
-    
-} else {
-    throw new Manager_Config_Exception('błąd konfiguracji dla strony listy galerii');
+        //$mac->config('offer/config/nav');
+
+        $event = new Manager_Event();
+        $event->setName('fluid')->setClass('Gallery_Module_List');
+        $mac->add($event);
+
+        $mac->setStorage($storage);
+    }
+
 }

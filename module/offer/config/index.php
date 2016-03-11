@@ -1,28 +1,34 @@
 <?php
 
-if ($this instanceof Manager_Controller) {
-    $this->config('common/config/basic');
-    $this->storage->scripts->setCss('/css/offer.css');
-    $this->storage->pageId = 'offer-page';
+class Module_Offer_Config_Index extends Module_Config {
 
-    $link = new Model_Link_Container();
-    $link->setTitle('Oferta');
-    $this->storage->breadcrumbs->set(1, $link);
-    $this->storage->metatags->setTitle('Katalog z ofertą');
-    $this->storage->metatags->setDescription('Katalog drzew i krzewów ozdobnych.', 'append');
-    $this->storage->metatags->setKeywords('katalog, oferta, produkty,');
+    public function get(Manager_Controller $mac) {
 
-    $this->config('offer/config/nav');
+        $mac->config(new Module_Common_Config_Basic());
 
-    $event = new Manager_Event();
-    $event->setName('main')->setClass('Offer_Module_Index');
-    $this->add($event);
+        $storage = $mac->getStorage();
+        $storage->scripts->setCss('/css/offer.css');
+        $storage->pageId = 'offer-page';
 
-    $event = new Manager_Event();
-    $event->setName('aside')->setClass('Offer_Module_Nav')->setTemplate('offer/view/aside.phtml')
-            ->setOut(array('title' => 'nawigacja katalogu z ofertą',
-                'cssClass' => 'offer-nav-list'));
-    $this->add($event);
-} else {
-    throw new Manager_Config_Exception('błąd konfiguracji dla strony oferty');
+        $link = new Model_Link_Container();
+        $link->setTitle('Oferta');
+        $storage->breadcrumbs->set(1, $link);
+        $storage->metatags->setTitle('Katalog z ofertą');
+        $storage->metatags->setDescription('Katalog drzew i krzewów ozdobnych.', 'append');
+        $storage->metatags->setKeywords('katalog, oferta, produkty,');
+
+        $mac->config(new Module_Offer_Config_Nav());
+
+        $event = new Manager_Event();
+        $event->setName('main')->setClass('Offer_Module_Index');
+        $mac->add($event);
+
+        $event = new Manager_Event();
+        $event->setName('aside')->setClass('Offer_Module_Nav')->setTemplate('Offer/View/Aside.phtml')
+                ->setOut(array('title' => 'nawigacja katalogu z ofertą',
+                    'cssClass' => 'offer-nav-list'));
+        $mac->add($event);
+        $mac->setStorage($storage);
+    }
+
 }

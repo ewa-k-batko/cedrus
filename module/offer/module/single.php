@@ -47,7 +47,7 @@ class Offer_Module_Single extends Module_Abstract {
         } catch (Exception $e) {
             throw new Manager_Exception_Unavailable();
         }
-        $this->template = 'offer/view/single.phtml';
+        $this->template = 'Offer/View/Single.phtml';
         parent::execute();
     }
 }

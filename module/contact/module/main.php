@@ -1,6 +1,6 @@
 <?php
-//error_reporting(255);
-//ini_set('display_errors', '1');
+error_reporting(255);
+ini_set('display_errors', '1');
 
 spl_autoload_register('__autoload');
 
@@ -129,7 +129,7 @@ class Contact_Module_Main extends Module_Abstract {
         }
 
         //@todo  ajax
-        $this->template = 'contact/view/main.phtml';
+        $this->template = 'Contact/View/Main.phtml';
         parent::execute();
     }
 

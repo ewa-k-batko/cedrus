@@ -70,7 +70,7 @@ class Gallery_Module_List extends Module_Abstract {
           throw new Manager_Exception_NotFound();
           }
           } */
-        $this->template = 'gallery/view/list.phtml';
+        $this->template = 'Gallery/View/List.phtml';
         parent::execute();
     }
 

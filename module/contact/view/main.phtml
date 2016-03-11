@@ -3,7 +3,7 @@
     <?php if ($this->result == 1): ?>
         <p class="p-text">Dziękujemy za przesłanie wiadomości, wkrótce się z Państwem skontaktujemy.</p>
     <?php else: ?> 
-        <?php  $this->partial('contact/view/partial/form.phtml', array('captcha' => $this->captcha, 
+        <?php  $this->partial('Contact/View/Partial/Form.phtml', array('captcha' => $this->captcha, 
           'csrf' => $this->csrf,
           'errors' => $this->errors,
           'result' =>$this->result,

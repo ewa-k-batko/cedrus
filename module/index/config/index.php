@@ -1,20 +1,26 @@
 <?php
 
-if ($this instanceof Manager_Controller) {
-    $this->config('common/config/basic');
-    $this->storage->scripts->setCss('/css/index.css');
-    $this->storage->pageId = 'front-page';
-    $this->storage->metatags->setTitle('Firma o swojej działalności - ');
-    $this->storage->metatags->setDescription('Startuj z nami');
-    $this->storage->metatags->setKeywords('firma');
-    $link = new Model_Link_Container();
-    $link->setTitle('Mirage - szkółka ogrodnicza')->setRoot();
-    $this->storage->breadcrumbs->set(0, $link);
-    
-    
-    $event = new Manager_Event();
-    $event->setName('fluid')->setClass('Index_Module_Fluid');
-    $this->add($event);
-} else {
-    throw new Manager_Config_Exception('błąd konfiguracji dla strony głównej');
+class Module_Index_Config_Index extends Module_Config {
+
+    public function get(Manager_Controller $mac) {
+
+        $mac->config(new Module_Common_Config_Basic());
+        
+        $storage = $mac->getStorage();
+        $storage->scripts->setCss('/css/index.css');
+        $storage->pageId = 'front-page';
+        $storage->metatags->setTitle('Firma o swojej działalności - ');
+        $storage->metatags->setDescription('Startuj z nami');
+        $storage->metatags->setKeywords('firma');
+        $link = new Model_Link_Container();
+        $link->setTitle('Mirage - szkółka ogrodnicza')->setRoot();
+        $storage->breadcrumbs->set(0, $link);
+
+
+        $event = new Manager_Event();
+        $event->setName('fluid')->setClass('Index_Module_Fluid');
+        $mac->add($event);
+        $mac->setStorage($storage);
+    }
+
 }

@@ -13,7 +13,7 @@ class Formsan_Module_Template extends Module_Abstract {
             
             default;
             case 'list':                
-               $this->template = 'formsan/view/content.phtml';
+               $this->template = 'Formsan/View/Content.phtml';
                 break;
 
         }

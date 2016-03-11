@@ -63,7 +63,7 @@ class Contact_Module_Send extends Module_Abstract {
 
 
         //@todo  ajax
-        $this->template = 'contact/view/main.phtml';
+        $this->template = 'Contact/View/Main.phtml';
         parent::execute();
     }
 

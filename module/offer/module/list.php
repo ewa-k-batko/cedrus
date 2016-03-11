@@ -38,7 +38,7 @@ class Offer_Module_List extends Module_Abstract {
         } catch (Exception $e) {
             throw new Manager_Exception_Unavailable();
         }
-        $this->template = 'offer/view/list.phtml';
+        $this->template = 'Offer/View/List.phtml';
         parent::execute();
     }
 

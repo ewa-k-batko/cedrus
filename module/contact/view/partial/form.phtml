@@ -14,7 +14,7 @@
 <form encType="application/x-www-form-urlencoded" class="contact-form" method="post" action="/kontakt"> 
     <input id="lang" type="hidden" value="pl" name="lang">
     <?php if ($this->csrf instanceof Zend\Form\Element\Csrf): ?>
-        <?php $this->partial('common/view/partial/csrf.phtml', array('csrf' => $this->csrf)); ?>     
+        <?php $this->partial('Common/View/Partial/Csrf.phtml', array('csrf' => $this->csrf)); ?>     
     <?php endif; ?>
     <fieldset class="contact-form-fieldset">
         <ul> <fieldset class="contact-form-fieldset">
@@ -42,7 +42,7 @@
                 </li>            
                 <?php if ($this->captcha instanceof Zend\Captcha\Image): ?>
                     <li class="contact-form-field captcha-field">
-                        <?php $this->partial('common/view/partial/captcha.phtml', array('captcha' => $this->captcha)); ?> 
+                        <?php $this->partial('Common/View/Partial/Captcha.phtml', array('captcha' => $this->captcha)); ?> 
                         <?php if (isset($this->errors['captcha'])): ?>
                             <span class="error-field">Przepisz poprawnie kod z obrazka</span>
                         <?php endif; ?>

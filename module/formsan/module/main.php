@@ -12,7 +12,7 @@ class Formsan_Module_Main extends Module_Abstract {
 //print_r($this->out['plant']);
 
         //@todo  ajax
-        $this->template = 'formsan/view/main.phtml';
+        $this->template = 'Formsan/View/Main.phtml';
         parent::execute();
     }
 

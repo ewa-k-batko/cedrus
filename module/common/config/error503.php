@@ -1,19 +1,25 @@
 <?php
 
-if ($this instanceof Manager_Controller) {
+class Module_Common_Config_Error503 extends Module_Config {
 
-    $this->config('common/config/basic');
+    public function get(Manager_Controller $mac) {
 
-    $this->storage->metatags->setTitle('Strona chwilowo niedostępna. Prosimy spróbować ponownie.', false);
-    $this->storage->metatags->setDescription('Strona chwilowo niedostępna', false);
-    $this->storage->metatags->setKeywords('', false);
-    
-    $event = new Manager_Event();
-    $event->setName('init')->setClass('Manager_Response')->setIn(array('response_code' => 503));
-    $this->add($event);
-    $event = new Manager_Event();
-    $event->setName('fluid')->setClass('Module_Module')->setTemplate('common/view/error.phtml')->setOut(array('code' => 503));
-    $this->add($event);
-} else {
-    throw new Manager_Config_Exception('błąd konfiguracji dla strony błędu 503');
+        $mac->config(new Module_Common_Config_Basic());
+
+        $storage = $mac->getStorage();
+
+        $storage->metatags->setTitle('Strona chwilowo niedostępna. Prosimy spróbować ponownie.', false);
+        $storage->metatags->setDescription('Strona chwilowo niedostępna', false);
+        $storage->metatags->setKeywords('', false);
+
+        $event = new Manager_Event();
+        $event->setName('init')->setClass('Manager_Response')->setIn(array('response_code' => 503));
+        $mac->add($event);
+        $event = new Manager_Event();
+        $event->setName('fluid')->setClass('Module_Module')->setTemplate('Common/View/Error.phtml')->setOut(array('code' => 503));
+        $mac->add($event);
+
+        $mac->setStorage($storage);
+    }
+
 }

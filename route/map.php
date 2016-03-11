@@ -1,23 +1,27 @@
 <?php
+class Route_Map {
+
+    public static function get($route) {
+      
 switch ($route) {
     case '/':
-        return 'index/config/index';
+        return new Module_Index_Config_Index();
         break;
     case '/oferta':
-        return 'offer/config/index';
+        return new Module_Offer_Config_Index();
         break;
     case '/oferta/katalog/typ':
-        return 'offer/config/list';
+        return new Module_Offer_Config_List();
         break;
     case '/oferta/katalog/roslina':
-        return 'offer/config/single';
+        return new Module_Offer_Config_Single();
         break;
    
    case '/kontakt':     
-        return 'contact/config/contact';
+        return new Module_Contact_Config_Contact();
         break; /**/
    case '/kontakt/formularz-wyslij-wiadomosc': 
-   return 'contact/config/send';
+   return new Module_Contact_Config_Send();
         break;
        /*   return 'contact/config/contact';
         break;
@@ -25,24 +29,28 @@ switch ($route) {
         return 'contact/config/send-ajax';
         break;*/
     case '/galeria':
-        return 'gallery/config/list';
+        //return 'Gallery/Config/List';
+        return new Module_Gallery_Config_List();
         break;
     case '/polityka-cookie':
-        return 'index/config/cookie';
+        return new Module_Index_Config_Cookie();
         break;
     case '/formsan':
-        return 'formsan/config/main';
+        return new Module_Formsan_Config_Main();
         break;
     case '/formsantemplate':
-        return 'formsan/config/template';
+        return new Module_Formsan_Config_Template();
         break;
     case '/formsanajax':
-        return 'formsan/config/ajax';
+        return new Module_Formsan_Config_Ajax();
         break;
      case '/formsan/pdf':
-        return 'formsan/config/pdf';
+        return new Module_Formsan_Config_Pdf();
         break;
     default:
-        return 'common/config/error404';
+        return new Module_Common_Config_Error404();
         break;
+        }
+    }
+
 }

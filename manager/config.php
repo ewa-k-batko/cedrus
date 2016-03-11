@@ -6,15 +6,15 @@ class Manager_Config {
     const ENVIRONMENT = ENVIRONMENT;
     const DEV = 'dev';
     const DOMAIN = 'sadzonka.eu';
-    const DIR_VIEW = 'module/';
-    const DIR_CONFIG = 'config/';
-    const DIR_CONFIG_MODULE = 'module/';
-    const TYPE_ROUTE_MODULE = 'module';
-    const TYPE_ROUTE_ROUTE = 'route';
+    const DIR_VIEW = 'Module/';
+    const DIR_CONFIG = 'Config/';
+    const DIR_CONFIG_MODULE = 'Module/';
+    const TYPE_ROUTE_MODULE = 'Module';
+    const TYPE_ROUTE_ROUTE = 'Route';
     const TYPE_ROUTE_DEFAULT = self::TYPE_ROUTE_ROUTE;
     const ROOT_PAGE = '/index';
-    const ROOT_MAP_CONFIG = 'route/map.php';
-    
+    const ROOT_MAP_CONFIG = 'Route/Map.php';
+
     //const LAYOUT = 'common/view/layout.phtml';
 
     public static function isDev() {
@@ -50,11 +50,15 @@ class Manager_Config {
             return '//iphot.sadzonka.eu/';
         }
     }
-    
+
     public static function iphotDir() {
-        return self::ROOT_PATH . '/../' . 'iphot/';
+        if (self::isDev()) {
+            return self::ROOT_PATH . '/../' . 'iphot/';
+        } else {
+            return '../../../../../' . 'iphot/';
+        }
     }
-    
+
     public static function istatUrl() {
         if (self::isDev()) {
             return '//istat.dv/';
@@ -62,13 +66,17 @@ class Manager_Config {
             return '//istat.sadzonka.eu/';
         }
     }
-    
+
     public static function istatDir() {
-        return self::ROOT_PATH . '/../' . 'istat/';
+        if (self::isDev()) {
+            return self::ROOT_PATH . '/../' . 'istat/';
+        } else {
+            return '../../../../../' . 'istat/';
+        }
     }
 
     public static function dbCnf() {
-       $cnf =  parse_ini_file('/config/cnf.ini', true);
+        $cnf = parse_ini_file('/Config/cnf.ini', true);
         if (self::isDev()) {
             return $cnf['db-dv'];
         } else {
