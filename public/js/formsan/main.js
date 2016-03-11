@@ -23,7 +23,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                 // cache: true,
                 url: '/formsanajax',
                 data: {mdl: 'CategoryList', id: 33}, //id=78&baz=moe',//
-                headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
             }).then(function (response) {
                 console.debug(response.data.rows.list[0], 'response.data.form.elements');
                 $scope.list = response.data.rows.list;
@@ -44,7 +44,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                     // cache: true,
                     url: '/formsanajax',
                     data: {mdl: mthod, param: this.field}, //id=78&baz=moe',//
-                    headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
                 }).then(function (response) {
                     //console.debug(response.data.form.elements, 'response.data.form.elements');
                     $scope.list = response.data.rows;
@@ -62,7 +62,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                     // cache: true,
                     url: '/formsanajax',
                     data: {mdl: 'CategoryById', param: {id: id}}, //id=78&baz=moe',//
-                    headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
                 }).then(function (response) {
                     console.debug(response.data.rows, 'response.data.rows-1');
                     // $scope.list = response.data.rows;
@@ -104,7 +104,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                     // cache: true,
                     url: '/formsanajax',
                     data: {mdl: 'PlantList', id: 33}, //@todo , dodac filtrowanie id
-                    headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
                 }).then(function (response) {
                     //console.debug(response.data.rows.list[0], 'response.data.form.elements');
                     $scope.list = response.data.rows.list;
@@ -120,7 +120,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                     // cache: true,
                     url: '/formsanajax',
                     data: {mdl: 'PlantSet', param: this.field}, //id=78&baz=moe',//
-                    headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
                 }).then(function (response) {
                     //console.debug(response.data.form.elements, 'response.data.form.elements');
                     //$scope.list = response.data.rows;
@@ -136,7 +136,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                     // cache: true,
                     url: '/formsanajax',
                     data: {mdl: 'PlantById', param: {id: id}}, //id=78&baz=moe',//
-                    headers: {'Content-Type': 'application/json; charset=UTF-8'}
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
                 }).then(function (response) {
                     $scope.field = response.data.rows;
 

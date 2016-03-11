@@ -3,6 +3,8 @@
 class Formsan_Module_Ajax extends Module_Abstract {
 
     private $api;
+    
+    //http://stackoverflow.com/questions/5507234/how-to-use-basic-auth-with-jquery-and-ajax
 
     function execute() {
         if (!$this->request->isAjax()) {
@@ -80,7 +82,7 @@ class Formsan_Module_Ajax extends Module_Abstract {
         $category->setUrl($params->param->url);
         $category->setIcon($params->param->icon);
         $category->setStatus($params->param->status);
-        $category->setUserId(1);
+        $category->setUserCreateId(1);
         $this->out['ajax'] = array('res' => $this->api->getCategoryAddAd($category));
 
 
