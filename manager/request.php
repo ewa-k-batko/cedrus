@@ -123,11 +123,7 @@ class Manager_Request
     }
     
     public function isAjax()
-    {        
-        if(Manager_Config::isDev()){
-           return true; 
-        }        
-        print_r($_SERVER);
+    { 
         return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
     }
 }
