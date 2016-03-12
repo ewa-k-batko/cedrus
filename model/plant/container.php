@@ -8,15 +8,42 @@ class Model_Plant_Container extends Model_Container_Abstract {
     const CURRENCY = 'zł';   
      
 
-    protected $category, $nameLT,  $description,  $icon, $price, $genus, $species, $height, $heightMax, $pot, $periodBloom, $periodSow, $gallery;
+    protected $isnNo, $category, $gallery, $pot, $nameLT,  $description,  $icon, $price, $genus, $species, $height, $heightMax, $periodBloom, $periodSow;
   
+    public function setIsnNo($isnNo) {
+        $this->isnNo = $isnNo;
+        return $this;
+    }
+    public function getIsnNo() {
+        return $this->isnNo;
+    }
+    
     public function setCategory(Model_Plant_Category_Container $category) {
         $this->category = $category;
         return $this;
     }
     public function getCategory() {
         return $this->category; 
-    }    
+    }  
+    
+     public function setGallery(Model_Gallery_Container $gallery) {
+        $this->gallery = $gallery;
+        return $this;
+    }
+    public function getGallery() {
+        if(!$this->gallery) {
+           $this->gallery = new Model_Gallery_Container(); 
+        }
+        return $this->gallery;
+    }
+    
+     public function setPot(Model_Plant_Pot_Container $pot) {
+        $this->pot = $pot;
+        return $this;
+    }
+    public function getPot() {
+        return $this->pot;
+    }
     
     public function setNameLT($name) {
         $this->nameLT = $name;
@@ -94,14 +121,6 @@ class Model_Plant_Container extends Model_Container_Abstract {
         return $this->heightMax;
     }
     
-    public function setPot(Model_Plant_Pot_Container $pot) {
-        $this->pot = $pot;
-        return $this;
-    }
-    public function getPot() {
-        return $this->pot;
-    }
-    
     public function setPeriodBloom($periodBloom) {
         $this->periodBloom = $periodBloom;
         return $this;
@@ -116,19 +135,7 @@ class Model_Plant_Container extends Model_Container_Abstract {
     }
     public function getPeriodSow() {
         return $this->periodSow;
-    }
-    
-    public function setGallery(Model_Gallery_Container $gallery) {
-        $this->gallery = $gallery;
-        return $this;
-    }
-    public function getGallery() {
-        if(!$this->gallery) {
-           $this->gallery = new Model_Gallery_Container(); 
-        }
-        return $this->gallery;
-    }
-    
+    }    
     public function setter($row){}
 
 }

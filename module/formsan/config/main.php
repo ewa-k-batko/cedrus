@@ -20,6 +20,10 @@ class Module_Formsan_Config_Main extends Module_Config {
         $storage->scripts->setJs('/js/formsan/category.js', Manager_Helper_Scripts::SLOT_FOOT);
 
         $storage->scripts->setJs('/js/formsan/plant.js', Manager_Helper_Scripts::SLOT_FOOT);
+        
+        $storage->scripts->setJs('/js/formsan/pot.js', Manager_Helper_Scripts::SLOT_FOOT);
+        
+        $storage->scripts->setJs('/js/formsan/gallery.js', Manager_Helper_Scripts::SLOT_FOOT);
 
         $storage->scripts->setJs('/js/formsan/main.js', Manager_Helper_Scripts::SLOT_FOOT);
 

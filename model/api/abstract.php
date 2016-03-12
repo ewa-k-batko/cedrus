@@ -12,6 +12,10 @@ abstract class Model_Api_Abstract {
     const ORDER_DESC = 'desc';
     const SORT_ID = 'c_id';
     const SORT_NAME = 'c_name';
+    
+    const STATUS_ACTIVE = 'A';
+    const STATUS_CREATE = 'C';
+    const STATUS_DELETE = 'D';
 
     protected $source;
     
@@ -77,5 +81,12 @@ abstract class Model_Api_Abstract {
             return $order;
         }
         return self::ORDER_ASC;
+    }
+    
+    final protected static function validStatus($status) {
+        if(in_array($status, array(self::STATUS_ACTIVE, self::STATUS_CREATE, self::STATUS_DELETE))){
+            return $status;
+        }
+        return self::STATUS_DELETE;
     }
 }

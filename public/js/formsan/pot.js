@@ -1,43 +1,43 @@
 var frs = frs || {};
-frs.category = frs.category || {};
-frs.category.cnf = function () {
+frs.pot = frs.pot || {};
+frs.pot.cnf = function () {
     var self = this;
     self.getForm = function () {
         return {
             head: {
                 //action: '/formsan#/',
-                legend: 'Kategorie Edycja'},
+                legend: 'Doniczka Edycja'},
             items: [
                 {type: 'text',
                     label: 'id',
                     name: 'id',
-                    model: 'field.id',
-                    value: ''},
-                {type: 'select',
-                    label: 'galeria',
-                    name: 'gallery',
-                   // model: 'field.name',
-                    selected: {},
-                    elements: [
-                        {name: 'nazwa galerii', id: 'id galerii'}
-                    ]},                
+                   // model: 'field.id',
+                    value: ''}, 
                 {type: 'text',
                     label: 'nazwa',
                     name: 'name',
-                    model: 'field.name',
+                    //model: 'field.name',
                     value: 'wpisz tekst'},
                 {type: 'textarea',
                     label: 'opis',
                     name: 'description',
+                    value: ''},
+                {type: 'text',
+                    label: 'kolor doniczki',
+                    name: 'color',
+                    value: ''},
+                {type: 'text',
+                    label: 'wysokość doniczki',
+                    name: 'height',
                     value: ''},                
                 {type: 'text',
-                    label: 'ikona',
-                    name: 'icon',
+                    label: 'średnica doniczki',
+                    name: 'diameter',
                     value: ''},
                 {type: 'hidden',
                    // label: 'ikona',
                     name: 'mdl',
-                    value: 'setCategory'},
+                    value: 'setPlant'},
                 {type: 'radio-group',
                     label: 'status',
                     name: 'status',
@@ -53,7 +53,12 @@ frs.category.cnf = function () {
             ]
 
         }
-    }
+    },
+    self.setSelect = function (obj, pos, elements, current){
+        obj['items'][pos]['elements'] = elements; 
+        obj['items'][pos]['selected'] = {id: current.id, name: current.name};
+        return obj;
+    };
 
     return this;
 }

@@ -1,22 +1,23 @@
 <?php
 
-class Model_Plant_Category_ContainerAd extends Model_Plant_Category_Container implements JsonSerializable  
-{
-    use Model_Container_TraitAd; 
+class Model_Plant_Pot_ContainerAd extends Model_Plant_Pot_Container implements JsonSerializable {
+
+    use Model_Container_TraitAd;
 
     public function jsonSerialize() {
         return array(
             'filter' => self::FILTER,
             'id' => $this->id,
-            'gallery' => $this->gallery,
             'name' => $this->name,
             'description' => $this->description,
-            'url' => $this->url,
-            'icon' => $this->icon,
+            'color' => $this->color,
+            'height' => $this->height,
+            'diameter' => $this->diameter,
             'status' => $this->status,
             'dataCreate' => $this->dataCreate,
             'dataUpdate' => $this->dataUpdate,
-            'userId' => $this->userCreateId); //$this;
+            'userCreateId' => $this->userCreateId,
+            'userUpdateId' => $this->userUpdateId); //$this;
     }
 
 }

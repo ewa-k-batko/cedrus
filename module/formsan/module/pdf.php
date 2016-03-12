@@ -16,12 +16,16 @@ class Formsan_Module_Pdf extends Module_Abstract {
     private $cur_X, $cur_Y, $font, $font_H;
 
     function execute() {
+        
+      try {
 
         $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
         $list = $this->api->getPlantListAd($pack = 1, $sizePack = 20, $sort = Model_Api_Abstract::SORT_NAME, $order = Model_Api_Abstract::ORDER_ASC);
        print_r($list);
-
-
+      }catch(Exception $e) {
+          echo $e->getMessage();
+      }
+  
 
         $this->out['report'] = 'start generate pdf<br>';
         try {

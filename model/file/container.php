@@ -4,7 +4,7 @@ class Model_File_Container {
 
     //const DOMAIN = 'http://www.walaszczyk.pl';
 
-    private $id,  $url, $size, $width, $height, $extention, $parent;
+    protected $id,  $url, $size, $width, $height, $extention, $parent;
 
     public function setId($id) {
         $this->id = $id;

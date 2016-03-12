@@ -1,43 +1,31 @@
 var frs = frs || {};
-frs.category = frs.category || {};
-frs.category.cnf = function () {
+frs.gallery = frs.pot || {};
+frs.gallery.cnf = function () {
     var self = this;
     self.getForm = function () {
         return {
             head: {
                 //action: '/formsan#/',
-                legend: 'Kategorie Edycja'},
+                legend: 'Galeria Edycja'},
             items: [
                 {type: 'text',
                     label: 'id',
                     name: 'id',
-                    model: 'field.id',
-                    value: ''},
-                {type: 'select',
-                    label: 'galeria',
-                    name: 'gallery',
-                   // model: 'field.name',
-                    selected: {},
-                    elements: [
-                        {name: 'nazwa galerii', id: 'id galerii'}
-                    ]},                
+                   // model: 'field.id',
+                    value: ''}, 
                 {type: 'text',
                     label: 'nazwa',
                     name: 'name',
-                    model: 'field.name',
+                    //model: 'field.name',
                     value: 'wpisz tekst'},
                 {type: 'textarea',
                     label: 'opis',
                     name: 'description',
-                    value: ''},                
-                {type: 'text',
-                    label: 'ikona',
-                    name: 'icon',
                     value: ''},
                 {type: 'hidden',
                    // label: 'ikona',
                     name: 'mdl',
-                    value: 'setCategory'},
+                    value: 'setStuff'},
                 {type: 'radio-group',
                     label: 'status',
                     name: 'status',
@@ -53,7 +41,12 @@ frs.category.cnf = function () {
             ]
 
         }
-    }
+    },
+    self.setSelect = function (obj, pos, elements, current){
+        obj['items'][pos]['elements'] = elements; 
+        obj['items'][pos]['selected'] = {id: current.id, name: current.name};
+        return obj;
+    };
 
     return this;
 }

@@ -13,6 +13,14 @@ class Model_Plant_Source_Db_Mysql_Build_PlantAd extends Model_Plant_Source_Db_My
     public function getCategoryContainer() {
         return new Model_Plant_Category_ContainerAd();
     }
+    
+     public function getGalleryContainer() {
+        return new Model_Gallery_ContainerAd();
+    }
+    
+    public function getPotContainer() {
+        return new Model_Plant_Pot_ContainerAd();
+    }
 
     public function single($plant, $row) {
 

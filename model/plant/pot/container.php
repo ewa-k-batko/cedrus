@@ -1,41 +1,34 @@
 <?php
 
-class Model_Plant_Pot_Container {
+class Model_Plant_Pot_Container extends Model_Container_Abstract {
 
     const FILTER = 'oid';
 
-    private $id, $name, $url, $price, $width, $height;
+    protected $description, $color, $diameter, $height;
 
-    public function setId($id) {
-        $this->id = $id;
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
-    public function getId() {
-        return $this->id;
-    }
 
-    public function setName($name) {
-        $this->name = $name;
-        return $this;
-    }
-    public function getName() {
-        return $this->name;
-    } 
-
-    public function setUrl($url) {
-        $this->url = $url;
-        return $this;
-    }
-    public function getUrl() {
-        return $this->url;
+    public function getDescription() {
+        return $this->description;
     }
     
-    public function setPrice($price) {
-        $this->price = $price;
+    public function setColor($color) {
+        $this->color = $color;
         return $this;
     }
-    public function getPrice() {
-        return $this->price;
+    public function getColor() {
+        return $this->color;
+    }
+    
+    public function setDiameter($diameter) {
+        $this->diameter = $diameter;
+        return $this;
+    }
+    public function getDiameter() {
+        return $this->diameter;
     }
     
     public function setHeight($height) {
@@ -46,12 +39,7 @@ class Model_Plant_Pot_Container {
         return $this->height;
     }
     
-    public function setWidth($width) {
-        $this->width = $width;
-        return $this;
+    public function setter($row) {
+        
     }
-    public function getWidth() {
-        return $this->width;
-    }
-
 }

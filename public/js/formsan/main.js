@@ -151,6 +151,131 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
 
                 });
             }
+        }).controller('Pot', function ($scope, $routeParams, $http) {
+            var cnf = frs.pot.cnf(),
+                    frm = cnf.getForm();
+            $scope.form = frm.head;
+            $scope.items = frm.items;
+            $scope.params = frm.params;
+            $scope.field = {};
+
+            function getPotList() {
+                
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'PotList', id: 33}, //@todo , dodac filtrowanie id
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    //console.debug(response.data.rows.list[0], 'response.data.form.elements');
+                    $scope.list = response.data.rows.list;
+                });
+            }
+            getPotList();
+            
+            $scope.submit = function () {
+                //console.debug(this.field, 'submi-this');               
+               
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'PotSet', param: this.field}, //id=78&baz=moe',//
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    //console.debug(response.data.form.elements, 'response.data.form.elements');
+                    //$scope.list = response.data.rows;
+                   // alert(45);
+                    getPotList();
+                });
+                return false;
+            };
+
+            $scope.getElement = function (id) {
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'PotById', param: {id: id}}, //id=78&baz=moe',//
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    $scope.field = response.data.rows;
+
+                    //console.debug(response.data.categories, 'response.data.categories');
+                    //console.debug(response.data.rows, 'response.data.rows-2');
+
+                    frm = cnf.setSelect(frm, 1, response.data.categories.list, response.data.rows.category);
+                    $scope.items = frm.items;
+                    //$scope.items = frm.items;
+                    //console.debug($scope.items, '$scope-items-2');
+                    
+
+                });
+            };
+        })
+        .controller('Gallery', function ($scope, $routeParams, $http) {
+            var cnf = frs.gallery.cnf(),
+                    frm = cnf.getForm();
+            $scope.form = frm.head;
+            $scope.items = frm.items;
+            $scope.params = frm.params;
+            $scope.field = {};
+
+            function getGalleryList() {
+                
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'StuffList', id: 33, type: 'G'}, //@todo , dodac filtrowanie id
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    //console.debug(response.data.rows.list[0], 'response.data.form.elements');
+                    $scope.list = response.data.rows.list;
+                });
+            }
+            getGalleryList();
+            
+            $scope.submit = function () {
+                //console.debug(this.field, 'submi-this');               
+               this.field.type = 'G';
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'StuffSet', param: this.field}, //id=78&baz=moe',//
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    //console.debug(response.data.form.elements, 'response.data.form.elements');
+                    //$scope.list = response.data.rows;
+                   // alert(45);
+                    getGalleryList();
+                });
+                return false;
+            };
+
+            $scope.getElement = function (id) {
+                $http({
+                    method: 'POST',
+                    // cache: true,
+                    url: '/formsanajax',
+                    data: {mdl: 'StuffById', param: {id: id}}, //id=78&baz=moe',//
+                    headers: {'Content-Type': 'application/json; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest'}
+                }).then(function (response) {
+                    $scope.field = response.data.rows;
+
+                    //console.debug(response.data.categories, 'response.data.categories');
+                    //console.debug(response.data.rows, 'response.data.rows-2');
+
+                    frm = cnf.setSelect(frm, 1, response.data.categories.list, response.data.rows.category);
+                    $scope.items = frm.items;
+                    //$scope.items = frm.items;
+                    //console.debug($scope.items, '$scope-items-2');
+                    
+
+                });
+            };
         })
 
 //https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating
@@ -174,9 +299,19 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                         controller: 'Plant'
                     })
                     
+                    .when('/pot', {
+                        templateUrl: '/formsantemplate,s,list',
+                        controller: 'Pot'
+                    })
+                    
                     .when('/param', {
                         templateUrl: '/formsantemplate,s,list',
                         controller: 'Param'
+                    })
+                    
+                   .when('/gallery', {
+                        templateUrl: '/formsantemplate,s,list',
+                        controller: 'Gallery'
                     });
             //alert($locationProvider.path());    
             console.debug($routeProvider, '$routeProvider');

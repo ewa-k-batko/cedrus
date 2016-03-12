@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-static-top row">
-<div class="container col-xs-3 col-xs-offset-1">
+<div class="container col-xs-11 col-xs-offset-1">
     <?php foreach ($this->list as $i => $item): ?>
-        <p class="col-xs-2 <?php echo $item->getClass(); ?>">
+        <p class="col-xs-1 <?php echo $item->getClass(); ?>">
             <?php if ($item->isActive()): ?>
                 <span class="btn btn-link active"><span class="nav-title"><?php echo $item->getTitle(); ?></span></span>
             <?php else: ?>

@@ -24,7 +24,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
 
     public function getCategoryList($pack, $sizePack, $sort, $order) {
 
-        $sql = 'call PL_CAT_LIST_ALL(' . $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        $sql = 'call PL_CATEGORY_LIST_ALL(' . $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
         //echo $sql;
 
         try {
@@ -43,7 +43,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
     }
 
     public function getCategoryByIdAd($id) {
-        $sql = 'call PL_CAT_BY_ID(' . $id . ' );';
+        $sql = 'call PL_CATEGORY_BY_ID(' . $id . ' );';
         //echo $sql;
 
         try {
@@ -63,11 +63,11 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
         return $build->single($category, $res[0]);
     }
 
-    public function getCategoryUpdateAd(Model_Plant_Category_ContainerAd $category) {
-        $sql = 'call PL_CAT_UPDATE(' . $category->getId() .
+    public function getCategorySetAd(Model_Plant_Category_ContainerAd $category) {
+        $sql = 'call PL_CATEGORY_SET(' . $category->getId() .
                 ',"' . $category->getName() .
                 '", "' . $category->getDescription() .
-                '","' . $category->getUrl() .
+                '","' . $category->getGallery()->getId() .
                 '", "' . $category->getIcon() .
                 '", "' . $category->getStatus() .
                 '", ' . $category->getUserUpdateId() .
@@ -84,7 +84,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
         }
         var_dump($res);
     }
-
+/*
     public function getCategoryAddAd(Model_Plant_Category_ContainerAd $category) {
         $sql = 'call PL_CAT_ADD("' . $category->getName() .
                 '", "' . $category->getDescription() .
@@ -104,7 +104,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
             throw new Manager_Exception_Unavailable();
         }
         var_dump($res);
-    }
+    }*/
 
     public function getPlantListAd($pack, $sizePack, $sort, $order) {
 
@@ -149,16 +149,147 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
 
     public function getPlantSetAd(Model_Plant_ContainerAd $plant) {
         $sql = 'call PL_PLANT_SET(' . $plant->getId() .
-                ',' . $plant->getCategory()->getId() .
+                ',"' . $plant->getIsnNo() .
+                '",' . $plant->getCategory()->getId() .
+                ',' . $plant->getGallery()->getId() .
+                ',' . $plant->getPot()->getId() .
                 ',"' . $plant->getName() .
                 '","' . $plant->getNameLT() .
                 '", "' . $plant->getDescription() .
-                '","' . $plant->getUrl() .
-                '", "' . $plant->getIcon() .
+                '","' . $plant->getHeight() .
+                '", "' . $plant->getIcon() .  
+                '", "' . $plant->getPrice() .
                 '", "' . $plant->getStatus() .
                 '", ' . $plant->getUserCreateId() .
                 ' );';
         // echo $sql;
+        try {
+            $res = self::$db->multiQuery($sql);
+            return $res;
+            //var_dump($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        //var_dump($res);
+    }
+    
+    
+    public function getPotListAd($pack, $sizePack, $sort, $order) {
+
+        $sql = 'call PL_POT_LIST_ALL(' . $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->cpt_id) || $res[0]->cpt_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_PotAd();
+        $build->setCollection();
+        return $build->collection($res);
+    }
+
+    public function getPotByIdAd($id) {
+        $sql = 'call PL_POT_BY_ID(' . $id . ' );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->cpt_id) || $res[0]->cpt_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_PotAd();
+        $pot = $build->getContainer();
+        return $build->single($pot, $res[0]);
+    }
+
+    public function getPotSetAd(Model_Plant_Pot_ContainerAd $pot) {
+        $sql = 'call PL_POT_SET(' . $pot->getId() .               
+                ',"' . $pot->getName() .
+                '", "' . $pot->getDescription() .
+                '", "' . $pot->getColor() .
+                '",' . $pot->getHeight() .                  
+                ', ' . $pot->getDiameter() .
+                ', "' . $pot->getStatus() .
+                '", ' . $pot->getUserCreateId() .
+                ' );';
+        echo $sql;
+        try {
+            $res = self::$db->multiQuery($sql);
+            return $res;
+            //var_dump($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        //var_dump($res);
+    }
+    
+    public function getStuffListAd($type, $pack, $sizePack, $sort, $order) {
+
+        $sql = 'call PL_STUFF_LIST_ALL("' . $type. '",'. $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->csf_id) || $res[0]->csf_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_StuffAd();
+        $build->setCollection();
+        return $build->collection($res);
+    }
+
+    public function getStuffByIdAd($id) {
+        $sql = 'call PL_STUFF_BY_ID(' . $id . ' );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->csf_id) || $res[0]->csf_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_StuffAd();
+        $stuff = $build->getContainer();
+        return $build->single($stuff, $res[0]);
+    }
+
+    public function getStuffSetAd(Model_Stuff_ContainerAd $stuff) {
+        $sql = 'call PL_STUFF_SET(' . $stuff->getId() .               
+                ',"' . $stuff->getName() .
+                '", "' . $stuff->getDescription() .
+                '", "' . $stuff->getType() .
+                '", "' . $stuff->getStatus() .
+                '", ' . $stuff->getUserCreateId() .
+                ' );';
+        echo $sql;
         try {
             $res = self::$db->multiQuery($sql);
             return $res;

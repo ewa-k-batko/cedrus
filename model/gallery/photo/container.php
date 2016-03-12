@@ -11,7 +11,7 @@ class Model_Gallery_Photo_Container extends Model_Container_Abstract {
 
     public function getDescription() {
         return $this->description;
-    }
+    } 
 
     public function setFile(Model_File_Container $file) {
         $this->file = $file;

@@ -49,15 +49,23 @@ class Module_Formsan_Config_Basic extends Module_Config {
         $link->setUrl('/formsan#')->setTitle('Lista')->setClass('list-page');
         $nav->append($link);
         $link = new Model_Link_Container();
-        $link->setUrl('/formsan#category')->setTitle('Kategorie')->setClass('category-page');
+        $link->setUrl('/formsan#category')->setTitle('Kategoria')->setClass('category-page');
         $nav->append($link);
 
         $link = new Model_Link_Container();
-        $link->setUrl('/formsan#plant')->setTitle('Rośliny')->setClass('plant-page');
+        $link->setUrl('/formsan#plant')->setTitle('Roślina')->setClass('plant-page');
+        $nav->append($link);
+        
+        $link = new Model_Link_Container();
+        $link->setUrl('/formsan#pot')->setTitle('Doniczka')->setClass('pot-page');
         $nav->append($link);
 
         $link = new Model_Link_Container();
         $link->setUrl('/formsan#param')->setTitle('Parametry')->setClass('param-page');
+        $nav->append($link);
+        
+        $link = new Model_Link_Container();
+        $link->setUrl('/formsan#gallery')->setTitle('Galeria')->setClass('gallery-page');
         $nav->append($link);
 
         $link = new Model_Link_Container();

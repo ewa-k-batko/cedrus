@@ -7,20 +7,20 @@ class Model_Plant_Source_Db_Mysql_Build_Category {
     public function setCollection() {
         $this->collection = new Model_Collection();
     }
-    
-     public function getContainer() {
-         return new Model_Plant_Category_Container();
-     }
 
-    public function collection($res) {        
+    public function getContainer() {
+        return new Model_Plant_Category_Container();
+    }
+
+    public function collection($res) {
         foreach ($res as $row) {
             $category = $this->getContainer();
-            $this->collection->append($this->single($category,$row));
+            $this->collection->append($this->single($category, $row));
         }
         return $this->collection;
     }
 
-    public function single($category,$row) {        
+    public function single($category, $row) {
         if (isset($row->cpc_id)) {
             $category->setId($row->cpc_id);
         }
@@ -30,9 +30,12 @@ class Model_Plant_Source_Db_Mysql_Build_Category {
         if (isset($row->cpc_desc)) {
             $category->setDescription($row->cpc_desc);
         }
-        if (isset($row->cpc_url)) {
-            $category->setUrl($row->cpc_url);
+        if (isset($row->cpc_gal_id)) {
+            $gallery = new Model_Gallery_Container();
+            $gallery->setId($row->cpc_gal_id);
+            $category->setGallery($gallery);
         }
+
         if (isset($row->cpc_icon)) {
             $category->setIcon($row->cpc_icon);
         }

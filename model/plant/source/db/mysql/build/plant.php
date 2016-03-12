@@ -23,15 +23,36 @@ class Model_Plant_Source_Db_Mysql_Build_Plant {
     public function getCategoryContainer() {
         return new Model_Plant_Category_Container();
     }
+    
+    public function getGalleryContainer() {
+        return new Model_Gallery_Container();
+    }
+    
+    public function getPotContainer() {
+        return new Model_Plant_Pot_Container();
+    }
 
     public function single($plant, $row) {        
         if (isset($row->cpp_id)) {
             $plant->setId($row->cpp_id);
         }
+        if (isset($row->cpp_no_isn)) {
+            $plant->setIsnNo($row->cpp_no_isn);
+        }
         if (isset($row->cpp_cpc_id)) {
             $category = $this->getCategoryContainer();
             $category->setId($row->cpp_cpc_id);            
             $plant->setCategory($category);
+        }
+        if (isset($row->cpp_gal_id)) {
+            $gallery = $this->getGalleryContainer();
+            $gallery->setId($row->cpp_gal_id);            
+            $plant->setGallery($gallery);
+        }
+        if (isset($row->cpp_pot_id)) {
+            $pot = $this->getPotContainer();
+            $pot->setId($row->cpp_pot_id);            
+            $plant->setPot($pot);
         }
         if (isset($row->cpp_name_pl)) {
             $plant->setName($row->cpp_name_pl);
@@ -42,11 +63,14 @@ class Model_Plant_Source_Db_Mysql_Build_Plant {
         if (isset($row->cpp_desc)) {
             $plant->setDescription($row->cpp_desc);
         }
-        if (isset($row->cpp_url)) {
-            $plant->setUrl($row->cpp_url);
+        if (isset($row->cpp_height)) {
+            $plant->setHeight($row->cpp_height);
         }
         if (isset($row->cpp_icon)) {
             $plant->setIcon($row->cpp_icon);
+        }
+        if (isset($row->cpp_price)) {
+            $plant->setPrice($row->cpp_price);
         }
         return $plant;
     }

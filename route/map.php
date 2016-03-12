@@ -2,7 +2,7 @@
 class Route_Map {
 
     public static function get($route) {
-      
+     // echo $route;exit;
 switch ($route) {
     case '/':
         return new Module_Index_Config_Index();
@@ -46,7 +46,7 @@ switch ($route) {
     case '/formsanajax':
         return new Module_Formsan_Config_Ajax();
         break;
-     case '/formsan/pdf':
+     case '/formsan/pdf':         
         return new Module_Formsan_Config_Pdf();
         break;
     default:

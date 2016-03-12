@@ -1,45 +1,27 @@
 <?php
 
-class Model_Gallery_Container {
+class Model_Gallery_Container extends Model_Container_Abstract {
 
     const FILTER = 'gid';
 
-    private $id, $category, $name, $url, $items;
+    protected $description, $stuff, $items;
 
-    public function setId($id) {
-        $this->id = $id;
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
 
-    public function getId() {
-        return $this->id;
+    public function getDescription() {
+        return $this->description;
     }
 
-    public function setName($name) {
-        $this->name = $name;
+    public function setStuff(Model_Stuff_Container $stuff) {
+        $this->stuff = $stuff;
         return $this;
     }
 
-    public function getName() {
-        return $this->name;
-    }
-
-    public function setCategory(Model_Category_Container $category) {
-        $this->category = $category;
-        return $this;
-    }
-
-    public function getCategory() {
-        return $this->category;
-    }
-
-    public function setUrl($url) {
-        $this->url = $url;
-        return $this;
-    }
-
-    public function getUrl() {
-        return $this->url;
+    public function getStuff() {
+        return $this->stuff;
     }
 
     public function setItems(Model_Collection $items) {
@@ -52,6 +34,10 @@ class Model_Gallery_Container {
             $this->items = new Model_Collection();
         }
         return $this->items;
+    }
+
+    public function setter($row) {
+        
     }
 
 }
