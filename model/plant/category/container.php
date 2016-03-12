@@ -33,4 +33,8 @@ class Model_Plant_Category_Container extends Model_Container_Abstract {
         }
         return $this->gallery;
     }
+    
+    public function setter($row) {
+        
+    }
 }
