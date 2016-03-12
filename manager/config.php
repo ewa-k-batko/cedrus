@@ -76,7 +76,7 @@ class Manager_Config {
     }
 
     public static function dbCnf() {
-        $cnf = parse_ini_file('/Config/cnf.ini', true);
+        $cnf = parse_ini_file(self::ROOT_PATH .'Config/cnf.ini', true);
         if (self::isDev()) {
             return $cnf['db-dv'];
         } else {
