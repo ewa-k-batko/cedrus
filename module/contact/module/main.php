@@ -124,10 +124,12 @@ class Contact_Module_Main extends Module_Abstract {
         } else {
 
             //formularz nie byl wypeniany jeszcze  => tworz  captcha + csrf
-            $this->out['captcha'] = Model_Form_Captcha::getInstance()->get();
-            $this->out['csrf'] = Model_Form_Csrf::getInstance()->get();
+            ////@todo wlaczyc
+            //$this->out['captcha'] = Model_Form_Captcha::getInstance()->get();
+           //$this->out['csrf'] = Model_Form_Csrf::getInstance()->get();
         }
 
+        spl_autoload_register('__autoload');
         //@todo  ajax
         $this->template = 'Contact/View/Main.phtml';
         parent::execute();

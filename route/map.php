@@ -21,6 +21,7 @@ switch ($route) {
         return new Module_Contact_Config_Contact();
         break; /**/
    case '/kontakt/formularz-wyslij-wiadomosc': 
+   case '/kontakt/formularz': 
    return new Module_Contact_Config_Send();
         break;
        /*   return 'contact/config/contact';
@@ -33,6 +34,7 @@ switch ($route) {
         return new Module_Gallery_Config_List();
         break;
     case '/polityka-cookie':
+    case '/polityka':
         return new Module_Index_Config_Cookie();
         break;
     case '/formsan':

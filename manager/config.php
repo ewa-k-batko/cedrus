@@ -55,7 +55,7 @@ class Manager_Config {
         if (self::isDev()) {
             return self::ROOT_PATH . '/../' . 'iphot/';
         } else {
-            return '../../../../../' . 'iphot/';
+             return self::ROOT_PATH . '../iphot.sadzonka.eu/';
         }
     }
 
@@ -71,7 +71,7 @@ class Manager_Config {
         if (self::isDev()) {
             return self::ROOT_PATH . '/../' . 'istat/';
         } else {
-            return '../../../../../' . 'istat/';
+            return self::ROOT_PATH . '../istat.sadzonka.eu/';
         }
     }
 

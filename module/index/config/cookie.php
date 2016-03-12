@@ -17,7 +17,7 @@ class Module_Index_Config_Cookie extends Module_Config {
         $storage->breadcrumbs->set(1, $link);
 
         $event = new Manager_Event();
-        $event->setName('main')->setClass('Module_Module')->setTemplate('index/view/cookie.phtml');
+        $event->setName('main')->setClass('Module_Module')->setTemplate('Index/View/Cookie.phtml');
         $mac->add($event);
         $mac->setStorage($storage);
     }
