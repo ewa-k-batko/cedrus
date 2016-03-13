@@ -34,7 +34,11 @@ frs.gallery.cnf = function () {
                         {label: 'usunięty', value: 'D'},
                         {label: 'utworzony', value: 'C'}
                     ]
-                }
+                },
+                {type: 'multifile',
+                    label: 'dodaj zdjęcia',
+                    name: 'files',
+                    value: ''}
             ],
             params: [
                 {name: 'mdl', value: 'setCategory'}

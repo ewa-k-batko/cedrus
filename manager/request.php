@@ -15,9 +15,10 @@ class Manager_Request
         $this->setRoute();
         $_POST = is_array($_POST) ? $_POST : array();
         $_GET = is_array($_GET) ? $_GET : array();
-        $this->raw = array_merge($_GET, $_POST);
+        $this->raw = array_merge($_GET, $_POST, $_FILES);
         $_POST = null;
         $_GET = null;
+        $_FILES = null;
     }
 
     public static function getInstance()
@@ -26,6 +27,14 @@ class Manager_Request
             self::$instance = new self();
         }
         return self::$instance;
+    }
+    
+    /**
+     * 
+     * @return  uwaga zmienne niebezpieczne 
+     */
+    public function getRaw() {
+        return  $this->raw;
     }
 
     private function stripUri($string)

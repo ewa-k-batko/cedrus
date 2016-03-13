@@ -27,7 +27,12 @@
             <select ng-if="e.type === 'select'" ng-model="field[e.name]"
                     ng-options="option.name for option in e.elements track by option.id"
                     ng-model="e.selected"></select>
-
+            
+           <div ng-if="e.type === 'multifile'">
+                <input type="file" ng-file-model="files" multiple ng-model="field[e.name]"   ngf-pattern="'image/*'" ngf-max-size="2M"/>
+                <!--<button type="button" ng-click="uploadFile()">Upload</button>  -->              
+                <p ng-if="files">przesłane pliki : <pre ng-repeat="file in files"><img src="{{ file.url }}" width="120"/>{{ file.name }}, rozmiar:{{ file.size }} </pre> </p>
+            </div>
 
             <!-- @todo             
             <input ng-if="e.type === 'hidden'" type="{{e.type}}" value="{{e.value}}" ng-model="field[e.name]">-->
