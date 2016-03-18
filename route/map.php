@@ -49,6 +49,9 @@ switch ($route) {
      case '/formsan/pdf':         
         return new Module_Formsan_Config_Pdf();
         break;
+    case '/formsan/import':         
+        return new Module_Formsan_Config_Import();
+        break;
     default:
         return new Module_Common_Config_Error404();
         break;

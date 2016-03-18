@@ -139,6 +139,7 @@ class Formsan_Module_Ajax extends Module_Abstract {
 
         $plant->setName($params->param->name);
         $plant->setNameLT($params->param->namelt);
+        $plant->setSpecies($params->param->species);
         $plant->setDescription($params->param->description);
         $plant->setHeight($params->param->height);
         $plant->setIcon($params->param->icon);

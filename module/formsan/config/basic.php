@@ -71,6 +71,10 @@ class Module_Formsan_Config_Basic extends Module_Config {
         $link = new Model_Link_Container();
         $link->setUrl('/formsan/pdf/')->setTitle('Pdf')->setClass('pdf-page');
         $nav->append($link);
+        
+        $link = new Model_Link_Container();
+        $link->setUrl('/formsan/import/')->setTitle('Import')->setClass('import-page');
+        $nav->append($link);
 
         /**
          * navigation end

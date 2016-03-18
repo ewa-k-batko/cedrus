@@ -130,6 +130,7 @@ CREATE TABLE `cdr_plant_plant` (
   `cpp_pot_id` int(11) NOT NULL,
   `cpp_name_pl` varchar(128) COLLATE utf8_polish_ci NOT NULL,
   `cpp_name_lt` varchar(128) COLLATE utf8_polish_ci DEFAULT NULL,
+  `cpp_species` varchar(48) COLLATE utf8_polish_ci NOT NULL,
   `cpp_desc` text COLLATE utf8_polish_ci NOT NULL,
   `cpp_height` int(4) NOT NULL,
   `cpp_icon` varchar(48) COLLATE utf8_polish_ci NOT NULL,
@@ -141,7 +142,7 @@ CREATE TABLE `cdr_plant_plant` (
   `cpp_user_mod` int(11) NOT NULL,
   PRIMARY KEY (`cpp_id`),
   UNIQUE KEY `cpp_no_isn_u_i` (`cpp_no_isn`),
-  UNIQUE KEY `cpp_name_u_i` (`cpp_name_pl`),
+  UNIQUE KEY `cpp_name_sp_u_i` (`cpp_name_pl`, `cpp_species`),
   KEY `cpp_cpc_id_f_i` (`cpp_cpc_id`) ,
   KEY `cpp_gal_id_f_i` (`cpp_gal_id`),
   KEY `cpp_pot_id_f_i` (`cpp_pot_id`)
@@ -224,6 +225,7 @@ CREATE PROCEDURE `PL_PLANT_SET`(
         IN pot_id INTEGER,
         IN name_pl VARCHAR(128), 
         IN name_lt VARCHAR(128),
+        IN species VARCHAR(48),
         IN description TEXT, 
         IN height INTEGER,
         IN icon VARCHAR(48),
@@ -234,8 +236,8 @@ CREATE PROCEDURE `PL_PLANT_SET`(
 BEGIN  
 
 if pl_id = 0 then
-    insert into cdr_plant_plant (cpp_no_isn,cpp_cpc_id, cpp_gal_id, cpp_pot_id, cpp_name_pl, cpp_name_lt, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status,cpp_create,cpp_user_create ) 
-    values (no_isn,cat_id,gal_id,pot_id,name_pl,name_lt,description,height,icon,price,status,NOW(),user_id);
+    insert into cdr_plant_plant (cpp_no_isn,cpp_cpc_id, cpp_gal_id, cpp_pot_id, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status,cpp_create,cpp_user_create ) 
+    values (no_isn,cat_id,gal_id,pot_id,name_pl,name_lt,species,description,height,icon,price,status,NOW(),user_id);
 
     SET pl_id = LAST_INSERT_ID();
     
@@ -247,6 +249,7 @@ else
               cpp_pot_id = pot_id,
               cpp_name_pl = name_pl,
               cpp_name_lt = name_lt,
+              cpp_species = species,
               cpp_desc = description,
               cpp_height = height,
               cpp_icon = icon,

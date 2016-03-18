@@ -6,13 +6,15 @@
  * and open the template in the editor.
  */
 
-class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
+class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
 
     private static $hand;
     private static $instance;
 
     private function __construct() {
-        self::$hand = fopen($_SERVER['DOCUMENT_ROOT'] . 'baza_produktow.csv', "r");
+        //self::$hand = fopen($_SERVER['DOCUMENT_ROOT'] . 'baza_produktow.csv', "r");
+        
+        //self::$hand = fopen($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog.csv', "r");
     }
 
     public static function getInstance() {
@@ -30,20 +32,84 @@ class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
 
     public function getData() {
 
-        $list = new Model_Collection();
-        if (is_resource(self::$hand)) {
-            while (($data = fgetcsv(self::$hand, 1000, ";")) !== FALSE) {
-
-                if ($data[0] == 'lp.' || $data[0] == 0) {
+        $list = new Model_Collection();       
+        
+        //if (is_resource(self::$hand)) {
+           
+            $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog.csv','r');
+            
+            
+            
+            $csv->setFlags(SplFileObject::READ_CSV);
+            
+         $i = 0;
+            
+                //foreach ($file as $data) {
+            while (!$csv->eof()) {
+                
+                   $i++;            
+              
+                
+                 //echo 9;exit;
+                $data = $csv->fgetcsv( ';', "\n", "\\");
+                 
+                
+                if($data[0] == 'L.p'){
+                    
+                    //echo 6;exit;
                     continue;
-                }
-                $plant = new Model_Plant_Container();
+                    
+                   // $csv->next();  
+                    
+                } 
+                
+               // pr($data);//exit;
+                
+                  
+                $plant = new Model_Plant_ContainerAd();
 
-                $category = new Model_Plant_Category_Container();
-                $category->setId($data[1]);
-                $plant->setCategory($category);
+                //$category = new Model_Plant_Category_ContainerAd();
+               // $category->setId($data[1]);
+                
+                
+                $plant->setName($data[1]);
+                
+                $plant->setSpecies($data[2]);
+                
+                $plant->setStatus( $data[3] == 'D' ? 'A' : 'C');
+                 $plant->setNameLT($data[4]);
+                 $plant->setDescription($data[5]);
+                 
+                 $plant->setIcon(str_replace('zdjcia\\','',$data[6]));
+                 
+                // pr($plant);exit;
+                 
+                 //foto
+                // $plant->setDescription($data[6]);
+                 
+                 $plant->setHeight($data[7]);
+                 
+                 $pot = new Model_Plant_Pot_ContainerAd();
+                 $pot->setId($this->getPotId($data[8]));
+                 $plant->setPot($pot);
+                 $plant->setPrice($data[9]);
+                 
+                 
+                 $category = new Model_Plant_Category_Container();
+                    $category->setId($data[10]);
+                    $plant->setCategory($category);
+                    
+                    $no = date('ymd').'/'.$data[10].'/'.$i;
+                    
+                    echo $no;
+                    $plant->setIsnNo($no);
+                 
+                 
+                 /////////
+                
+               /* $plant->setCategory($category);
                 $plant->setId($data[3]);
-                $plant->setName($data[4]);
+                
                 $plant->setSpecies($data[5]);
                 $plant->setGenus($data[6]);
                 $plant->setPrice($data[7]);
@@ -56,31 +122,35 @@ class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
 
                 $plant->setHeightMax($data[11]);
                 $plant->setPeriodBloom($data[12]);
-                $plant->setPeriodSow($data[13]);
+                $plant->setPeriodSow($data[13]);*/
 
-                $items = new Model_Collection();
+                /*$items = new Model_Collection();
 
                 //foto child
                 $photo = new Model_Gallery_Photo_Container();
                 $file = new Model_File_Container();
-                $file->setUrl($data[14]);
+                $file->setUrl($data[6]);
                 $photo->setFile($file);
-                $items->append($photo);
+                $items->append($photo);*/
 
-                //foto adult
+                /*//foto adult
                 $photo = new Model_Gallery_Photo_Container();
                 $file = new Model_File_Container();
                 $file->setUrl($data[15]);
                 $photo->setFile($file);
-                $items->append($photo);
+                $items->append($photo);*/
 
-                $gallery = new Model_Gallery_Container();
+                /*$gallery = new Model_Gallery_Container();
                 $gallery->setItems($items);
-                $plant->setGallery($gallery);
+                $plant->setGallery($gallery);*/
+                
+                
                 $list->append($plant);
             }
-            fclose(self::$hand);
-        }
+            
+          // pr($list);exit;
+            //fclose(self::$hand);
+        //}
         return $list;
     }
 
@@ -161,6 +231,20 @@ class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
 
     private function buildListPlant($row) {
         //$list = new Model_Collection();
+    }
+    
+    private function getPotId($name){
+        
+        $tmp = array('P13' => '1');
+        
+        return $tmp[$name];
+    }
+    
+    private function getCategoryId($name){
+        
+        $tmp = array('P13' => '1');
+        
+        return $tmp[$name];
     }
 
 }

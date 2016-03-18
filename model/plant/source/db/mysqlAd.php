@@ -155,6 +155,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
                 ',' . $plant->getPot()->getId() .
                 ',"' . $plant->getName() .
                 '","' . $plant->getNameLT() .
+                '","' . $plant->getSpecies() .
                 '", "' . $plant->getDescription() .
                 '","' . $plant->getHeight() .
                 '", "' . $plant->getIcon() .  
