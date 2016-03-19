@@ -7,6 +7,9 @@ switch ($route) {
     case '/':
         return new Module_Index_Config_Index();
         break;
+    case '/ofirmie':
+        return new Module_Company_Config_Index();
+        break;
     case '/oferta':
         return new Module_Offer_Config_Index();
         break;
@@ -29,10 +32,10 @@ switch ($route) {
   case '/ajax/kontakt/wyslij':
         return 'contact/config/send-ajax';
         break;*/
-    case '/galeria':
+    /*case '/galeria':
         //return 'Gallery/Config/List';
         return new Module_Gallery_Config_List();
-        break;
+        break;*/
     case '/polityka-cookie':
     case '/polityka':
         return new Module_Index_Config_Cookie();

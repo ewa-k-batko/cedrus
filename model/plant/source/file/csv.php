@@ -97,7 +97,7 @@ class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
         return isset($plant) ? $plant : null;
     }
 
-    public function getCategoryPlantsById($id, $pack, $sizePack) {
+    public function getPlantListByCategoryId($id, $pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
         $list = new Model_Collection();
         if (is_resource(self::$hand)) {
             while (($row = fgetcsv(self::$hand, 1000, ";")) !== FALSE) {
@@ -157,6 +157,10 @@ class Model_Plant_Source_File_Csv implements Model_Plant_Source_Interface {
         $gallery->setItems($items);
         $plant->setGallery($gallery);
         return $plant;
+    }
+    
+    public function getPromotionPlantList($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC)  {
+        
     }
 
     private function buildListPlant($row) {

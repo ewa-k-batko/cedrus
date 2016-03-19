@@ -76,7 +76,14 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
                 
                 $plant->setSpecies($data[2]);
                 
-                $plant->setStatus( $data[3] == 'D' ? 'A' : 'C');
+                $status = 'D';
+                if($data[3] == 'D'){
+                    $status = 'A';                    
+                }elseif($data[3] == 'P'){
+                    $status = 'P';
+                }
+                
+                $plant->setStatus( $status);
                  $plant->setNameLT($data[4]);
                  $plant->setDescription($data[5]);
                  
@@ -167,7 +174,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         return isset($plant) ? $plant : null;
     }
 
-    public function getCategoryPlantsById($id, $pack, $sizePack) {
+    public function getPlantListByCategoryId($id, $pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
         $list = new Model_Collection();
         if (is_resource(self::$hand)) {
             while (($row = fgetcsv(self::$hand, 1000, ";")) !== FALSE) {
@@ -227,6 +234,10 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         $gallery->setItems($items);
         $plant->setGallery($gallery);
         return $plant;
+    }
+    
+    public function getPromotionPlantList($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+        
     }
 
     private function buildListPlant($row) {

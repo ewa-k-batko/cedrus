@@ -24,42 +24,75 @@ class Model_Plant_Source_Db_Mysql implements Model_Plant_Source_Interface {
 
     //public function __destruct() {}
 
-    private function getCsv() {
-        $sid = 3;
-        $sql = 'call CSV(' . $sid . ' );';
-        $res = self::$db->multiQuery($sql);
-        if (isset($res[0]->p_data)) {
-            return $res[0]->p_data;
-        }
-        throw new Model_Exception_NotFound();
+    public function getCategoryList() {
+       
     }
 
     public function getPlantById($id) {
-        $data = $this->getCsv();
-        $data = str_getcsv($data, "|");
-        foreach ($data as $row) {
-            $row = str_getcsv($row, ";");
-            if (isset($row[3]) && $row[3] == $id) {
-                $plant = Model_Plant_Source_File_Csv::buildPlant($row);
-            }
+        $sql = 'call PLS_PLANT_BY_ID(' . $id . ' );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
         }
-        return $plant;
+        if (!isset($res[0]->cpp_id) || $res[0]->cpp_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_Plant();
+        $plant = $build->getContainer();
+        return $build->single($plant, $res[0]);
     }
 
-    public function getCategoryPlantsById($id, $pack, $sizePack) {
-        $list = new Model_Collection();
-        $data = $this->getCsv();
-        $data = str_getcsv($data, "|");
-        foreach ($data as $row) {
-            $row = str_getcsv($row, ";");
-            if (isset($row[1]) && $row[1] == $id) {
-                $list->append(Model_Plant_Source_File_Csv::buildPlant($row));
-            }
+    public function getPlantListByCategoryId($id, $pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+
+        $sql = 'call PLS_PLANT_LIST_BY_CATEGORY_ID(' . $id.','.$pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+           // print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {            
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
         }
-        return $list;
+        if (!isset($res[0]->cpp_id) || $res[0]->cpp_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_Plant();
+        $build->setCollection();
+        return $build->collection($res);
     }
 
     public function getMixPlant($sizePack) {
+        
+    }
+    
+    public function getPromotionPlantList($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+        $sql = 'call PLS_PLANT_LIST_PROMOTED('. $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+           //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {            
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->cpp_id) || $res[0]->cpp_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_Plant();
+        $build->setCollection();
+        return $build->collection($res);
+        
+        
         
     }
 

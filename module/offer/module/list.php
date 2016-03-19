@@ -14,7 +14,7 @@ class Offer_Module_List extends Module_Abstract {
             if ($this->out['category'] instanceof Model_Link_Container) {
                 
                 $api = new Model_Plant_Source_Api(Model_Plant_Source_Factory::DB_MYSQL);
-                $this->out['list'] = $api->getCategoryPlantsById($this->in['id']);
+                $this->out['list'] = $api->getPlantListByCategoryId($this->in['id']);
                 
                 $this->storage->pageId = $this->out['category']->getClass();
                 $this->out['category']->setActive($this->storage->pageId);

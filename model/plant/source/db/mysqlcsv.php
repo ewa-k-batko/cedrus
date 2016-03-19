@@ -46,7 +46,7 @@ class Model_Plant_Source_Db_MysqlCsv implements Model_Plant_Source_Interface {
         return $plant;
     }
 
-    public function getCategoryPlantsById($id, $pack, $sizePack) {
+    public function getPlantListByCategoryId($id, $pack, $sizePack) {
         $list = new Model_Collection();  
         $data = $this->getCsv();
         $data = str_getcsv($data, "|");

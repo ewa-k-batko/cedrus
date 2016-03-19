@@ -1,7 +1,5 @@
 <?php
-
-class Offer_Module_Index extends Module_Abstract {
-
+class Index_Module_Index extends Module_Abstract {
     function execute() {
         try {
 
@@ -12,8 +10,7 @@ class Offer_Module_Index extends Module_Abstract {
         } catch (Exception $e) {
             throw new Manager_Exception_Unavailable();
         }
-        $this->template = 'Offer/View/List.phtml';
+        $this->template = 'Index/View/Index.phtml';
         parent::execute();
     }
-
 }

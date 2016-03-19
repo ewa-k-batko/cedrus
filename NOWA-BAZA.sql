@@ -135,7 +135,7 @@ CREATE TABLE `cdr_plant_plant` (
   `cpp_height` int(4) NOT NULL,
   `cpp_icon` varchar(48) COLLATE utf8_polish_ci NOT NULL,
   `cpp_price` varchar(7) DEFAULT NULL,
-  `cpp_status` enum('C','A','D') COLLATE utf8_polish_ci NOT NULL DEFAULT 'D',
+  `cpp_status` enum('C','A','D', 'P') COLLATE utf8_polish_ci NOT NULL DEFAULT 'D',
   `cpp_create` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `cpp_mod` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `cpp_user_create` int(11) NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `cdr_plant_plant` (
   KEY `cpp_cpc_id_f_i` (`cpp_cpc_id`) ,
   KEY `cpp_gal_id_f_i` (`cpp_gal_id`),
   KEY `cpp_pot_id_f_i` (`cpp_pot_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
 
 
 ###
@@ -230,7 +230,7 @@ CREATE PROCEDURE `PL_PLANT_SET`(
         IN height INTEGER,
         IN icon VARCHAR(48),
         IN price VARCHAR(7),
-        IN status enum('C', 'A', 'D'), 
+        IN status enum('C', 'A', 'D', 'P'), 
         IN user_id INTEGER
     )
 BEGIN  
@@ -354,7 +354,7 @@ IN description TEXT,
 IN color VARCHAR(28),
 IN height INTEGER,
 IN diameter INTEGER,
-IN p_status enum('C', 'A', 'D'), 
+IN p_status enum('C', 'A', 'D', 'P'), 
 IN user_id INTEGER
 
 )
@@ -539,4 +539,115 @@ CREATE TABLE `cdr_gallery_bind` (
 
 
 #####
+
+#################################
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `PLS_PLANT_LIST_BY_CATEGORY_ID`;
+CREATE PROCEDURE `PLS_PLANT_LIST_BY_CATEGORY_ID`(
+        IN p_id INT,
+        IN p_pack INT,
+        IN p_limit INT,
+        IN p_type_sort enum('p_id','p_cat_id','p_name_pl','p_name_lt', 'p_desc','p_status' ),
+        IN p_order_sort enum('asc', 'desc')
+    )
+BEGIN
+ 
+set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status
+                  FROM cdr_plant_plant 
+                  LEFT JOIN cdr_plant_category  ON cpp_cpc_id= cpc_id
+                  LEFT JOIN cdr_plant_pot  ON cpp_pot_id=cpt_id  where cpp_cpc_id =?';
+     if p_type_sort = 'p_id' then
+          set @querySt = concat(@querySt, ' order by cpp_id ');
+     elseif p_type_sort = 'p_cat_id' then
+          set @querySt = concat(@querySt, ' order by cpp_cpc_id ');     
+     elseif p_type_sort = 'p_name_pl' then
+          set @querySt = concat(@querySt, ' order by cpp_name_pl ');
+     elseif p_type_sort = 'p_name_lt' then
+          set @querySt = concat(@querySt, ' order by cpp_name_lt ');     
+     elseif p_type_sort = 'p_desc' then
+          set @querySt = concat(@querySt, ' order by cpp_desc ');
+     elseif p_type_sort = 'p_status' then
+          set @querySt = concat(@querySt, ' order by cpp_status ');    
+     end if;
+                                      
+     if p_order_sort = 'desc' then
+           set @querySt = concat(@querySt, ' desc');
+     end if;     
+     set @querySt = concat(@querySt, ' limit ?, ?');
+     
+     set @id = p_id;     
+     set @noPack = (p_pack-1) * p_limit;
+     set @limitPack = p_limit;     
+
+        prepare ps from @querySt;
+        execute ps using @id,@noPack, @limitPack;
+        deallocate prepare ps;  
+
+END$$
+DELIMITER ;
+
+###
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `PLS_PLANT_BY_ID`;
+CREATE PROCEDURE `PLS_PLANT_BY_ID`(
+        IN id INT
+    )
+BEGIN
+ 
+set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height,cpp_icon,cpp_price,cpp_status
+                FROM cdr_plant_plant 
+                LEFT JOIN cdr_plant_category ON cpp_cpc_id= cpc_id
+                LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id where cpp_id =?';
+set @id = id;      
+
+        prepare ps from @querySt;
+        execute ps using @id;
+        deallocate prepare ps;  
+
+END$$
+DELIMITER ;
+
+######
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `PLS_PLANT_LIST_PROMOTED`;
+CREATE PROCEDURE `PLS_PLANT_LIST_PROMOTED`(        
+        IN p_pack INT,
+        IN p_limit INT,
+        IN p_type_sort enum('p_id','p_name_pl','p_name_lt', 'p_desc' ),
+        IN p_order_sort enum('asc', 'desc')
+    )
+BEGIN
+ 
+set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status
+                  FROM cdr_plant_plant 
+                  LEFT JOIN cdr_plant_category  ON cpp_cpc_id= cpc_id
+                  LEFT JOIN cdr_plant_pot  ON cpp_pot_id=cpt_id  where cpp_status = "P"';
+     
+     if p_type_sort = 'p_id' then
+          set @querySt = concat(@querySt, ' order by cpp_cpc_id ');     
+     elseif p_type_sort = 'p_name_pl' then
+          set @querySt = concat(@querySt, ' order by cpp_name_pl ');
+     elseif p_type_sort = 'p_name_lt' then
+          set @querySt = concat(@querySt, ' order by cpp_name_lt ');     
+     elseif p_type_sort = 'p_desc' then
+          set @querySt = concat(@querySt, ' order by cpp_desc ');         
+     end if;
+                                      
+     if p_order_sort = 'desc' then
+           set @querySt = concat(@querySt, ' desc');
+     end if;     
+     set @querySt = concat(@querySt, ' limit ?, ?');     
+         
+     set @noPack = (p_pack-1) * p_limit;
+     set @limitPack = p_limit;     
+
+        prepare ps from @querySt;
+        execute ps using @noPack, @limitPack;
+        deallocate prepare ps;  
+
+END$$
+DELIMITER ;
 

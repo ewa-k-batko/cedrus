@@ -2,7 +2,7 @@
 
 class Formsan_Module_Pdf extends Module_Abstract {
 
-    const PDF_FILE_PATH = 'test-create.pdf';
+    const PDF_FILE_PATH = 'katalog.pdf';
     const WIDTH = 600;
     const HEIGHT = 820;
     const MAX_X = 575;
@@ -21,7 +21,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
         $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
         $list = $this->api->getPlantListAd($pack = 1, $sizePack = 20, $sort = Model_Api_Abstract::SORT_NAME, $order = Model_Api_Abstract::ORDER_ASC);
-       print_r($list);
+       //print_r($list);
       }catch(Exception $e) {
           echo $e->getMessage();
       }
@@ -55,7 +55,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
             foreach ($list as $plant) {
 
 
-                $this->addPlant($page1, $plant->getName(), $plant->getDescription(), '20,70 pln');
+               $this->addPlant($page1, $plant->getName(), $plant->getDescription(), $plant->getPrice());
             }
 
 

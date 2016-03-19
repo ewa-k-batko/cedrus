@@ -16,7 +16,8 @@ abstract class Model_Api_Abstract {
     const STATUS_ACTIVE = 'A';
     const STATUS_CREATE = 'C';
     const STATUS_DELETE = 'D';
-
+    const STATUS_PROMOTE = 'P';
+    
     protected $source;
     
     
@@ -84,7 +85,7 @@ abstract class Model_Api_Abstract {
     }
     
     final protected static function validStatus($status) {
-        if(in_array($status, array(self::STATUS_ACTIVE, self::STATUS_CREATE, self::STATUS_DELETE))){
+        if(in_array($status, array(self::STATUS_ACTIVE, self::STATUS_CREATE, self::STATUS_DELETE, self::STATUS_PROMOTE))){
             return $status;
         }
         return self::STATUS_DELETE;

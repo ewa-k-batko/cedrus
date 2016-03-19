@@ -8,7 +8,8 @@
 
 interface Model_Plant_Source_Interface {    
    public function getPlantById($id);
-   public function getCategoryPlantsById($id, $pack, $sizePack);
+   public function getPlantListByCategoryId($id, $pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC);
    public function getMixPlant($sizePack);
+   public function getPromotionPlantList($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) ;
 }
 

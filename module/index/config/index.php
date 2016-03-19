@@ -7,7 +7,8 @@ class Module_Index_Config_Index extends Module_Config {
         $mac->config(new Module_Common_Config_Basic());
         
         $storage = $mac->getStorage();
-        $storage->scripts->setCss('/css/index.css');
+        $storage->scripts->setCss('/css/offer.css');
+        $storage->scripts->setCss('/css/contact.css');
         $storage->pageId = 'front-page';
         $storage->metatags->setTitle('Firma o swojej działalności - ');
         $storage->metatags->setDescription('Startuj z nami');
@@ -18,7 +19,7 @@ class Module_Index_Config_Index extends Module_Config {
 
 
         $event = new Manager_Event();
-        $event->setName('fluid')->setClass('Index_Module_Fluid');
+        $event->setName('fluid')->setClass('Index_Module_Index');
         $mac->add($event);
         $mac->setStorage($storage);
     }

@@ -22,11 +22,11 @@ class Model_Plant_Source_Api extends Model_Api_Abstract implements Model_Plant_S
         return self::validObject($plant, 'Model_Plant_Container');
     }
 
-    public function getCategoryPlantsById($id, $pack = 1, $sizePack = 10) {
+    public function getPlantListByCategoryId($id, $pack = 1, $sizePack = 10,$sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
         $id = self::validId($id);
         $pack = self::validPack($pack);
         $sizePack = self::validPackSize($sizePack);
-        $list = $this->source->getCategoryPlantsById($id, $pack, $sizePack);
+        $list = $this->source->getPlantListByCategoryId($id, $pack, $sizePack);
         return self::validList($list);
     }
 
@@ -34,6 +34,14 @@ class Model_Plant_Source_Api extends Model_Api_Abstract implements Model_Plant_S
         $sizePack = self::validPackSize($sizePack);
         $list = $this->source->getData($sizePack);//@todo
         return self::validList($list);
-    }   
+    }  
+    
+    public function getPromotionPlantList($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+        $pack = self::validPack($pack);
+        $sizePack = self::validPackSize($sizePack);
+        $list = $this->source->getPromotionPlantList($pack, $sizePack, $sort, $order);
+        return self::validList($list);
+        
+    }
    
 }

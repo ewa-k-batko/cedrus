@@ -15,7 +15,7 @@ class Offer_Module_Single extends Module_Abstract {
             $this->out['category'] = $this->storage->getParam('list-nav')->search('id', $this->in['id']);
             if ($this->out['category'] instanceof Model_Link_Container) {
 
-                $api = new Model_Plant_Source_Api(Model_Plant_Source_Factory::DB_MYSQL_CSV);
+                $api = new Model_Plant_Source_Api(Model_Plant_Source_Factory::DB_MYSQL);
                 $this->out['plant'] = $api->getPlantById($this->in['id']);
                 
                 
