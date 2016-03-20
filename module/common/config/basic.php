@@ -38,11 +38,12 @@ class Module_Common_Config_Basic extends Module_Config {
         $link = new Model_Link_Container();
         $link->setUrl('/')->setTitle('Start')->setClass('front-page');
         $nav->append($link);
-        $link = new Model_Link_Container();
-        $link->setUrl('/ofirmie')->setTitle('O firmie')->setClass('front-page');
-        $nav->append($link);
+        
         $link = new Model_Link_Container();
         $link->setUrl('/oferta')->setTitle('Oferta')->setClass('offer-page');
+        $nav->append($link);
+        $link = new Model_Link_Container();
+        $link->setUrl('/ofirmie')->setTitle('O firmie')->setClass('front-page');
         $nav->append($link);
         $link = new Model_Link_Container();
         $link->setUrl('/kontakt')->setTitle('Kontakt')->setClass('contact-page');

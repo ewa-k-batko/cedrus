@@ -1,6 +1,6 @@
 <?php
 
-class Model_Collection extends ArrayIterator{
+class Model_Collection extends ArrayIterator {
 
     protected $_total,
             $_position,
@@ -51,38 +51,27 @@ class Model_Collection extends ArrayIterator{
         $this->_items = unserialize($data);
         $this->_total = count($this->_items);
         return $this;
-    } 
-    
+    }
+
     public function search($name, $value) {
-        //$name = 'get' . ucfirst($name);
-        
-        //echo $value;
-        //var_dump($this->_items);
         foreach ($this->_items as $item) {
-           // var_dump($item);
-            if(property_exists(get_class($item), $name) && method_exists($item, 'search')) {
-                
-                //echo 89;
-                if( $item->search($name, $value)) {
+            if (property_exists(get_class($item), $name) && method_exists($item, 'search')) {
+                if ($item->search($name, $value)) {
                     return $item;
                 }
             }
-          // echo 6; 
-           
-           //var_dump($item);
-            //echo $item .'/'.$name;
-            /*if (method_exists($item, 'search')) {
-                
-               // echo 7;
-                $tmp = $item->search($name, $value, $nameIn , $level);
-                
-                var_dump($tmp);
-                if ($tmp == $value) {
-                    return $item;
-                }
-            }*/
         }
         return false;
+    }
+
+    public function shuffle() {
+        $keys = array_keys($this->_items);       
+        shuffle($keys);
+        foreach ($keys as $key => $val) {
+            $new[$key] =  $this->_items[$val];
+        }
+        $this->_items = $new;
+        return true;
     }
 
 }

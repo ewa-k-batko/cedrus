@@ -12,6 +12,7 @@ class Model_Tool_String {
         if (!$string || !is_string($string)) {
             return;
         }
+        $string = trim(strip_tags($string));
         return preg_replace('/^[^(a-z-)]$/', '', strtolower(strtr(stripslashes($string), array(
             'ą' => 'a', 'Ą' => 'a',
             'ć' => 'c', 'Ć' => 'c',
@@ -23,7 +24,8 @@ class Model_Tool_String {
             'ż' => 'z', 'Ż' => 'z',
             'ź' => 'z', 'Ź' => 'z',
             ' ' => '-', '/' => '-',
-            ',' => '.', '\'' => '', '"' => ''
+            ',' => '.', '\'' => '', 
+            '"' => '', "'" => ''
                 ))));
     }
 

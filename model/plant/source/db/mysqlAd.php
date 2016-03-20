@@ -41,6 +41,28 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
         $build->setCollection();
         return $build->collection($res);
     }
+    
+    public function getOfferList() {
+
+        $sql = 'call PL_PLANT_OFFER_EXPORT( );';
+       // echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+            
+           // print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->cpp_cpc_id) || $res[0]->cpp_cpc_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_CategoryAd();
+        $build->setCollection();
+        return $build->collection($res);
+    }
 
     public function getCategoryByIdAd($id) {
         $sql = 'call PL_CATEGORY_BY_ID(' . $id . ' );';

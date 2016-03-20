@@ -43,5 +43,13 @@ class Model_Plant_Source_Api extends Model_Api_Abstract implements Model_Plant_S
         return self::validList($list);
         
     }
+    
+     public function getCategoryListWithPlant($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+          $pack = self::validPack($pack);
+        $sizePack = self::validPackSize($sizePack);
+        $list = $this->source->getCategoryListWithPlant($pack, $sizePack, $sort, $order);
+        return self::validList($list);
+     
+     }
    
 }

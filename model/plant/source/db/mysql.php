@@ -91,9 +91,26 @@ class Model_Plant_Source_Db_Mysql implements Model_Plant_Source_Interface {
         $build = new Model_Plant_Source_Db_Mysql_Build_Plant();
         $build->setCollection();
         return $build->collection($res);
-        
-        
-        
+    }
+    
+    public function getCategoryListWithPlant($pack, $sizePack, $sort = Model_Api_Abstract::SORT_ID, $order= Model_Api_Abstract::ORDER_ASC) {
+        $sql = 'call PLS_CATEGORY_LIST_WITH_PLANT('. $pack . ',' . $sizePack . ',"' . $sort . '", "' . $order . '" );';
+        //echo $sql;
+
+        try {
+            $res = self::$db->multiQuery($sql);
+           //print_r($res);
+        } catch (Model_Db_Exception_NotFound $e) {            
+            throw new Manager_Exception_NotFound();
+        } catch (Model_Db_Exception_Unavailable $e) {
+            throw new Manager_Exception_Unavailable();
+        }
+        if (!isset($res[0]->cpp_id) || $res[0]->cpp_id <= 0) {
+            throw new Manager_Exception_NotFound();
+        }
+        $build = new Model_Plant_Source_Db_Mysql_Build_Category();
+        $build->setCollection();
+        return $build->collection($res);
     }
 
 }

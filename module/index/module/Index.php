@@ -5,6 +5,9 @@ class Index_Module_Index extends Module_Abstract {
 
             $api = new Model_Plant_Source_Api(Model_Plant_Source_Factory::DB_MYSQL);
             $this->out['list'] = $api->getPromotionPlantList(1,10);
+            
+            $this->out['list']->shuffle();
+            
         } catch (Model_Exception_NotFound $e) {
             throw new Manager_Exception_NotFound();
         } catch (Exception $e) {

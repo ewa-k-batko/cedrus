@@ -556,7 +556,8 @@ BEGIN
 set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status
                   FROM cdr_plant_plant 
                   LEFT JOIN cdr_plant_category  ON cpp_cpc_id= cpc_id
-                  LEFT JOIN cdr_plant_pot  ON cpp_pot_id=cpt_id  where cpp_cpc_id =?';
+                  LEFT JOIN cdr_plant_pot  ON cpp_pot_id=cpt_id  
+                  WHERE cpp_cpc_id =? AND cpp_status IN ("A", "P") ';
      if p_type_sort = 'p_id' then
           set @querySt = concat(@querySt, ' order by cpp_id ');
      elseif p_type_sort = 'p_cat_id' then
@@ -599,7 +600,7 @@ BEGIN
 set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height,cpp_icon,cpp_price,cpp_status
                 FROM cdr_plant_plant 
                 LEFT JOIN cdr_plant_category ON cpp_cpc_id= cpc_id
-                LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id where cpp_id =?';
+                LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id where cpp_id =? AND cpp_status IN ("A", "P")';
 set @id = id;      
 
         prepare ps from @querySt;
@@ -624,7 +625,7 @@ BEGIN
 set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height, cpp_icon, cpp_price, cpp_status
                   FROM cdr_plant_plant 
                   LEFT JOIN cdr_plant_category  ON cpp_cpc_id= cpc_id
-                  LEFT JOIN cdr_plant_pot  ON cpp_pot_id=cpt_id  where cpp_status = "P"';
+                  LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id  where cpp_status = "P"';
      
      if p_type_sort = 'p_id' then
           set @querySt = concat(@querySt, ' order by cpp_cpc_id ');     
@@ -646,6 +647,72 @@ set @querySt =  'SELECT cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpp_gal_id, cpp_
 
         prepare ps from @querySt;
         execute ps using @noPack, @limitPack;
+        deallocate prepare ps;  
+
+END$$
+DELIMITER ;
+
+#########
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `PLS_CATEGORY_LIST_WITH_PLANT`;
+CREATE PROCEDURE `PLS_CATEGORY_LIST_WITH_PLANT`(        
+        IN p_pack INT,
+        IN p_limit INT,
+        IN p_type_sort enum('p_id','p_name_pl','p_name_lt', 'p_desc' ),
+        IN p_order_sort enum('asc', 'desc')
+    )
+BEGIN
+ 
+set @querySt =  'SELECT  cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpc_desc, cpc_icon, COUNT(cpp_cpc_id) as cnt, cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height,cpp_icon,cpp_price,cpp_status
+                FROM cdr_plant_plant 
+                LEFT JOIN cdr_plant_category ON cpp_cpc_id= cpc_id
+                LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id where cpp_status IN ( "P","A")
+                GROUP BY cpc_id';
+     
+     if p_type_sort = 'p_id' then
+          set @querySt = concat(@querySt, ' order by cpp_cpc_id ');     
+     elseif p_type_sort = 'p_name_pl' then
+          set @querySt = concat(@querySt, ' order by cpp_name_pl ');
+     elseif p_type_sort = 'p_name_lt' then
+          set @querySt = concat(@querySt, ' order by cpp_name_lt ');     
+     elseif p_type_sort = 'p_desc' then
+          set @querySt = concat(@querySt, ' order by cpp_desc ');         
+     end if;
+                                      
+     if p_order_sort = 'desc' then
+           set @querySt = concat(@querySt, ' desc');
+     end if;     
+     set @querySt = concat(@querySt, ' limit ?, ?');     
+         
+     set @noPack = (p_pack-1) * p_limit;
+     set @limitPack = p_limit;     
+
+        prepare ps from @querySt;
+        execute ps using @noPack, @limitPack;
+        deallocate prepare ps;  
+
+END$$
+DELIMITER ;
+
+
+####
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `PL_PLANT_OFFER_EXPORT`;
+CREATE PROCEDURE `PL_PLANT_OFFER_EXPORT`()
+BEGIN
+ 
+set @querySt =  'SELECT  cpp_id,cpp_no_isn,cpp_cpc_id, cpc_name, cpc_desc, cpc_icon,cpp_gal_id, cpp_pot_id, cpt_name, cpp_name_pl, cpp_name_lt, cpp_species, cpp_desc, cpp_height,cpp_icon,cpp_price,cpp_status
+                FROM cdr_plant_plant 
+                LEFT JOIN cdr_plant_category ON cpp_cpc_id= cpc_id
+                LEFT JOIN cdr_plant_pot ON cpp_pot_id=cpt_id where cpp_status IN ( "P","A")
+                order by cpp_cpc_id, cpc_name, cpp_species';
+     
+     
+
+        prepare ps from @querySt;
+        execute ps;
         deallocate prepare ps;  
 
 END$$

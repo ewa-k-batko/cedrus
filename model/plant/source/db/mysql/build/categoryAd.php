@@ -14,6 +14,8 @@ class Model_Plant_Source_Db_Mysql_Build_CategoryAd extends Model_Plant_Source_Db
         
         $category = parent::single($category,$row);
         
+        
+        
         if (isset($row->cpc_status)) {
             $category->setStatus($row->cpc_status);
         }

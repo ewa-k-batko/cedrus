@@ -2,7 +2,7 @@
 
 class Formsan_Module_Pdf extends Module_Abstract {
 
-    const PDF_FILE_PATH = 'katalog.pdf';
+    const PDF_FILE_PATH = 'katalog-szkolki-ogrodniczej-mirage.pdf';
     const WIDTH = 600;
     const HEIGHT = 820;
     const MAX_X = 575;
@@ -12,60 +12,77 @@ class Formsan_Module_Pdf extends Module_Abstract {
     const PAD_W = 12;
     const PAD_H = 12;
     const LINE_HR = 1.2;
-
+   
     private $cur_X, $cur_Y, $font, $font_H;
 
     function execute() {
-        
-      try {
 
-        $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
-        $list = $this->api->getPlantListAd($pack = 1, $sizePack = 20, $sort = Model_Api_Abstract::SORT_NAME, $order = Model_Api_Abstract::ORDER_ASC);
-       //print_r($list);
-      }catch(Exception $e) {
-          echo $e->getMessage();
-      }
-  
+        try {
+
+            $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
+            $list = $this->api->getOfferList();
+            var_dump($list); //exit;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
 
         $this->out['report'] = 'start generate pdf<br>';
         try {
             //////////////////////
             //$pdf = new Zend_Pdf();
             $pdf = Zend_Pdf::load(self::PDF_FILE_PATH);
-           // return;
-            
+            // return;
+
             $pdf->properties['Title'] = 'Katalog produktów szkółki ogrodniczej "Mirage"';
             $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
 
 
             //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
+            //$page1 = new Zend_Pdf_Page(Zend_Pdf_Page::SIZE_A4);
+            //$page1->setFont($this->font, 36);
+            //$this->addCategory($page1, 'Byliny');
+            // $this->addPlant($page1, 'Abies balsamea "Nana"', 'Odmiana karłowa o pokroju kopulastym, igły krótkie o ciemnozielonej barwie, gęsto osadzone na pędzie.', '20,70 pln');
 
 
             $pdf->pages = array();
-
-
             $page1 = $this->getTemplate();
-            //$page1 = new Zend_Pdf_Page(Zend_Pdf_Page::SIZE_A4);
-            //$page1->setFont($this->font, 36);
+            
+            $tmpCat = null;
 
-            $this->addCategory($page1, 'Byliny');
-            $this->addPlant($page1, 'Abies balsamea "Nana"', 'Odmiana karłowa o pokroju kopulastym, igły krótkie o ciemnozielonej barwie, gęsto osadzone na pędzie.', '20,70 pln');
+            if ($list instanceof Model_Collection) {
+                foreach ($list as $category) {
 
+                    if($tmpCat != $category->getName()){  
+                        $this->setNPT_Y();
+                        $this->addCategory($page1, $category->getName());
+                        $tmpCat = $category->getName();
+                        //print_r($category);
+                    }
+                    foreach ($category->getItems() as $plant) {
+  //@todo spradzic ile miejsca zajmie roslina jesli za malo nastepna strone zrobic
+                                             
+                        $pot = $plant->getPot();                        
+                        if($pot instanceof Model_Plant_Pot_Container ) {
+                             $pot = (string)$pot->getName();
+                        } 
 
-            foreach ($list as $plant) {
-
-
-               $this->addPlant($page1, $plant->getName(), $plant->getDescription(), $plant->getPrice());
+                        $this->addPlant($page1, $plant->getName() . ' "' . $plant->getSpecies() . '" ('.  $plant->getIsnNo(). ')', 
+                                $plant->getDescription(), 
+                                $plant->getPrice() . ' zł', 
+                                $plant->getHeight(), 
+                                (string)$pot);
+                    }
+                }
             }
-
-
-
-
-
-
+            
+           
+            $size = count($pdf->pages) + 1;
+            $strona = 'strona: 1 z '.$size;
+            $page1->drawText($strona, self::MAX_X - 50, 4, 'UTF-8');
+            
+            //@printowanie stron przeniesc na koniec dokumentu (wracac sie do stron i strona 1 z 2  w tym samym miejscu
             $pdf->pages[] = $page1;
-
-
 
 
 //$pdf->save('test-create.pdf');
@@ -127,13 +144,13 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $style = $this->getFootStyle();
         $page->setStyle($style);
         $y = self::PAD_H + self::PAD_H;
-        $page->drawText('Copyright (c) ' . date('Y') . ' sadzonka.eu, Szkółka ogrodnicza "Mirage" - Wszelkie prawa zastrzeżone.', self::MIN_X, self::PAD_H, 'UTF-8')
+        $page->drawText('Szkółka ogrodnicza "Mirage", www: sadzonka.eu, adres: Pawlikowice 182, 32-020-Wieliczka, tel: 519431929, 506455392', self::MIN_X, self::PAD_H, 'UTF-8')
                 ->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
         return $page;
     }
 
-    private function addPlant($page, $plant, $desc, $prize) {
+    private function addPlant($page, $plant, $desc, $prize, $height, $pot) {
         $style = $this->getPlantStyle();
         $page->setStyle($style);
 
@@ -143,17 +160,36 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $style->setFontSize($style->getFontSize() + 1);
         $page->setStyle($style);
 
-        $page->drawText($prize, self::MAX_X - 70, $y, 'UTF-8');
+        $page->drawText($prize, self::MAX_X - 40, $y, 'UTF-8');
 
 
-        $y = $this->setNST_Y();
+        //$y = $this->setNST_Y();
         //$y = $this->setNPT_Y();
 
         $style->setFontSize($style->getFontSize() - 2);
         $page->setStyle($style);
-        $page->drawText($desc, self::MIN_X, $y, 'UTF-8');
 
+        ////////////////
+        //echo mb_strlen($desc);
+        //$lgth = mb_strlen($desc);
+        $signs = 110; //500/ceil($lgth/12);
+        //echo $lines;
+        $desc = wordwrap($desc, $signs, "\n");
+
+        //var_dump($desc);
+        //echo '<br>';
+        foreach (explode("\n", $desc) as $i => $line) {
+            $y = $this->setNST_Y();
+            $page->drawText($line, self::MIN_X, $y, 'UTF-8');
+        }
         $y = $this->setNST_Y();
+        
+        $page->drawText('Wysokość sadzonki: '.$height.' cm, doniczka: '.$pot , self::MIN_X, $y, 'UTF-8');
+         $y = $this->setNST_Y();
+        /////////////////
+        //$page->drawText($desc, self::MIN_X, $y, 'UTF-8');
+
+
         $page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
         return $page;

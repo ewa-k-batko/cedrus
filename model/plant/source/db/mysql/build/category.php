@@ -13,7 +13,7 @@ class Model_Plant_Source_Db_Mysql_Build_Category {
     }
 
     public function collection($res) {
-        foreach ($res as $row) {
+        foreach ($res as $row) {            
             $category = $this->getContainer();
             $this->collection->append($this->single($category, $row));
         }
@@ -21,8 +21,12 @@ class Model_Plant_Source_Db_Mysql_Build_Category {
     }
 
     public function single($category, $row) {
+        
         if (isset($row->cpc_id)) {
             $category->setId($row->cpc_id);
+        }
+        if (isset($row->cpp_cpc_id)) {
+            $category->setId($row->cpp_cpc_id);
         }
         if (isset($row->cpc_name)) {
             $category->setName($row->cpc_name);
@@ -39,6 +43,18 @@ class Model_Plant_Source_Db_Mysql_Build_Category {
         if (isset($row->cpc_icon)) {
             $category->setIcon($row->cpc_icon);
         }
+
+        if (isset($row->cpp_id)) {
+            $list = new Model_Plant_Category_Plant_Collection();
+            if (isset($row->cnt)) {
+                $list->setSummaryItems($row->cnt);
+            }
+            $build = new Model_Plant_Source_Db_Mysql_Build_Plant();
+            $plant = $build->getContainer();
+            $build->single($plant, $row);
+            $list->append($plant);
+            $category->setItems($list);
+        }        
         return $category;
     }
 

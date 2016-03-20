@@ -20,6 +20,12 @@ class Model_Plant_Source_ApiAd extends Model_Api_Abstract {
         $list = $this->source->getCategoryList($pack, $sizePack, $sort, $order);
         return self::validListAd($list);
     }
+    
+    public function getOfferList() {
+        $res = $this->source->getOfferList();
+        var_dump($res);
+        return $res;
+    }
 
     public function getCategorySetAd(Model_Plant_Category_ContainerAd $category) {
         //@todo validate
