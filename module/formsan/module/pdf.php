@@ -12,8 +12,8 @@ class Formsan_Module_Pdf extends Module_Abstract {
     const PAD_W = 12;
     const PAD_H = 12;
     const LINE_HR = 1.2;
-   
-    private $cur_X, $cur_Y, $font, $font_H;
+
+    private $cur_X, $cur_Y, $font, $font_H, $pdf, $page;
 
     function execute() {
 
@@ -21,105 +21,69 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
             $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
             $list = $this->api->getOfferList();
-            var_dump($list); //exit;
+            //var_dump($list); //exit;
         } catch (Exception $e) {
             echo $e->getMessage();
         }
 
-
         $this->out['report'] = 'start generate pdf<br>';
-        try {
-            //////////////////////
-            //$pdf = new Zend_Pdf();
-            $pdf = Zend_Pdf::load(self::PDF_FILE_PATH);
-            // return;
+        try {            
+
+            $this->pdf = new Zend_Pdf(); 
 
             $pdf->properties['Title'] = 'Katalog produktów szkółki ogrodniczej "Mirage"';
             $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
 
+            $this->pdf->pages = array();
+            $this->page = $this->getTemplate();
 
-            //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
-            //$page1 = new Zend_Pdf_Page(Zend_Pdf_Page::SIZE_A4);
-            //$page1->setFont($this->font, 36);
-            //$this->addCategory($page1, 'Byliny');
-            // $this->addPlant($page1, 'Abies balsamea "Nana"', 'Odmiana karłowa o pokroju kopulastym, igły krótkie o ciemnozielonej barwie, gęsto osadzone na pędzie.', '20,70 pln');
-
-
-            $pdf->pages = array();
-            $page1 = $this->getTemplate();
-            
             $tmpCat = null;
 
             if ($list instanceof Model_Collection) {
                 foreach ($list as $category) {
 
-                    if($tmpCat != $category->getName()){  
-                        $this->setNPT_Y();
-                        $this->addCategory($page1, $category->getName());
+                    if ($tmpCat != $category->getName()) {                        
+                        $this->addCategory($category);
                         $tmpCat = $category->getName();
-                        //print_r($category);
                     }
                     foreach ($category->getItems() as $plant) {
-  //@todo spradzic ile miejsca zajmie roslina jesli za malo nastepna strone zrobic
-                                             
-                        $pot = $plant->getPot();                        
-                        if($pot instanceof Model_Plant_Pot_Container ) {
-                             $pot = (string)$pot->getName();
-                        } 
 
-                        $this->addPlant($page1, $plant->getName() . ' "' . $plant->getSpecies() . '" ('.  $plant->getIsnNo(). ')', 
-                                $plant->getDescription(), 
-                                $plant->getPrice() . ' zł', 
-                                $plant->getHeight(), 
-                                (string)$pot);
+                        $pot = $plant->getPot();
+                        if ($pot instanceof Model_Plant_Pot_Container) {
+                            $pot = (string) $pot->getName();
+                        }
+
+                        $this->addPlant($plant, (string) $pot);
                     }
                 }
             }
-            
-           
-            $size = count($pdf->pages) + 1;
-            $strona = 'strona: 1 z '.$size;
-            $page1->drawText($strona, self::MAX_X - 50, 4, 'UTF-8');
-            
-            //@printowanie stron przeniesc na koniec dokumentu (wracac sie do stron i strona 1 z 2  w tym samym miejscu
-            $pdf->pages[] = $page1;
+
+            $this->pdf->pages[] = $this->page;
 
 
-//$pdf->save('test-create.pdf');
-//odtad nie dziala
-            $page2 = $this->getTemplate();
-            $page2//->setStyle($h3)
-                    ->drawLine(73, 244, 512, 244)   // HEAD Bottom
-                    ->drawLine(73, 244, 73, 166)    // MOST Left
-                    ->drawLine(512, 244, 512, 166)  // MOST Right
-                    ->drawLine(73, 166, 512, 166)       // MOST Bottom
-                    ->drawLine(225, 244, 225, 166)      // MOST Left
-//->setStyle($h2)
-                    ->drawText('Analytics Site', 73, 252)   // Table Headers
-//->setStyle($h3)
-                    ->drawText('Page Views', 80, 225)           // Table Headers (402) - 27
-                    ->drawText('Bounce Rate', 80, 200)      // Table Headers
-                    ->drawText('Avg. Time On Site', 80, 174)    // Table Headers
-                    ->drawLine(73, 192, 512, 192)   // Bottom
-                    ->drawLine(73, 218, 512, 218);   // Bottom
-//->drawText($site_metrics[0]->{"ga:pageviews"}, 235, 225)
-//->drawText(sprintf('%1.02f%%', $site_metrics[0]->{"ga:visitBounceRate"}), 235, 200)
-//->drawText($avg_time, 235, 174);
+            //koniec dokumentu
 
-            $pdf->pages[1] = $page2;
-            $this->out['report'] = 'stron: ' . count($pdf->pages) . ' pdf<br>';
-            $pdf->save(self::PDF_FILE_PATH, true);
+            $size = count($this->pdf->pages);
+
+            for ($i = 0; $i < $size; $i++) {
+                $strona = 'strona: ' . ($i + 1) . ' z ' . $size;
+                $this->pdf->pages[$i]->drawText($strona, self::MAX_X - 65, self::MAX_Y + 35, 'UTF-8');
+            }
+
+
+            $this->out['report'] = 'stron: ' . $size . ' pdf<br>';
+
+            $this->pdf->save(self::PDF_FILE_PATH, true);
 
             $this->out['report'] .= 'koniec generate pdf<br>';
         } catch (Exception $e) {
             $this->out['error'] = $e->getMessage() . '<br>';
-        }
 
-//////////////////
+            //echo $e->getMessage();
+        }
 
 
         $this->out['file'] = self::PDF_FILE_PATH;
-
 
         $this->template = 'Formsan/View/Pdf.phtml';
         parent::execute();
@@ -148,79 +112,76 @@ class Formsan_Module_Pdf extends Module_Abstract {
                 ->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
         return $page;
-    }
+    }   
 
-    private function addPlant($page, $plant, $desc, $prize, $height, $pot) {
-        $style = $this->getPlantStyle();
-        $page->setStyle($style);
-
+    private function addPlant($plant, $pot) {
         $y = $this->setNPT_Y();
+        
+        //dzieli opis na linie
+        $lines = $this->calcPlantDescLine($plant->getDescription());
+        
+        //spr. czy plant zmiesci sie na obecnej stronie , jelsi nie tworzy nowa 
+        if (!$this->checkPlantPlace($lines['size'])) {
+            $this->pdf->pages[] = $this->page;
+            $this->page = $this->getTemplate();
+        }
+        
+        
+        $style = $this->getPlantStyle();
+        $this->page->setStyle($style);        
 
-        $page->drawText($plant, self::MIN_X, $y, 'UTF-8');
+        //nazwa
+        $this->page->drawText($plant->getName() . ' "' . $plant->getSpecies() . '" (' . $plant->getIsnNo() . ')', self::MIN_X, $y, 'UTF-8');
         $style->setFontSize($style->getFontSize() + 1);
-        $page->setStyle($style);
+        $this->page->setStyle($style);
 
-        $page->drawText($prize, self::MAX_X - 40, $y, 'UTF-8');
+        //cena
+        $this->page->drawText($plant->getPrice() . ' zł', self::MAX_X - 40, $y, 'UTF-8');
 
-
-        //$y = $this->setNST_Y();
-        //$y = $this->setNPT_Y();
 
         $style->setFontSize($style->getFontSize() - 2);
-        $page->setStyle($style);
+        $this->page->setStyle($style);
 
-        ////////////////
-        //echo mb_strlen($desc);
-        //$lgth = mb_strlen($desc);
-        $signs = 110; //500/ceil($lgth/12);
-        //echo $lines;
-        $desc = wordwrap($desc, $signs, "\n");
-
-        //var_dump($desc);
-        //echo '<br>';
-        foreach (explode("\n", $desc) as $i => $line) {
+        //opis
+        for ($i = 0; $i < $lines['size']; $i++) {
             $y = $this->setNST_Y();
-            $page->drawText($line, self::MIN_X, $y, 'UTF-8');
+            $this->page->drawText($lines['lines'][$i], self::MIN_X, $y, 'UTF-8');
         }
+
         $y = $this->setNST_Y();
-        
-        $page->drawText('Wysokość sadzonki: '.$height.' cm, doniczka: '.$pot , self::MIN_X, $y, 'UTF-8');
-         $y = $this->setNST_Y();
-        /////////////////
-        //$page->drawText($desc, self::MIN_X, $y, 'UTF-8');
 
+        //wysokosc + doniczka
+        $this->page->drawText('Wysokość sadzonki: ' . $plant->getHeight() . ' cm, doniczka: ' . $pot, self::MIN_X, $y, 'UTF-8');
+        $y = $this->setNST_Y();       
 
-        $page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
+        //linia    
+        $this->page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
-        return $page;
     }
 
-    private function addCategory($page, $category) {
+    private function addCategory($category) {
+        $this->setNPT_Y();
+
+        if (!$this->checkCategoryPlace()) {
+            $this->pdf->pages[] = $this->page;
+            $this->page = $this->getTemplate();
+        }
+
         $style = $this->getCategoryStyle();
-        $page->setStyle($style);
+        $this->page->setStyle($style);
 
         $y = $this->setNPT_Y();
 
-        $page->drawText($category, self::MIN_X, $y, 'UTF-8');
+        $this->page->drawText($category->getName(), self::MIN_X, $y, 'UTF-8');
         $y = $this->setNPT_Y();
-        $page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
-
-        return $page;
+        $this->page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
     }
 
     private function getFootStyle() {
         $style = new Zend_Pdf_Style();
         $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
-        // $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
         $style->setLineWidth(0.1);
-        //$style->setLineDashingPattern(array(3, 2, 3, 4), 1.6);
-
         $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
-        //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
-        //$this->font = Zend_Pdf_Font::fontWithPath(RESOURCES_PATH.DIRECTORY_SEPARATOR.'arial.ttf');c:/wamp/www/istat/fonts/f/
-        // echo $_SERVER['DOCUMENT_ROOT'];exit;
-        // $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'].'opensansregular.ttf');
-        //$h = fopen($_SERVER['DOCUMENT_ROOT'] . 'op.ttf', 'a+');
         $this->font_H = 10;
         $style->setFont($this->font, $this->font_H);
 
@@ -230,12 +191,8 @@ class Formsan_Module_Pdf extends Module_Abstract {
     private function getHeadStyle() {
         $style = new Zend_Pdf_Style();
         $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
-        // $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
         $style->setLineWidth(0.1);
-        //$style->setLineDashingPattern(array(3, 2, 3, 4), 1.6);
-
         $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
-        //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
         $this->font_H = 18;
         $style->setFont($this->font, $this->font_H);
 
@@ -245,12 +202,8 @@ class Formsan_Module_Pdf extends Module_Abstract {
     private function getCategoryStyle() {
         $style = new Zend_Pdf_Style();
         $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
-        // $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
         $style->setLineWidth(0.1);
-        //$style->setLineDashingPattern(array(3, 2, 3, 4), 1.6);
-
         $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
-        //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
         $this->font_H = 14;
         $style->setFont($this->font, $this->font_H);
 
@@ -260,12 +213,8 @@ class Formsan_Module_Pdf extends Module_Abstract {
     private function getPlantStyle() {
         $style = new Zend_Pdf_Style();
         $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
-        // $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
         $style->setLineWidth(0.1);
-        //$style->setLineDashingPattern(array(3, 2, 3, 4), 1.6);
-
         $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
-        //$this->font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
         $this->font_H = 11;
         $style->setFont($this->font, $this->font_H);
 
@@ -282,38 +231,41 @@ class Formsan_Module_Pdf extends Module_Abstract {
         return $this->cur_Y;
     }
 
+    private function checkSizeY() {
+        return $this->cur_Y - self::MIN_Y;
+    }
+
+    private function checkCategorySizeY() {
+        return (self::PAD_H * self::LINE_HR * 2);
+    }
+
+    private function calcPlantDescLine($desc) {
+        $signs = 110; 
+        $desc = wordwrap($desc, $signs, "\n");
+        $lines = explode("\n", $desc);
+        return array('size' => count($lines), 'lines' => $lines);
+    }
+
+    private function checkPlantSizeY($lines) {
+        
+        $tmp = (self::PAD_H * self::LINE_HR * 2 )  +  ( self::PAD_H * self::LINE_HR * $lines);
+        return $tmp;
+    }
+    
+    private function checkPlantPlace($lines) {
+
+       // var_dump($this->checkSizeY());
+        //var_dump($this->checkPlantSizeY($lines));
+       // var_dump($this->checkSizeY() - $this->checkPlantSizeY($lines)); //exit;
+        return ($this->checkSizeY() - $this->checkPlantSizeY($lines)) <= 0 ? false : true;
+    }
+
+    private function checkCategoryPlace() {
+
+        //var_dump($this->checkSizeY());
+       // var_dump($this->checkCategorySizeY());
+        //var_dump($this->checkSizeY() - $this->checkCategorySizeY()); //exit;
+        return ($this->checkSizeY() - $this->checkCategorySizeY()) <= 0 ? false : true;
+    }
+
 }
-
-/*
- * 
- * public function widthForStringUsingFontSize($string, $font, $fontSize) 
-    { 
-        $drawingString = iconv('UTF-8', 'UTF-16BE//IGNORE', $string); 
-        $characters = array(); 
-        for ($i = 0; $i < strlen($drawingString); $i++) { 
-            $characters[] = (ord($drawingString[$i++]) << 8) | 
-ord($drawingString[$i]); 
-        } 
-        $glyphs = $font->glyphNumbersForCharacters($characters); 
-        $widths = $font->widthsForGlyphs($glyphs); 
-        $stringWidth = (array_sum($widths) / $font->getUnitsPerEm()) * 
-$fontSize;       
-        return $stringWidth; 
-
-    } 
- * *********************************
- * 
- * 
- * 
- * $this->getResponse()->setHeader('Content-type', 'application/pdf', true);
-    $this->getResponse()->setHeader('Content-disposition', 'inline; filename=' . $this->_pdfName . '.pdf', true);
-    $this->getResponse()->setBody($pdf->render(false));
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * */

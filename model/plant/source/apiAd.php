@@ -23,7 +23,7 @@ class Model_Plant_Source_ApiAd extends Model_Api_Abstract {
     
     public function getOfferList() {
         $res = $this->source->getOfferList();
-        var_dump($res);
+       // var_dump($res);
         return $res;
     }
 
