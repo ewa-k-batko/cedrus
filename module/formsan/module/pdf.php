@@ -72,8 +72,10 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
 
             $this->out['report'] = 'stron: ' . $size . ' pdf<br>';
+            
+            $fileName = str_replace('.pdf',date('ymd').'.pdf',self::PDF_FILE_PATH);
 
-            $this->pdf->save(self::PDF_FILE_PATH, true);
+            $this->pdf->save($fileName, true);
 
             $this->out['report'] .= 'koniec generate pdf<br>';
         } catch (Exception $e) {
@@ -83,7 +85,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
         }
 
 
-        $this->out['file'] = self::PDF_FILE_PATH;
+        $this->out['file'] = $fileName;
 
         $this->template = 'Formsan/View/Pdf.phtml';
         parent::execute();

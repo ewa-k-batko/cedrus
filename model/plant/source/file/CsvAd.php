@@ -36,11 +36,13 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         
         //if (is_resource(self::$hand)) {
            
-            $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog.csv','r');
+            $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog2.csv','r');
             
             
             
             $csv->setFlags(SplFileObject::READ_CSV);
+            
+            $codeTool =  new Model_Tool_Code();
             
          $i = 0;
             
@@ -55,61 +57,61 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
                  
                 
                 if($data[0] == 'L.p'){
-                    
-                    //echo 6;exit;
                     continue;
-                    
-                   // $csv->next();  
-                    
                 } 
                 
-               // pr($data);//exit;
-                
+                if(!isset($data[11]) || count($data) != 12) {
+                    continue;
+                }                
                   
                 $plant = new Model_Plant_ContainerAd();
 
                 //$category = new Model_Plant_Category_ContainerAd();
                // $category->setId($data[1]);
                 
+                //$plant->setIsnNo($data[1]);
+                $plant->setName($data[2]);
                 
-                $plant->setName($data[1]);
-                
-                $plant->setSpecies($data[2]);
+                $plant->setSpecies($data[3]);
                 
                 $status = 'D';
-                if($data[3] == 'D'){
+                if($data[4] == 'D'){
                     $status = 'A';                    
-                }elseif($data[3] == 'P'){
+                }elseif($data[4] == 'P'){
                     $status = 'P';
                 }
                 
                 $plant->setStatus( $status);
-                 $plant->setNameLT($data[4]);
-                 $plant->setDescription($data[5]);
+                 $plant->setNameLT($data[5]);
+                 $plant->setDescription($data[6]);
                  
-                 $plant->setIcon(str_replace('zdjcia\\','',$data[6]));
+                 $plant->setIcon(str_replace('zdjcia\\','',$data[7]));
                  
                 // pr($plant);exit;
                  
                  //foto
                 // $plant->setDescription($data[6]);
                  
-                 $plant->setHeight($data[7]);
+                 $plant->setHeight($data[8]);
                  
                  $pot = new Model_Plant_Pot_ContainerAd();
-                 $pot->setId($this->getPotId($data[8]));
+                 $pot->setId($this->getPotId($data[9]));
                  $plant->setPot($pot);
-                 $plant->setPrice($data[9]);
+                 $plant->setPrice($data[10]);
                  
                  
                  $category = new Model_Plant_Category_Container();
-                    $category->setId($data[10]);
+                    $category->setId($data[11]);
                     $plant->setCategory($category);
                     
-                    $no = date('ymd').'/'.$data[10].'/'.$i;
+                    $no = $codeTool->getCode($data);
                     
-                    echo $no;
-                    $plant->setIsnNo($no);
+                    echo($no) . '<br>';
+                    
+                   // $no = date('ym').'/'.$data[11].'/'.$this->getSigns($data[2]).'/'.$this->getSigns($data[3]).'/'.$this->getSigns($data[5]).'/'.$i;
+                    
+                    //echo $no;
+                    $plant->setIsnNo($no);/**/
                  
                  
                  /////////
@@ -154,10 +156,11 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
                 
                 $list->append($plant);
             }
-            
+           // exit;
           // pr($list);exit;
             //fclose(self::$hand);
         //}
+          
         return $list;
     }
 
@@ -256,6 +259,6 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         $tmp = array('P13' => '1');
         
         return $tmp[$name];
-    }
+    }    
 
 }
