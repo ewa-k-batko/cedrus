@@ -27,12 +27,17 @@ class Formsan_Module_Pdf extends Module_Abstract {
         }
 
         $this->out['report'] = 'start generate pdf<br>';
-        try {            
+        try {
 
-            $this->pdf = new Zend_Pdf(); 
+            $this->pdf = new Zend_Pdf();
 
             $pdf->properties['Title'] = 'Katalog produktów szkółki ogrodniczej "Mirage"';
-            $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
+            
+            if (Manager_Config::isDev()) {
+              $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
+            } else {
+                $this->font = Zend_Pdf_Font::fontWithPath('../public/fonts/opensansregular.ttf');
+            }
 
             $this->pdf->pages = array();
             $this->page = $this->getTemplate();
@@ -42,7 +47,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
             if ($list instanceof Model_Collection) {
                 foreach ($list as $category) {
 
-                    if ($tmpCat != $category->getName()) {                        
+                    if ($tmpCat != $category->getName()) {
                         $this->addCategory($category);
                         $tmpCat = $category->getName();
                     }
@@ -72,8 +77,14 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
 
             $this->out['report'] = 'stron: ' . $size . ' pdf<br>';
-            
-            $fileName = str_replace('.pdf',date('ymd').'.pdf',self::PDF_FILE_PATH);
+
+            $fileName = str_replace('.pdf', date('ymd') . '.pdf', self::PDF_FILE_PATH);
+
+            if (Manager_Config::isDev()) {
+                $fileName = $fileName;
+            } else {
+                $fileName = '../public/'.$fileName;
+            }
 
             $this->pdf->save($fileName, true);
 
@@ -114,23 +125,23 @@ class Formsan_Module_Pdf extends Module_Abstract {
                 ->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
         return $page;
-    }   
+    }
 
     private function addPlant($plant, $pot) {
         $y = $this->setNPT_Y();
-        
+
         //dzieli opis na linie
         $lines = $this->calcPlantDescLine($plant->getDescription());
-        
+
         //spr. czy plant zmiesci sie na obecnej stronie , jelsi nie tworzy nowa 
         if (!$this->checkPlantPlace($lines['size'])) {
             $this->pdf->pages[] = $this->page;
             $this->page = $this->getTemplate();
         }
-        
-        
+
+
         $style = $this->getPlantStyle();
-        $this->page->setStyle($style);        
+        $this->page->setStyle($style);
 
         //nazwa
         $this->page->drawText($plant->getName() . ' "' . $plant->getSpecies() . '" (' . $plant->getIsnNo() . ')', self::MIN_X, $y, 'UTF-8');
@@ -154,11 +165,10 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
         //wysokosc + doniczka
         $this->page->drawText('Wysokość sadzonki: ' . $plant->getHeight() . ' cm, doniczka: ' . $pot, self::MIN_X, $y, 'UTF-8');
-        $y = $this->setNST_Y();       
+        $y = $this->setNST_Y();
 
         //linia    
         $this->page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
-
     }
 
     private function addCategory($category) {
@@ -242,30 +252,30 @@ class Formsan_Module_Pdf extends Module_Abstract {
     }
 
     private function calcPlantDescLine($desc) {
-        $signs = 110; 
+        $signs = 110;
         $desc = wordwrap($desc, $signs, "\n");
         $lines = explode("\n", $desc);
         return array('size' => count($lines), 'lines' => $lines);
     }
 
     private function checkPlantSizeY($lines) {
-        
-        $tmp = (self::PAD_H * self::LINE_HR * 2 )  +  ( self::PAD_H * self::LINE_HR * $lines);
+
+        $tmp = (self::PAD_H * self::LINE_HR * 2 ) + ( self::PAD_H * self::LINE_HR * $lines);
         return $tmp;
     }
-    
+
     private function checkPlantPlace($lines) {
 
-       // var_dump($this->checkSizeY());
+        // var_dump($this->checkSizeY());
         //var_dump($this->checkPlantSizeY($lines));
-       // var_dump($this->checkSizeY() - $this->checkPlantSizeY($lines)); //exit;
+        // var_dump($this->checkSizeY() - $this->checkPlantSizeY($lines)); //exit;
         return ($this->checkSizeY() - $this->checkPlantSizeY($lines)) <= 0 ? false : true;
     }
 
     private function checkCategoryPlace() {
 
         //var_dump($this->checkSizeY());
-       // var_dump($this->checkCategorySizeY());
+        // var_dump($this->checkCategorySizeY());
         //var_dump($this->checkSizeY() - $this->checkCategorySizeY()); //exit;
         return ($this->checkSizeY() - $this->checkCategorySizeY()) <= 0 ? false : true;
     }

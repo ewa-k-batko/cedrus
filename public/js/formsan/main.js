@@ -31,7 +31,7 @@ angular.module('Formsan', ['ngRoute', 'ngSanitize'])
                 $scope.submit = function () {
 //@todo radio + hidden + select + checkbox
                 console.debug(this.field, 'submi-this');
-                        var mthod = this.field.id > 0 ? 'CategoryUpdate' : 'CategoryAdd';
+                        var mthod = 'CategorySet';
                         $http({
                         method: 'POST',
                                 // cache: true,

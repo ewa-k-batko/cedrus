@@ -153,9 +153,12 @@ class Formsan_Module_Ajax extends Module_Abstract {
     }
 
     private function getPotListAd($params) {
-
-        //@todo do params
-        $this->out['ajax'] = array('res' => 1, 'rows' => $this->api->getPotListAd($pack = 1, $sizePack = 20, $sort = Model_Api_Abstract::SORT_NAME, $order = Model_Api_Abstract::ORDER_ASC));
+        try {
+            //@todo do params
+            $this->out['ajax'] = array('res' => 1, 'rows' => $this->api->getPotListAd($pack = 1, $sizePack = 20, $sort = Model_Api_Abstract::SORT_NAME, $order = Model_Api_Abstract::ORDER_ASC));
+        } catch (Exception $e) {
+            
+        }
     }
 
     private function getPotByIdAd($params) {
@@ -198,11 +201,11 @@ class Formsan_Module_Ajax extends Module_Abstract {
     private function getStuffSetAd($params) {
 
         print_r($params);
-        
+
         print_r($this->request->getRaw());
 
         foreach ($params->param->files as $file) {
-            var_dump($file);          
+            var_dump($file);
         }
 
         $stuff = new Model_Stuff_ContainerAd();

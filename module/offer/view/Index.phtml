@@ -26,7 +26,7 @@
                         <?php if ($plant instanceof Model_Plant_Container): ?>
                             <li class="offer-item plant small-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
                                 <?php
-                                $this->partial('offer/view/partial/plant.phtml', array('plant' => $plant,
+                                $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
                                     'htag' => 'h2',
                                     'dtag' => 'div',
                                     'ltag' => 'span',
@@ -36,7 +36,7 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                     <p>
-                        <img src="<?php echo $category->getIcon(); ?>" alt="<?php echo $category->getName(); ?>" width="300" align="middle">
+                        <img src="//<?php echo $category->getIcon(); ?>" alt="<?php echo $category->getName(); ?>" width="300" align="middle">
                         <?php echo $category->getDescription(); ?>
                     </p>    
                     <a href="<?php echo $category->getUrl(); ?>">zobacz pełny katalog kategorii: <?php echo $category->getName(); ?></a>

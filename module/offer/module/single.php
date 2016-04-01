@@ -23,7 +23,7 @@ class Offer_Module_Single extends Module_Abstract {
                 $this->out['category']->setActive($this->storage->pageId);
 
                 $this->storage->metatags->setTitle('Roślina: ' . $this->out['plant']->getName() . ' - ');
-                $this->storage->metatags->setDescription(' - Roślina: ' . $this->out['plant']->getName(), 'append');
+                $this->storage->metatags->setDescription(' - Roślina: ' . $this->out['plant']->getDescription(), 'append');
                 $this->storage->metatags->setKeywords($this->out['plant']->getName() . ',');
 
                 $link = new Model_Link_Container();

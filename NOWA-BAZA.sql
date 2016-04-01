@@ -12,16 +12,13 @@ CREATE TABLE `cdr_plant_category` (
   PRIMARY KEY (`cpc_id`),
   UNIQUE KEY `cpc_name_f_i` (`cpc_name`),
   KEY `cpc_gal_id` (`cpc_gal_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
 
 
  ####
 
-
-
 DELIMITER $$
-DROP PROCEDURE IF EXISTS `PL_CATEGORY_SET`;
-CREATE PROCEDURE `PL_CATEGORY_SET`( 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PL_CATEGORY_SET`( 
         IN cat_id INTEGER,
         IN name_pl VARCHAR(255),
         IN description TEXT, 
@@ -31,7 +28,6 @@ CREATE PROCEDURE `PL_CATEGORY_SET`(
         IN user_id INTEGER
     )
 BEGIN  
-
 if cat_id = 0 then    
     
     insert into cdr_plant_category (cpc_name, cpc_desc, cpc_gal_id, cpc_icon, cpc_status,cpc_create,cpc_user_create ) 
@@ -50,13 +46,10 @@ else
           cpc_user_mod=user_id 
           where cpc_id=cat_id;
 end if;
-
-
-SELECT cat_id;
-
-        
+SELECT cat_id;        
 END$$
 DELIMITER ;
+
 
 
 ####
@@ -283,7 +276,7 @@ CREATE TABLE `cdr_plant_pot` (
   `cpt_user_mod` int(11) NOT NULL,
   PRIMARY KEY (`cpt_id`),
   UNIQUE KEY `cpt_name_f_i` (`cpt_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
 
 
 ###
@@ -398,7 +391,7 @@ CREATE TABLE `cdr_stuff` (
   PRIMARY KEY (`csf_id`),
   UNIQUE KEY `csf_name_f_i` (`csf_name`),
   KEY `csf_type_f_i` (`csf_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
 
 ###
 
@@ -516,7 +509,7 @@ CREATE TABLE `cdr_photo` (
   `cph_user_mod` int(11) NOT NULL,
   PRIMARY KEY (`cph_id`),
   UNIQUE KEY `cph_file_src_f_i` (`cph_file_src`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci PACK_KEYS=0;
 
 
 ####
