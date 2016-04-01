@@ -18,17 +18,19 @@
 
 <!--<span itemprop="numberOfItems">315</span>-->
         <?php if ($this->list instanceof Model_Collection): ?>   
-            <ul class="offer-list row">
+            <ul class="offer-list row index">
                 <?php foreach ($this->list as $plant): ?>
                     <?php if ($plant instanceof Model_Plant_Container): ?>
-                        <li class="offer-item plant small-view col-xs-12 col-sm-6 col-md-4 col-lg-4" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
-                            <?php
-                            $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
-                                'htag' => 'h2',
-                                'dtag' => 'div',
-                                'ltag' => 'span',
-                                'vtag' => 'span'));
-                            ?>
+                        <li class="offer-item plant middle-view col-xs-12 col-sm-6 col-md-6 col-lg-6" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
+                            
+                                <?php
+                                $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
+                                    'htag' => 'h2',
+                                    'dtag' => 'div',
+                                    'ltag' => 'span',
+                                    'vtag' => 'span'));
+                                ?>
+                            
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -51,22 +53,22 @@
 
 <section class="container-fluid">
 
-<div class="review-text contact-front-page" itemscope itemtype="http://schema.org/Organization">
-    <h3 class="head-title col-md-offset-1">Kontakt</h3>       
-    <ul class="row">
-        <li class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
-            <?php $this->partial('Contact/View/Partial/Company.phtml'); ?>
-        </li>
-        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
-            <?php $this->partial('Contact/View/Partial/Address.phtml'); ?>                    
-        </li>
-        <li itemprop="location"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3"> 
-            <?php $this->partial('Contact/View/Partial/Geolocation.phtml'); ?>
-            <br><br>
-            <?php $this->partial('Contact/View/Partial/Logo.phtml'); ?>
-        </li>
-    </ul>
-</div> 
+    <div class="review-text contact-front-page" itemscope itemtype="http://schema.org/Organization">
+        <h3 class="head-title col-md-offset-1">Kontakt</h3>       
+        <ul class="row">
+            <li class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+                <?php $this->partial('Contact/View/Partial/Company.phtml'); ?>
+            </li>
+            <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+                <?php $this->partial('Contact/View/Partial/Address.phtml'); ?>                    
+            </li>
+            <li itemprop="location"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3"> 
+                <?php $this->partial('Contact/View/Partial/Geolocation.phtml'); ?>
+                <br><br>
+                <?php $this->partial('Contact/View/Partial/Logo.phtml'); ?>
+            </li>
+        </ul>
+    </div> 
 </section>
 <?php $this->ob(); ?>
 <script src="/js/mig/mig.nav.offer.view.js"></script>

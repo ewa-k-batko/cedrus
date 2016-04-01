@@ -39,7 +39,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         //echo $_SERVER['DOCUMENT_ROOT'];exit;$_SERVER['DOCUMENT_ROOT'] .
         
         if (Manager_Config::isDev()) {
-            $csv = new SplFileObject( $_SERVER['DOCUMENT_ROOT'].'katalog/katalog.csv','r');
+            $csv = new SplFileObject( $_SERVER['DOCUMENT_ROOT'].'katalog/katalog2.csv','r');
         }else {
             $csv = new SplFileObject( '../public/katalog/katalog.csv','r');
         }
