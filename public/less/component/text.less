@@ -57,3 +57,36 @@
     &:extend(.p-text);
     color: @c-pink;
 }
+
+.link {
+    &-more {
+        &:extend(.s-text);
+        margin: 20px 0;
+        color: @c-pink;
+        text-decoration: none;
+        clear: both;
+        float: right;
+        text-align: right;
+        display: block;
+        padding-right: 10px;
+        b {
+            font-weight: bold;
+        }
+        &:hover {
+           text-decoration: underline; 
+        }
+        &:after {
+            float: right;
+            margin: 5px 0 0 5px;
+            content: "";
+            display: block;
+            width:5px;
+            height: 5px;
+            border-style: solid;
+            border-color: @c-pink;
+            border-radius: 3px;
+            border-width:3px 3px 0 0;
+            .rotate(45);
+        }
+    }
+}

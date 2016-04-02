@@ -3,61 +3,28 @@
     <div class="offer-head">
         <h1 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>: <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?></h1>
 
-        <div class="view-switch">    
-            <ul class="view-switch-nav js-view-switch">
-                <li class="view-switch-link"><a class="view-link js-view-link js-small-on" data-link="small-view" href="#">widok fotografie  o małej wielkości </a></li>
-                <li class="view-switch-link"><a class="view-link js-view-link js-middle-on" data-link="middle-view" href="#">widok fotografie  o średniej wielkości </a></li>
-                <li class="view-switch-link"><a class="view-link js-view-link js-large-on" data-link="large-view" href="#">widok fotografie  o dużej wielkości </a></li>
+        <?php $this->partial('Offer/View/Partial/Switch.phtml', array()); ?>
+
+        <?php if ($this->list instanceof Model_Collection): ?>   
+            <ul class="offer-list">
+                <?php foreach ($this->list as $plant): ?>
+                    <?php if ($plant instanceof Model_Plant_Container): ?>
+                        <li class="offer-item plant small-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
+                            <?php
+                            $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
+                                'htag' => 'h2',
+                                'dtag' => 'div',
+                                'ltag' => 'span',
+                                'vtag' => 'span'));
+                            ?>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </ul>
-            <a class="offer-print-link" href="javascript:window.print()">drukuj</a> 
-        </div>
-       
-   
+        <?php else: ?>
+            <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
+        <?php endif; ?>
 
 
-
-<!--<span itemprop="numberOfItems">315</span>-->
-    <?php if ($this->list instanceof Model_Collection): ?>   
-        <ul class="offer-list">
-            <?php foreach ($this->list as $plant): ?>
-                <?php if ($plant instanceof Model_Plant_Container): ?>
-                    <li class="offer-item plant small-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
-                        <?php
-                        $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
-                            'htag' => 'h2',
-                            'dtag' => 'div',
-                            'ltag' => 'span',
-                            'vtag' => 'span'));
-                        ?>
-                    </li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
-    <?php endif; ?>
-    <?php /* if ($this->product): ?>
-      <p class="p-text">Katalog z ofertą "<?php echo $this->product->getTitle(); ?>" dostępną od wiosny 2015 roku znajdziecie Państwo tutaj wkrótce.</p>
-      <div class="offer-<?php echo $this->product->getClass(); ?> img-offer"></div>
-
-      <?php else: ?>
-      <p class="p-text">Katalog z naszą ofertą dostępną od wiosny 2015 roku znajdziecie Państwo tutaj wkrótce.</p>
-      <div class="offer-perennial active img-offe"></div>
-
-      <?php endif; */ ?>
-        
-         </div>
+    </div>
 </section>
-
-<?php $this->ob(); ?>
-<script src="/js/mig/mig.nav.offer.view.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-    mig.nav.offer.view(window, {
-        //switcher: '.js-nav-swith',
-        // menu: '.js-nav-list',
-        screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?>
-    });
-// ]]>
-</script>
-<?php $this->clean(); ?>

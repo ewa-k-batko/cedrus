@@ -1,0 +1,16 @@
+<div class="review-text contact-front-page" itemscope itemtype="http://schema.org/Organization">
+    <h3 class="head-title col-md-offset-1">Kontakt</h3>       
+    <ul class="row">
+        <li class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+            <?php $this->partial('Contact/View/Partial/Company.phtml'); ?>
+        </li>
+        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3">
+            <?php $this->partial('Contact/View/Partial/Address.phtml'); ?>                    
+        </li>
+        <li itemprop="location"  class="item col-xs-12 col-rs-6 col-sm-4 col-md-offset-1 col-md-3"> 
+            <?php $this->partial('Contact/View/Partial/Geolocation.phtml'); ?>
+            <br><br>
+            <?php $this->partial('Contact/View/Partial/Logo.phtml'); ?>
+        </li>
+    </ul>
+</div>  

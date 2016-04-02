@@ -1,0 +1,21 @@
+<div class="view-switch">    
+    <ul class="view-switch-nav js-view-switch">
+        <li class="view-switch-link switch-small"><a class="view-link js-view-link js-small-on" data-link="small-view" href="#">widok fotografie  o małej wielkości </a></li>
+        <li class="view-switch-link switch-middle"><a class="view-link js-view-link js-middle-on" data-link="middle-view" href="#">widok fotografie  o średniej wielkości </a></li>
+        <li class="view-switch-link switch-large"><a class="view-link js-view-link js-large-on" data-link="large-view" href="#">widok fotografie  o dużej wielkości </a></li>
+    </ul>
+    <a class="offer-print-link" href="javascript:window.print()">drukuj</a> 
+</div>
+
+<?php $this->ob(); ?>
+<script src="/js/mig/mig.nav.offer.view.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+    mig.nav.offer.view(window, {
+        //switcher: '.js-nav-swith',
+        // menu: '.js-nav-list',
+        screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?>
+    });
+// ]]>
+</script>
+<?php $this->clean(); ?>

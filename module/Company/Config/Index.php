@@ -7,7 +7,7 @@ class Module_Company_Config_Index extends Module_Config {
         $mac->config(new Module_Common_Config_Basic());
         
         $storage = $mac->getStorage();
-        $storage->scripts->setCss('/css/index.css');
+        $storage->scripts->setCss('/css/company.css');
         $storage->pageId = 'company-page';
         $storage->metatags->setTitle('O firmie ');
         $storage->metatags->setDescription('O firmie');
