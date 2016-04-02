@@ -1,8 +1,11 @@
 <section class="offer" itemtype="http://schema.org/ItemList">
 
     <div class="offer-head">
-        <h1 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>: <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?></h1>
+        <h1 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>: 
+            <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?>
 
+        </h1>
+        <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
         <?php $this->partial('Offer/View/Partial/Switch.phtml', array()); ?>
 
         <?php if ($this->list instanceof Model_Collection): ?>   
@@ -21,6 +24,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
+
         <?php else: ?>
             <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
         <?php endif; ?>

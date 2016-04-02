@@ -1,8 +1,11 @@
 <div itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
     <div class="offer-head">
-        <h3 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>:</h3>
+        <h3 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>:
+        
+        </h3>
     </div>
     <section class="plant large-view">
+        
         <?php if ($this->plant instanceof Model_Plant_Container): ?>
             <?php
             $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $this->plant,
@@ -12,5 +15,6 @@
                 'vtag' => 'dd'));
             ?>
         <?php endif; ?>
+            <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
     </section>
 </div>

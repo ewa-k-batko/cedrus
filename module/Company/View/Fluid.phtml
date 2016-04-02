@@ -24,8 +24,8 @@
         </div>
     </div>
     <div class="review-photo-3 img-fluid">
-        <div class="review-about gradient">                
-            <a class="review-link" href="http://<?php echo Manager_Config::PDF_CATALOG; ?>">Katalog z naszą aktualną ofertą "Wiosna 2016" (wersja do druku)</a>
+        <div class="review-about gradient"> 
+            <?php $this->partial('Offer/View/Partial/Pdf.phtml', array('class' =>'review-link'));?>
         </div>
     </div>
 

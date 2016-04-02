@@ -1,9 +1,8 @@
 <section class="promote" itemtype="http://schema.org/ItemList">
 
     <div class="">
-        <h1 class="head-title">Wybrane rośliny z naszej oferty:
-            <a class="link-more" href="http://<?php echo Manager_Config::PDF_CATALOG; ?>">Katalog z naszą aktualną ofertą "Wiosna 2016" (wersja do druku)</a>
-        
+        <h1 class="head-title">Wybrane rośliny z naszej oferty:            
+        <?php $this->partial('Offer/View/Partial/Pdf.phtml', array());?>
         </h1>
         <?php if ($this->list instanceof Model_Collection): ?>   
             <ul class="promote-list row index">
