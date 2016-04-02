@@ -8,7 +8,7 @@ class Module_Index_Config_Index extends Module_Config {
         
         $storage = $mac->getStorage();
         $storage->scripts->setCss('/css/index.css');
-        $storage->scripts->setCss('/css/offer.css');
+        /*$storage->scripts->setCss('/css/offer.css');*/
         $storage->scripts->setCss('/css/contact.css');
         $storage->pageId = 'front-page';
         $storage->metatags->setTitle('Firma o swojej działalności - ');

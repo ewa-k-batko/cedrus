@@ -1,24 +1,24 @@
-<section class="promote offer" itemtype="http://schema.org/ItemList">
+<section class="promote" itemtype="http://schema.org/ItemList">
 
     <div class="">
         <h1 class="head-title">Wybrane rośliny z naszej oferty: <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?></h1>
-
-        <?php //$this->partial('Offer/View/Partial/Switch.phtml', array()); ?>
-
         <?php if ($this->list instanceof Model_Collection): ?>   
-            <ul class="offer-list row index">
+            <ul class="promote-list row index">
                 <?php foreach ($this->list as $plant): ?>
                     <?php if ($plant instanceof Model_Plant_Container): ?>
-                        <li class="offer-item plant middle-view col-xs-12 col-sm-6 col-md-6 col-lg-6" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
-
-                            <?php
-                            $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
-                                'htag' => 'h2',
-                                'dtag' => 'div',
-                                'ltag' => 'span',
-                                'vtag' => 'span'));
-                            ?>
-
+                        <li class="promote-item middle-view col-xs-12 col-rs-12 col-sm-12 col-md-6 col-lg-4" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
+                            <div class="promote-container">
+                                <div class="plant ">
+                                    <?php
+                                    $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
+                                        'htag' => 'h2',
+                                        'dtag' => 'div',
+                                        'ltag' => 'span',
+                                        'vtag' => 'span'));
+                                    ?>
+                                    <a class="link-more" href="<?php echo $plant->getCategory()->getUrl(); ?>">zobacz pełny katalog kategorii: <b><?php echo $plant->getCategory()->getName(); ?></b></a>
+                                </div>
+                            </div>
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -26,9 +26,6 @@
         <?php else: ?>
             <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
         <?php endif; ?> 
-            
-
     </div>
-  <?php $this->partial('Index/View/Partial/Contact.phtml'); ?>  
-    
+    <?php $this->partial('Index/View/Partial/Contact.phtml'); ?> 
 </section>

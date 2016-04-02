@@ -11,6 +11,9 @@ mig.nav.offer.view = function (window, confApp) {
                 jQuery(list).each(function (index) {
                     jQuery(this).on('click', function (e, name) {
                         var name = jQuery(this).attr('data-link');
+                        
+                        jQuery('.js-view-link').removeClass('selected');
+                        jQuery(this).addClass('selected').delay(300);
                         name = 'offer-item plant ' + name;
                         jQuery(items).each(function (index) {
 
