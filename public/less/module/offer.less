@@ -346,9 +346,13 @@
         background-position: 0 1px;    
         background-repeat: no-repeat;
         background-size: 100% 100%;/**/
-        cursor: pointer;
+        cursor: text;
         &.selected {
             border: 2px solid @c-green;
+            cursor: none;
+            &:hover {
+                border: 2px solid @c-green;
+            }
         }
         &:hover {
              border: 2px solid @c-pink;

@@ -1,7 +1,10 @@
 <section class="promote" itemtype="http://schema.org/ItemList">
 
     <div class="">
-        <h1 class="head-title">Wybrane rośliny z naszej oferty: <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?></h1>
+        <h1 class="head-title">Wybrane rośliny z naszej oferty:
+            <a class="link-more" href="http://<?php echo Manager_Config::PDF_CATALOG; ?>">Katalog z naszą aktualną ofertą "Wiosna 2016" (wersja do druku)</a>
+        
+        </h1>
         <?php if ($this->list instanceof Model_Collection): ?>   
             <ul class="promote-list row index">
                 <?php foreach ($this->list as $plant): ?>
