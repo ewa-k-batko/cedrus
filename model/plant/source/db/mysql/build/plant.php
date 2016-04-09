@@ -87,7 +87,7 @@ class Model_Plant_Source_Db_Mysql_Build_Plant {
             $photo = new Model_Gallery_Photo_Container();
             $photo->setName($plant->getName());
             $file = new Model_File_Container();
-            $file->setUrl('/katalog/'.$row->cpp_icon);
+            $file->setUrl('/katalog/fotografie'.$row->cpp_icon);
             $photo->setFile($file);
             $items->append($photo);
 

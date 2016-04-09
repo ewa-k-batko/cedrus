@@ -9,11 +9,14 @@
 class Model_Tool_String {
 
     public static function toUrl($string) {
+        $string = trim($string);
+        //$string = mb_convert_encoding($string,"UTF-8", "UTF-8" );
+
         if (!$string || !is_string($string)) {
             return;
         }
         $string = trim(strip_tags($string));
-        return preg_replace('/^[^(a-z-)]$/', '', strtolower(strtr(stripslashes($string), array(
+        $tmp = preg_replace('/^[^(a-z-)]$/', '', mb_strtolower(strtr(stripslashes($string), array(
             'ą' => 'a', 'Ą' => 'a',
             'ć' => 'c', 'Ć' => 'c',
             'ę' => 'e', 'Ę' => 'e',
@@ -24,13 +27,20 @@ class Model_Tool_String {
             'ż' => 'z', 'Ż' => 'z',
             'ź' => 'z', 'Ź' => 'z',
             ' ' => '-', '/' => '-',
-            ',' => '.', '\'' => '', 
-            '"' => '', "'" => ''
-                ))));
+            ',' => '.', '\'' => '',
+            '"' => '', "'" => '', "\s" => '', ' ' => ''
+                        )), 'UTF-8'));
+
+        //$tmp = preg_replace('/^[a-z-]/i','', $tmp);
+
+        return $tmp;
+    }
+
+    function utf8($string) {
+        return iconv("UTF-8", "UTF-8//IGNORE", strtr(trim($string),array(' '=>'')));
     }
 
 }
-
 
 /*
  * 

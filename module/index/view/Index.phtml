@@ -1,9 +1,10 @@
 <section class="promote" itemtype="http://schema.org/ItemList">
 
-    <div class="">
+    
         <h1 class="head-title">Wybrane rośliny z naszej oferty:            
         <?php $this->partial('Offer/View/Partial/Pdf.phtml', array());?>
         </h1>
+    <br> 
         <?php if ($this->list instanceof Model_Collection): ?>   
             <ul class="promote-list row index">
                 <?php foreach ($this->list as $plant): ?>
@@ -28,6 +29,6 @@
         <?php else: ?>
             <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
         <?php endif; ?> 
-    </div>
+    
     <?php $this->partial('Index/View/Partial/Contact.phtml'); ?> 
 </section>

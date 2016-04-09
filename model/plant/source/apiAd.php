@@ -66,7 +66,9 @@ class Model_Plant_Source_ApiAd extends Model_Api_Abstract {
 
     public function getPlantSetAd(Model_Plant_ContainerAd $plant) {
         //@todo validate
-        $res = $this->source->getPlantSetAd($plant);
+        $res = $this->source->getPlantSetAd($plant);  
+        
+        //var_dump($res);
         return $res;
     }
     
