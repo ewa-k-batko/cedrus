@@ -186,7 +186,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
                 '", "' . $plant->getStatus() .
                 '", ' . $plant->getUserCreateId() .
                 ' );';
-        // echo $sql;
+         echo $sql;
         try {
             $res = self::$db->multiQuery($sql);
             if (isset($res[0]->pl_id) && $res[0]->pl_id > 0) {

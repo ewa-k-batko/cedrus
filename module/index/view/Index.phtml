@@ -32,3 +32,11 @@
     
     <?php $this->partial('Index/View/Partial/Contact.phtml'); ?> 
 </section>
+<?php $this->ob(); ?>
+<script src="/js/mig/mig.image.responsive.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+    mig.image.responsive(window, {screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?> });
+// ]]>
+</script>
+<?php $this->clean(); ?>

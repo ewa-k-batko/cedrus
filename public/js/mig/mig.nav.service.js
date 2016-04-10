@@ -21,14 +21,17 @@ mig.nav.service = function (window, confApp) {
     confDef = {
         root: '.panel-body'
     };
-    conf = jQuery.extend(confDef, confApp);
-    device = int(jQuery(window).width());
-    if (device < conf.screen) {
-        root = jQuery(conf.root);
-        switcher = root.find(conf.switcher);
-        menu = root.find(conf.menu);
-        show(switcher, menu);
-    }
+
+    setTimeout(function () {
+        conf = jQuery.extend(confDef, confApp);
+        device = int(jQuery(window).width());
+        if (device < conf.screen) {
+            root = jQuery(conf.root);
+            switcher = root.find(conf.switcher);
+            menu = root.find(conf.menu);
+            show(switcher, menu);
+        }
+    }, 60);
 };
 
 

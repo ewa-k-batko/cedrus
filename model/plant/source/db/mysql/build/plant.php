@@ -74,20 +74,25 @@ class Model_Plant_Source_Db_Mysql_Build_Plant {
         }
         if (isset($row->cpp_height)) {
             $plant->setHeight($row->cpp_height);
-        }
-        if (isset($row->cpp_icon)) {
-            $plant->setIcon($row->cpp_icon);
-        }
+        }        
         if (isset($row->cpp_price)) {
             $plant->setPrice($row->cpp_price);
         }
-        if (isset($row->cpp_icon) && $row->cpp_icon && file_exists(ROOT_PATH.'public/katalog/'.$row->cpp_icon)) {
+        if (isset($row->cpp_icon) && $row->cpp_icon) {
+            $plant->setIcon($row->cpp_icon);
+            
             $items = new Model_Collection();
             //foto child
             $photo = new Model_Gallery_Photo_Container();
             $photo->setName($plant->getName());
             $file = new Model_File_Container();
-            $file->setUrl('/katalog/fotografie'.$row->cpp_icon);
+            $file->setId( $plant->getIcon());
+            $imgUpload = Model_Tool_Upload_Image::getInstance();
+            $path = $imgUpload->getPathDestination() . $plant->getCategory()->getId() . '/' . $plant->getIcon() . '.jpg';            
+            if($path) {
+              $file->setUrlResponsive($path, 'Model_Tool_Upload_Image::isImage');  
+            }
+            
             $photo->setFile($file);
             $items->append($photo);
 
@@ -95,6 +100,8 @@ class Model_Plant_Source_Db_Mysql_Build_Plant {
             $gallery->setItems($items);
             $plant->setGallery($gallery);
         }
+        
+        //print_r($plant);//exit;
         return $plant;
     }
 

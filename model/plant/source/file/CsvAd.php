@@ -72,14 +72,14 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
 
             $plant->setSpecies($tmp[3]);
 
-            $status = 'D';
+            /*$status = 'D';
             if ($data[5] == 'D') {
                 $status = 'A';
             } elseif ($data[5] == 'P') {
                 $status = 'P';
-            }
+            }*/
 
-            $plant->setStatus($status);
+            $plant->setStatus($this->getStatus($data[5]));
 
             $plant->setDescription(Model_Tool_String::utf8($data[7]));
 
@@ -107,7 +107,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
             
              $plant->setIcon(str_replace('zdjcia\\', '', $data[8]));
             
-            $imgUpload = new Model_Tool_Update_Image();
+            $imgUpload = Model_Tool_Upload_Image::getInstance()();
             $plant = $imgUpload->save($plant);
 
 
@@ -251,11 +251,11 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         return $tmp[$name];
     }
 
-    private function getCategoryId($name) {
+    private function getStatus($status) {
 
-        $tmp = array('P13' => '1');
+        $tmp = array('D' => Model_Api_Abstract::STATUS_ACTIVE, 'P' => Model_Api_Abstract::STATUS_PROMOTE, 'N' => Model_Api_Abstract::STATUS_DELETE);
 
-        return $tmp[$name];
+        return $tmp[$status];
     }
 
 }

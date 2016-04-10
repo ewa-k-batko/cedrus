@@ -8,7 +8,7 @@ class Model_Plant_Container extends Model_Container_Abstract {
     const CURRENCY = 'zł';   
      
 
-    protected $isnNo, $category, $gallery, $pot, $nameLT,  $description,  $icon, $price, $genus, $species, $height, $heightMax, $periodBloom, $periodSow;
+    protected $isnNo, $category, $gallery, $pot, $nameLT,  $description,  $icon, $price, $iconSrc, $genus, $species, $height, $heightMax, $periodBloom, $periodSow;
   
     public function setIsnNo($isnNo) {
         $this->isnNo = $isnNo;
@@ -81,6 +81,30 @@ class Model_Plant_Container extends Model_Container_Abstract {
         return $this->icon;
     }
     
+    /*public function setIconSrc() {  
+        $imgUpload = new Model_Tool_Update_Image();
+        $pathSM = $imgUpload->getDirDestination() .  $this->getCategory()->getId() . '/'. $this->getIcon() . '.jpg';        
+        
+        $iconSrc = array('sm' => $pathSM, 'xs' => str_replace('sm','xs', $pathSM), 'rs' => str_replace('sm','rs', $pathSM));
+        
+        foreach($iconSrc  as $level => $src){
+           if(file_exists($src)){
+               $file = new Model_File_Container();
+               $file->setUrl($src);
+               $this->iconSrc[$level] =  $file;
+           }            
+        }
+        return $this;
+    }
+    public function getIconSrc() {  
+        
+        if(!$this->iconSrc){
+            $this->setIconSrc();
+        }
+        return $this->iconSrc;
+    }*/        
+            
+    
     public function setPrice($price) {
         $this->price = $price;
         return $this;
@@ -132,7 +156,8 @@ class Model_Plant_Container extends Model_Container_Abstract {
     public function setPeriodSow($periodSow) {
         $this->periodSow = $periodSow;
         return $this;
-    }
+    } 
+    
     public function getPeriodSow() {
         return $this->periodSow;
     }    

@@ -16,15 +16,15 @@ class Formsan_Module_Import extends Module_Abstract {
 
             $apiDB = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
 
-            $imgUpload = new Model_Tool_Update_Image();
+            $imgUpload = Model_Tool_Upload_Image::getInstance();
 
             foreach ($list as $plant) {
 
                 $iconDate = $plant->getIcon();
                 
-                echo $iconDate;
-                echo '---------';
-                echo mb_substr($iconDate, 0, -10, 'UTF-8');
+                //echo $iconDate;
+               // echo '---------';
+                //echo mb_substr($iconDate, 0, -10, 'UTF-8');
                 
                 $plant->setIcon(mb_substr($iconDate, 0, -10, 'UTF-8'));
 
@@ -33,7 +33,7 @@ class Formsan_Module_Import extends Module_Abstract {
                 $imgUpload->replaceIcon($plant, $iconDate);
 
 
-               print_r($res);
+               //print_r($res);
                 //exit;
             }
 

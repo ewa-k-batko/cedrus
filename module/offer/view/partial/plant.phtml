@@ -9,12 +9,14 @@
         <figure class="plant-thumb"> 
             <a class="plant-thumb-link" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
                 <?php $photo = $this->plant->getGallery()->getItems()->current(); ?>
-                <img class="plant-image" src="<?php echo $photo->getFile()->getUrl(); ?>" itemprop="image">
+                <img class="plant-image" src="/img/p.gif" data-src="<?php echo $photo->getFile()->getUrlResponsive(true); ?>" itemprop="image">
                 <?php if ($photo->getDescription()): ?>
                     <figcaption><?php echo $photo->getDescription(); ?></figcaption>
                 <?php endif; ?>
             </a>         
         </figure>
+    
+
 
     <?php endif; ?>    
     <<?php echo $this->dtag; ?> class="plant-details" name="<?php echo $this->plant->getName(); ?>">
@@ -55,3 +57,5 @@
     </span> 
     </<?php echo $this->dtag; ?>>
 <?php endif; ?>
+
+    
