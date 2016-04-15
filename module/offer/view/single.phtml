@@ -1,7 +1,7 @@
 <div itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
     <div class="offer-head">
         <h3 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>:
-        
+        <span itemprop="brand"><?php echo $this->plant->getCategory()->getName(); ?></span>
         </h3>
     </div>
     <section class="plant large-view">
@@ -15,8 +15,11 @@
                 'vtag' => 'dd'));
             ?>
         <?php endif; ?>
+             <a class="link-more" href="<?php echo $this->plant->getCategory()->getUrl(); ?>">zobacz: <b><?php echo $this->plant->getCategory()->getName(); ?></b></a>
+    
             <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
-    </section>
+        
+   </section>
 </div>
 <?php $this->ob(); ?>
 <script src="/js/mig/mig.image.responsive.js"></script>

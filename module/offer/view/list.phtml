@@ -33,7 +33,7 @@
                         <a class="link-prev" href="<?php echo $plant->getCategory()->getUrl(); ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsPrev(); ?>">pobierz poprzednie</a>
                     <?php endif; ?>
                     <?php if ($this->list->getIsNext() > 0): ?> 
-                        <a class="link-next" href="<?php echo $plant->getCategory()->getUrl(); ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsNext(); ?>">pobierz nastepne</a>
+                        <a class="link-next" href="<?php echo $plant->getCategory()->getUrl(); ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsNext(); ?>">pobierz następne</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

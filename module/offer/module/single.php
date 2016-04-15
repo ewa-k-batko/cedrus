@@ -21,10 +21,13 @@ class Offer_Module_Single extends Module_Abstract {
                 
                 $this->storage->pageId = $this->out['category']->getClass();
                 $this->out['category']->setActive($this->storage->pageId);
+                
+                
+                //add category to metatag
 
-                $this->storage->metatags->setTitle('Roślina: ' . $this->out['plant']->getName() . ' - ');
-                $this->storage->metatags->setDescription(' - Roślina: ' . $this->out['plant']->getDescription(), 'append');
-                $this->storage->metatags->setKeywords($this->out['plant']->getName() . ',');
+                $this->storage->metatags->setTitle('Roślina: ' . $this->out['plant']->getName() . ' ' . $this->out['plant']->getSpecies() . ' - ');
+                $this->storage->metatags->setDescription('Roślina: ' . $this->out['plant']->getDescription(), 'prepend');
+                //$this->storage->metatags->setKeywords($this->out['plant']->getName() . ',');
 
                 $link = new Model_Link_Container();
                 $link->setUrl('/oferta')->setTitle('Oferta');
@@ -35,7 +38,7 @@ class Offer_Module_Single extends Module_Abstract {
                 $this->storage->breadcrumbs->set(2, $link);
                 
                 $link = new Model_Link_Container();
-               $link->setTitle(' (roślina) ' . $this->out['plant']->getName());
+               $link->setTitle(' (roślina) ' . $this->out['plant']->getName(). ' ' . $this->out['plant']->getSpecies());
                 $this->storage->breadcrumbs->set(3, $link);
                 
                 
