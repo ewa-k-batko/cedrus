@@ -1,14 +1,20 @@
 <?php
 
 class Model_Collection extends ArrayIterator {
+    
+    const FILTER = 'pc';
 
     protected $_total,
             $_position,
-            $_items;
+            $_items,
+            $isNext,
+            $isPrev;
 
     public function __construct() {
         $this->_position = 0;
         $this->_total = 0;
+        $this->isNext = 0;
+        $this->isPrev = 0 ;
     }
 
     public function append($object) {
@@ -41,6 +47,23 @@ class Model_Collection extends ArrayIterator {
 
     public function count() {
         return $this->_total;
+    }
+    
+    public function setIsNext($pack, $packSize) {        
+       // echo "$pack, $packSize";exit;
+        $this->isNext = $this->_total < $packSize ? $pack + 1 : 0;        
+    }
+    
+    public function setIsPrev($pack) { 
+        $this->isPrev = $pack > 1 ? $pack - 1 : 0;
+    }
+    
+    public function getIsNext() {
+        return $this->isNext;
+    }
+    
+    public function getIsPrev() {
+        return $this->isPrev;
     }
 
     public function serialize() {

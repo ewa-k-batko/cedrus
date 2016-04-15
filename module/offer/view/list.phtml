@@ -1,14 +1,16 @@
 <section class="offer" itemtype="http://schema.org/ItemList">
 
     <div class="offer-head">
-        <h1 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>: 
-            <?php if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; ?>
 
-        </h1>
-        <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
-        <?php $this->partial('Offer/View/Partial/Switch.phtml', array()); ?>
+        <?php if ($this->list instanceof Model_Collection): ?> 
+            <h1 class="head-title">Oferta firmy <span itemprop="manufacturer">"Mirage"</span>: 
+                <?php /* if ($this->product): ?><span itemprop="brand"><?php echo $this->product->getTitle(); ?></span><?php endif; */ ?>
+                <span itemprop="brand"><?php echo $this->list->current()->getCategory()->getName(); ?></span>
+            </h1>
+            <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
+            <?php $this->partial('Offer/View/Partial/Switch.phtml', array()); ?>
 
-        <?php if ($this->list instanceof Model_Collection): ?>   
+
             <ul class="offer-list">
                 <?php foreach ($this->list as $plant): ?>
                     <?php if ($plant instanceof Model_Plant_Container): ?>
@@ -25,6 +27,16 @@
                 <?php endforeach; ?>
             </ul>
 
+            <?php if ($this->list->getIsPrev() > 0 || $this->list->getIsNext() > 0): ?>
+                <div class="link-box js-get-more-list" data-prev="<?php echo $this->list->getIsPrev(); ?>" data-next="<?php echo $this->list->getIsNext(); ?>">
+                    <?php if ($this->list->getIsPrev() > 0): ?>
+                        <a class="link-prev" href="<?php echo $plant->getCategory()->getUrl(); ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsPrev(); ?>">pobierz poprzednie</a>
+                    <?php endif; ?>
+                    <?php if ($this->list->getIsNext() > 0): ?> 
+                        <a class="link-next" href="<?php echo $plant->getCategory()->getUrl(); ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsNext(); ?>">pobierz nastepne</a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         <?php else: ?>
             <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
         <?php endif; ?>
@@ -36,7 +48,7 @@
 <script src="/js/mig/mig.image.responsive.js"></script>
 <script type="text/javascript">
 // <![CDATA[
-    mig.image.responsive(window, {screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?> });
+    mig.image.responsive(window, {screen: <?php echo Manager_Config_Js::SCREEN_MD_MIN; ?>});
 // ]]>
 </script>
 <?php $this->clean(); ?>

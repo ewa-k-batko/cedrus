@@ -91,7 +91,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
             $pot = new Model_Plant_Pot_ContainerAd();
             $pot->setId($this->getPotId($data[10]));
             $plant->setPot($pot);
-            $plant->setPrice($data[11]);
+            $plant->setPrice((int)$data[11]);
 
 
             $category = new Model_Plant_Category_Container();

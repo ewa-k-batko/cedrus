@@ -4,9 +4,13 @@ class Offer_Module_List extends Module_Abstract {
 
     function execute() {
 
-        $this->in['id'] = $this->request->get(Model_Type_Container::FILTER, 'html');
+        $this->in['id'] = $this->request->get(Model_Type_Container::FILTER, 'i');
         if ($this->in['id'] <= 0) {
             throw new Manager_Exception_NotFound();
+        }
+        $this->in['pack'] = $this->request->get(Model_Collection::FILTER, 'i');
+        if ($this->in['pack'] <= 0) {
+            $this->in['pack'] = 1;
         }
 
         try {
@@ -14,8 +18,8 @@ class Offer_Module_List extends Module_Abstract {
             if ($this->out['category'] instanceof Model_Link_Container) {
                 
                 $api = new Model_Plant_Source_Api(Model_Plant_Source_Factory::DB_MYSQL);
-                $this->out['list'] = $api->getPlantListByCategoryId($this->in['id']);
-                
+                $this->out['list'] = $api->getPlantListByCategoryId($this->in['id'], $this->in['pack'], 10, Model_Api_Abstract::SORT_NAME);
+              //print_r($this->out['list'] );  
                 $this->storage->pageId = $this->out['category']->getClass();
                 $this->out['category']->setActive($this->storage->pageId);
 
@@ -33,8 +37,8 @@ class Offer_Module_List extends Module_Abstract {
             } else {
                 throw new Manager_Exception_NotFound();
             }
-        } catch (Model_Exception_NotFound $e) {
-            throw new Manager_Exception_NotFound();
+        } catch (Manager_Exception_NotFound $e) {
+            //throw new Manager_Exception_NotFound();
         } catch (Exception $e) {
             throw new Manager_Exception_Unavailable();
         }
