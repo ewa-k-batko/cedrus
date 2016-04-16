@@ -1,0 +1,18 @@
+.arrow {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-radius: 3px;  
+    width:5px;
+    height: 5px;
+}
+.arrow-left {
+    &:extend(.arrow);
+    border-width:3px 3px 0 0;
+    .rotate(225);
+}
+.arrow-right {
+    &:extend(.arrow);
+    border-width:3px 3px 0 0;
+    .rotate(45);
+}

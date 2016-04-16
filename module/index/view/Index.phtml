@@ -26,6 +26,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
+        <?php $this->partial('Common/View/Partial/Pagination.phtml', array('list' => $this->list, 'url' => '/'));?>
         <?php else: ?>
             <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
         <?php endif; ?> 

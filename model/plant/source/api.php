@@ -48,6 +48,13 @@ class Model_Plant_Source_Api extends Model_Api_Abstract implements Model_Plant_S
         $pack = self::validPack($pack);
         $sizePack = self::validPackSize($sizePack);
         $list = $this->source->getPromotionPlantList($pack, $sizePack, $sort, $order);
+        if ($list->count() == $sizePack) {             
+            /**
+             * check if is next
+             */
+            $next = $this->source->getPromotionPlantList($pack * $sizePack + 1, 1, $sort, $order, true);
+            $list->setIsNext($pack, $sizePack + $next);
+        }
         return self::validList($list);
     }
 

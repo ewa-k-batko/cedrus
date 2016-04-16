@@ -13,7 +13,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
     const PAD_H = 12;
     const LINE_HR = 1.2;
 
-    private $cur_X, $cur_Y, $font, $font_H, $pdf, $page;
+    private $cur_X, $cur_Y, $font, $font_H, $pdf, $page, $pos;
 
     function execute() {
 
@@ -21,7 +21,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
             $this->api = new Model_Plant_Source_ApiAd(Model_Plant_Source_Factory::DB_MYSQL_AD);
             $list = $this->api->getOfferList();
-            //var_dump($list); //exit;
+            //print_r($list); exit;
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -32,38 +32,38 @@ class Formsan_Module_Pdf extends Module_Abstract {
             $this->pdf = new Zend_Pdf();
 
             $pdf->properties['Title'] = 'Katalog produktów szkółki ogrodniczej "Mirage"';
-            
+
             if (Manager_Config::isDev()) {
-              $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
+                $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
             } else {
                 $this->font = Zend_Pdf_Font::fontWithPath('../public/fonts/opensansregular.ttf');
             }
 
             $this->pdf->pages = array();
             $this->page = $this->getTemplate();
+            $this->pos = 0;
 
             $tmpCat = null;
 
             if ($list instanceof Model_Collection) {
-                foreach ($list as $category) {
+                foreach ($list as $plant) {
+
+                    $category = $plant->getCategory();
 
                     if ($tmpCat != $category->getName()) {
                         $this->addCategory($category);
                         $tmpCat = $category->getName();
                     }
-                    foreach ($category->getItems() as $plant) {
 
-                        $pot = $plant->getPot();
-                        if ($pot instanceof Model_Plant_Pot_Container) {
-                            $pot = (string) $pot->getName();
-                        }
-
-                        $this->addPlant($plant, (string) $pot);
+                    $pot = $plant->getPot();
+                    if ($pot instanceof Model_Plant_Pot_Container) {
+                        $pot = (string) $pot->getName();
                     }
+                    $this->addPlant($plant, (string) $pot);
                 }
             }
 
-            $this->pdf->pages[] = $this->page;
+            $this->pdf->pages[$this->pos++] = $this->page;
 
 
             //koniec dokumentu
@@ -83,7 +83,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
             if (Manager_Config::isDev()) {
                 $fileName = $fileName;
             } else {
-                $fileName = '../public/'.$fileName;
+                $fileName = '../public/' . $fileName;
             }
 
             $this->pdf->save($fileName, true);
@@ -111,11 +111,20 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $y = $this->setNPT_Y();
         $style = $this->getHeadStyle();
         $page->setStyle($style);
-        $page->drawText('Katalog szkółki ogrodniczej "MIRAGE"', self::MIN_X, $y, 'UTF-8');
+        
+        //logo
+        $image = Zend_Pdf_Image::imageWithPath($_SERVER['DOCUMENT_ROOT'] .'/img/s-logo-mirage-pdf.png'); 
+ 
+        // Draw image 
+        $page->drawImage($image, self::MIN_X, $y-10, self::MIN_X+102, $y + 40-10); 
+        
+        
+        
+        $page->drawText('Katalog szkółki ogrodniczej "MIRAGE"', self::MIN_X + 130, $y, 'UTF-8');
         $y = $this->setNPT_Y();
         $page->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
-        $this->cur_Y = self::MAX_Y - self::PAD_H;
+       // $this->cur_Y = self::MAX_Y - self::PAD_H;
 
         /* FOOTER */
         $style = $this->getFootStyle();
@@ -128,20 +137,22 @@ class Formsan_Module_Pdf extends Module_Abstract {
     }
 
     private function addPlant($plant, $pot) {
-        $y = $this->setNPT_Y();
+
 
         //dzieli opis na linie
         $lines = $this->calcPlantDescLine($plant->getDescription());
 
         //spr. czy plant zmiesci sie na obecnej stronie , jelsi nie tworzy nowa 
         if (!$this->checkPlantPlace($lines['size'])) {
-            $this->pdf->pages[] = $this->page;
+            $this->pdf->pages[$this->pos++] = $this->page;
             $this->page = $this->getTemplate();
         }
 
 
         $style = $this->getPlantStyle();
         $this->page->setStyle($style);
+
+        $y = $this->setNPT_Y();
 
         //nazwa
         $this->page->drawText($plant->getName() . ' "' . $plant->getSpecies() . '" (' . $plant->getIsnNo() . ')', self::MIN_X, $y, 'UTF-8');
@@ -175,7 +186,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $this->setNPT_Y();
 
         if (!$this->checkCategoryPlace()) {
-            $this->pdf->pages[] = $this->page;
+            $this->pdf->pages[$this->pos++] = $this->page;
             $this->page = $this->getTemplate();
         }
 
@@ -191,9 +202,9 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
     private function getFootStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#330000'));
         $style->setLineWidth(0.1);
-        $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
+        $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 10;
         $style->setFont($this->font, $this->font_H);
 
@@ -202,9 +213,9 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
     private function getHeadStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#339933'));
         $style->setLineWidth(0.1);
-        $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
+        $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 18;
         $style->setFont($this->font, $this->font_H);
 
@@ -213,9 +224,9 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
     private function getCategoryStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#cc0066'));
         $style->setLineWidth(0.1);
-        $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
+        $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 14;
         $style->setFont($this->font, $this->font_H);
 
@@ -224,9 +235,9 @@ class Formsan_Module_Pdf extends Module_Abstract {
 
     private function getPlantStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Rgb(0, 0, 0));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#330000'));
         $style->setLineWidth(0.1);
-        $style->setLineColor(new Zend_Pdf_Color_GrayScale(0.2));
+        $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 11;
         $style->setFont($this->font, $this->font_H);
 

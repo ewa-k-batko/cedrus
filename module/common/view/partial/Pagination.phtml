@@ -1,0 +1,10 @@
+<?php if ($this->list->getIsPrev() > 0 || $this->list->getIsNext() > 0): ?>
+    <div class="link-box js-get-more-list" data-prev="<?php echo $this->list->getIsPrev(); ?>" data-next="<?php echo $this->list->getIsNext(); ?>">
+        <?php if ($this->list->getIsPrev() > 0): ?>
+            <a class="link-prev" href="<?php echo $this->url; ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsPrev(); ?>">poprzednie</a>
+        <?php endif; ?>
+        <?php if ($this->list->getIsNext() > 0): ?> 
+            <a class="link-next" href="<?php echo $this->url; ?>,<?php echo Model_Collection::FILTER; ?>,<?php echo $this->list->getIsNext(); ?>">następne</a>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

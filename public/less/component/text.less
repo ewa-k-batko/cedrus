@@ -1,5 +1,6 @@
 @import '../bootstrap/config.less';
 @import '../bootstrap/component.less';
+@import (reference) 'graph.less';
 
 .p-text {
     color: @c-brown;
@@ -64,10 +65,9 @@
         margin: 20px 0;
         color: @c-pink;
         text-decoration: none;
-        /*clear: both;
-        float: right;*/
         position: relative;
-        right: 0;
+        right: 18px;
+        top: 0;
         text-align: right;
         display: block;
         padding-right: 10px;
@@ -75,75 +75,57 @@
             font-weight: bold;
         }
         &:hover {
-           text-decoration: underline; 
+            text-decoration: underline; 
         }
         &:after {
-            float: right;
+            &:extend(.arrow-right);
+            position: absolute;
+            right: 0;
+            top: 0;
             margin: 5px 0 0 5px;
-            content: "";
-            display: block;
-            width:5px;
-            height: 5px;
-            border-style: solid;
             border-color: @c-pink;
-            border-radius: 3px;
-            border-width:3px 3px 0 0;
-            .rotate(45);
         }
     }
-    
+
     &-box {
         position: relative;
         padding: 20px;
     }    
     &-prev,
     &-next {
-         &:extend(.s-text);
-         color: @c-pink;
-         text-decoration: none;
-         display: block;
-         font-weight: bold;
-         position: absolute;
-         &:hover {
-           text-decoration: underline; 
+        &:extend(.s-text);
+        color: @c-pink;
+        text-decoration: none;
+        display: block;
+        font-weight: bold;
+        position: absolute;
+        &:hover {
+            text-decoration: underline; 
         }
     }
-    
+
     &-prev {
         left:15px;
         top: 0;
         &:before {
+            &:extend(.arrow-left);
             top:5px;
             left: -15px;
-            position: absolute;            
-            content: "";
-            display: block;
-            width:5px;
-            height: 5px;
-            border-style: solid;
+            position: absolute;
             border-color: @c-pink;
-            border-radius: 3px;
-            border-width:3px 3px 0 0;
-            .rotate(225);
+
         }
     }
-    
+
     &-next {
         right: 15px;
         top: 0;
         &:after {
+            &:extend(.arrow-right);
             right: -15px;
             top: 5px;
-            position: absolute;            
-            content: "";
-            display: block;
-            width:5px;
-            height: 5px;
-            border-style: solid;
+            position: absolute; 
             border-color: @c-pink;
-            border-radius: 3px;
-            border-width:3px 3px 0 0;
-            .rotate(45);
         }
     }
 }

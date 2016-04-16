@@ -50,7 +50,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
         try {
             $res = self::$db->multiQuery($sql);
 
-            // print_r($res);
+           //print_r($res);
         } catch (Model_Db_Exception_NotFound $e) {
             throw new Manager_Exception_NotFound();
         } catch (Model_Db_Exception_Unavailable $e) {
@@ -59,7 +59,7 @@ class Model_Plant_Source_Db_MysqlAd extends Model_Plant_Source_Db_Mysql {
         if (!isset($res[0]->cpp_cpc_id) || $res[0]->cpp_cpc_id <= 0) {
             throw new Manager_Exception_NotFound();
         }
-        $build = new Model_Plant_Source_Db_Mysql_Build_CategoryAd();
+        $build = new Model_Plant_Source_Db_Mysql_Build_PlantAd();
         $build->setCollection();
         return $build->collection($res);
     }
