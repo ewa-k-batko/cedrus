@@ -73,6 +73,10 @@ class Module_Formsan_Config_Basic extends Module_Config {
         $nav->append($link);
         
         $link = new Model_Link_Container();
+        $link->setUrl('/formsan/advert/')->setTitle('Advert')->setClass('advert-page');
+        $nav->append($link);
+        
+        $link = new Model_Link_Container();
         $link->setUrl('/formsan/import/')->setTitle('Import')->setClass('import-page');
         $nav->append($link);
 

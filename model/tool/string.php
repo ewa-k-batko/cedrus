@@ -39,6 +39,11 @@ class Model_Tool_String {
     function utf8($string) {
         return iconv("UTF-8", "UTF-8//IGNORE", strtr(trim($string),array(' '=>'')));
     }
+    
+     public static function escape($string) {
+         return htmlspecialchars(trim($string), ENT_QUOTES | ENT_HTML5, "UTF-8", $double_encode = true);
+         
+     }
 
 }
 

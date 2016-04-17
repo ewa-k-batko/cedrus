@@ -130,7 +130,7 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $style = $this->getFootStyle();
         $page->setStyle($style);
         $y = self::PAD_H + self::PAD_H;
-        $page->drawText('Szkółka ogrodnicza "Mirage", www: sadzonka.eu, adres: Pawlikowice 182, 32-020-Wieliczka, tel: 519431929, 506455392', self::MIN_X, self::PAD_H, 'UTF-8')
+        $page->drawText('Szkółka ogrodnicza "Mirage", www: sadzonka.eu, adres: Siercza 485, 32-020-Wieliczka, tel: 519431929, 506455392', self::MIN_X, self::PAD_H, 'UTF-8')
                 ->drawLine(self::MIN_X, $y, self::MAX_X, $y);
 
         return $page;
