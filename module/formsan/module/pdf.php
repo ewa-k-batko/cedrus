@@ -112,9 +112,12 @@ class Formsan_Module_Pdf extends Module_Abstract {
         $style = $this->getHeadStyle();
         $page->setStyle($style);
         
-        //logo
-        $image = Zend_Pdf_Image::imageWithPath($_SERVER['DOCUMENT_ROOT'] .'/img/s-logo-mirage-pdf.png'); 
- 
+        if (Manager_Config::isDev()) {
+            //logo
+            $image = Zend_Pdf_Image::imageWithPath($_SERVER['DOCUMENT_ROOT'] .'/img/s-logo-mirage-pdf.png'); 
+        } else {
+           $image = Zend_Pdf_Image::imageWithPath('../public/img/s-logo-mirage-pdf.png'); 
+        }
         // Draw image 
         $page->drawImage($image, self::MIN_X, $y-10, self::MIN_X+102, $y + 40-10); 
         

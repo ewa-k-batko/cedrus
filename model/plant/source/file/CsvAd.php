@@ -36,7 +36,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         if (Manager_Config::isDev()) {
             $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog-v1.csv', 'r');
         } else {
-            $csv = new SplFileObject('../public/katalog/katalog.csv', 'r');
+            $csv = new SplFileObject('../public/katalog/katalog-v1.csv', 'r');
         }
 
         $csv->setFlags(SplFileObject::READ_CSV);
@@ -48,111 +48,114 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
         $i = 0;
 
         while (!$csv->eof()) {
+            try {
+                $i++;
+                $data = $csv->fgetcsv(';', "\n", "\\");
+                //print_r($data); 
 
-            $i++;
-            $data = $csv->fgetcsv(';', "\n", "\\");
-            //print_r($data); 
+                if ($data[0] == 'L.p') {
+                    continue;
+                }
 
-            if ($data[0] == 'L.p') {
-                continue;
+                if (!isset($data[12]) || count($data) != 13) {
+                    continue;
+                }
+
+                $plant = new Model_Plant_ContainerAd();
+
+                $plant->setName(Model_Tool_String::utf8($data[4]));
+                $tmp = explode('"', Model_Tool_String::utf8($data[6]));
+
+                if (isset($tmp[1])) {
+                    $plant->setNameLT($tmp[1]);
+                }
+
+                if (isset($tmp[3])) {
+                    $plant->setSpecies($tmp[3]);
+                }
+                /* $status = 'D';
+                  if ($data[5] == 'D') {
+                  $status = 'A';
+                  } elseif ($data[5] == 'P') {
+                  $status = 'P';
+                  } */
+
+                $plant->setStatus($this->getStatus($data[5]));
+
+                $plant->setDescription(Model_Tool_String::escape(Model_Tool_String::utf8($data[7])));
+
+
+
+
+                $plant->setHeight($data[9]);
+
+                $pot = new Model_Plant_Pot_ContainerAd();
+                $pot->setId($this->getPotId($data[10]));
+                $plant->setPot($pot);
+                $plant->setPrice((int) $data[11]);
+
+
+                $category = new Model_Plant_Category_Container();
+                $category->setId($data[12]);
+                $plant->setCategory($category);
+
+                $no = $codeTool->getCode($plant);
+
+                //echo($no) . '<br>';
+
+                $plant->setIsnNo($no); /**/
+
+
+                $plant->setIcon(str_replace('zdjcia\\', '', $data[8]));
+
+                $imgUpload = Model_Tool_Upload_Image::getInstance();
+                $plant = $imgUpload->save($plant);
+
+
+                /////////
+
+                /* $plant->setCategory($category);
+                  $plant->setId($data[3]);
+
+                  $plant->setSpecies($data[5]);
+                  $plant->setGenus($data[6]);
+                  $plant->setPrice($data[7]);
+                  $plant->setHeight($data[8]);
+
+                  $pot = new Model_Plant_Pot_Container();
+                  $pot->setDiameter($data[9]);
+                  $pot->setHeight($data[10]);
+                  $plant->setPot($pot);
+
+                  $plant->setHeightMax($data[11]);
+                  $plant->setPeriodBloom($data[12]);
+                  $plant->setPeriodSow($data[13]); */
+
+                /* $items = new Model_Collection();
+
+                  //foto child
+                  $photo = new Model_Gallery_Photo_Container();
+                  $file = new Model_File_Container();
+                  $file->setUrl($data[6]);
+                  $photo->setFile($file);
+                  $items->append($photo); */
+
+                /* //foto adult
+                  $photo = new Model_Gallery_Photo_Container();
+                  $file = new Model_File_Container();
+                  $file->setUrl($data[15]);
+                  $photo->setFile($file);
+                  $items->append($photo); */
+
+                /* $gallery = new Model_Gallery_Container();
+                  $gallery->setItems($items);
+                  $plant->setGallery($gallery); */
+
+
+                $list->append($plant);
+            } catch (Exception $e) {
+                echo $e->getMessage();
             }
-
-            if (!isset($data[12]) || count($data) != 13) {
-                continue;
-            }
-
-            $plant = new Model_Plant_ContainerAd();
-
-            $plant->setName(Model_Tool_String::utf8($data[4]));
-            $tmp = explode('"', Model_Tool_String::utf8($data[6]));
-
-            if (isset($tmp[1])) {
-                $plant->setNameLT($tmp[1]);
-            }
-
-            if (isset($tmp[3])) {
-                $plant->setSpecies($tmp[3]);
-            }
-            /* $status = 'D';
-              if ($data[5] == 'D') {
-              $status = 'A';
-              } elseif ($data[5] == 'P') {
-              $status = 'P';
-              } */
-
-            $plant->setStatus($this->getStatus($data[5]));
-
-            $plant->setDescription(Model_Tool_String::escape(Model_Tool_String::utf8($data[7])));
-
-
-
-
-            $plant->setHeight($data[9]);
-
-            $pot = new Model_Plant_Pot_ContainerAd();
-            $pot->setId($this->getPotId($data[10]));
-            $plant->setPot($pot);
-            $plant->setPrice((int) $data[11]);
-
-
-            $category = new Model_Plant_Category_Container();
-            $category->setId($data[12]);
-            $plant->setCategory($category);
-
-            $no = $codeTool->getCode($plant);
-
-            //echo($no) . '<br>';
-
-            $plant->setIsnNo($no); /**/
-
-
-            $plant->setIcon(str_replace('zdjcia\\', '', $data[8]));
-
-            $imgUpload = Model_Tool_Upload_Image::getInstance();
-            $plant = $imgUpload->save($plant);
-
-
-            /////////
-
-            /* $plant->setCategory($category);
-              $plant->setId($data[3]);
-
-              $plant->setSpecies($data[5]);
-              $plant->setGenus($data[6]);
-              $plant->setPrice($data[7]);
-              $plant->setHeight($data[8]);
-
-              $pot = new Model_Plant_Pot_Container();
-              $pot->setDiameter($data[9]);
-              $pot->setHeight($data[10]);
-              $plant->setPot($pot);
-
-              $plant->setHeightMax($data[11]);
-              $plant->setPeriodBloom($data[12]);
-              $plant->setPeriodSow($data[13]); */
-
-            /* $items = new Model_Collection();
-
-              //foto child
-              $photo = new Model_Gallery_Photo_Container();
-              $file = new Model_File_Container();
-              $file->setUrl($data[6]);
-              $photo->setFile($file);
-              $items->append($photo); */
-
-            /* //foto adult
-              $photo = new Model_Gallery_Photo_Container();
-              $file = new Model_File_Container();
-              $file->setUrl($data[15]);
-              $photo->setFile($file);
-              $items->append($photo); */
-
-            /* $gallery = new Model_Gallery_Container();
-              $gallery->setItems($items);
-              $plant->setGallery($gallery); */
-
-
-            $list->append($plant);
         }
         // exit;
         // print_r($list);exit;
@@ -247,9 +250,9 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
 
     private function getPotId($name) {
 
-        $tmp = array('P11' => '1', 'P13' => '3',  'P15' => '5','P16' => '6','P17' => '7','P18' => '8','P19' => '9','P20' => '10', );
+        $tmp = array('P11' => '1', 'P13' => '3', 'P15' => '5', 'P16' => '6', 'P17' => '7', 'P18' => '8', 'P19' => '9', 'P20' => '10');
 
-        return $tmp[$name];
+        return isset($tmp[$name]) ? $tmp[$name] : null;
     }
 
     private function getStatus($status) {

@@ -129,14 +129,14 @@ class Formsan_Module_Advert extends Module_Abstract {
         $style = $this->getPriceStyle();
         $page->setStyle($style);
 
-        $y = $y - 24;
+        $y = $y - 20;
         $page->drawText('Krzewy ozdobne oferujemy już od 4 zł za sztukę.', self::MIN_X, $y, 'UTF-8');
 
 
 
         $style = $this->getAddressStyle();
         $page->setStyle($style);
-        $y = $y - 30;
+        $y = $y - 20;
         $page->drawText('Katalog roślin dostępny jest pod adresem: sadzonka.eu', self::MIN_X, $y, 'UTF-8');
 
         $y = $y - 20;
@@ -150,7 +150,9 @@ class Formsan_Module_Advert extends Module_Abstract {
         $page->drawText('(południowa granica Wieliczki),', self::MIN_X + 110, $y, 'UTF-8');
 
         $y = $y - 20;
-        $page->drawText('Czynny: od poniedziałku do soboty od 8:00 do 20:00,', self::MIN_X, $y, 'UTF-8');
+        $page->drawText('Czynny: od poniedziałku do piątku', self::MIN_X, $y, 'UTF-8');
+        $y = $y - 20;
+        $page->drawText(' w godzinach 9:00 - 18:00, w soboty 8:00 - 15:00,', self::MIN_X, $y, 'UTF-8');
         $y = $y - 20;
         $page->drawText('Telefon: ', self::MIN_X, $y, 'UTF-8');
         $style = $this->getPriceStyle();
@@ -167,7 +169,7 @@ class Formsan_Module_Advert extends Module_Abstract {
 
         $style = $this->getInfoStyle();
         $page->setStyle($style);
-        $y = $y - 14;
+        $y = $y - 4;
         $page->drawText('mapa dojazdowa na odwrocie >>>', self::MAX_X - 140, $y, 'UTF-8');
 
 
@@ -188,7 +190,7 @@ class Formsan_Module_Advert extends Module_Abstract {
 
     private function getHeadStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Html('#339933'));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#336633'));
         $style->setLineWidth(0.1);
         $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 20;
@@ -221,7 +223,7 @@ class Formsan_Module_Advert extends Module_Abstract {
 
     private function getInfoStyle() {
         $style = new Zend_Pdf_Style();
-        $style->setFillColor(new Zend_Pdf_Color_Html('#339933'));
+        $style->setFillColor(new Zend_Pdf_Color_Html('#336633'));
         $style->setLineWidth(0.1);
         $style->setLineColor(new Zend_Pdf_Color_Html('#eeeeee'));
         $this->font_H = 9;
