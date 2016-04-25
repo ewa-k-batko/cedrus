@@ -30,9 +30,9 @@ class Module_Offer_Config_Nav extends Module_Config {
         $link->setId(5)->setUrl($url . 'wrzosowate,' . Model_Type_Container::FILTER . ',5')->setTitle('wrzosowate')->setClass('heathers');
         $nav->append($link);
 
-        $link = new Model_Link_Container();
+        /*$link = new Model_Link_Container();
         $link->setId(6)->setUrl($url . 'byliny,' . Model_Type_Container::FILTER . ',6')->setTitle('byliny')->setClass('perennial');
-        $nav->append($link);
+        $nav->append($link);*/
 
         $storage = $mac->getStorage();
         $storage->setParam('list-nav', $nav);

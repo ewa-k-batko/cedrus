@@ -90,13 +90,12 @@ class Model_File_Container {
             if ( call_user_func_array($callback, array($src))) {                
                 $this->urlResponsive[$threshold] = $src;
             }
-        }
-        
+        }        
         return $this;
     }
 
     public function getUrlResponsive($json = false) {
-        if($json){
+        if($json && count($this->urlResponsive) > 0 ){
             return htmlentities(json_encode($this->urlResponsive), ENT_QUOTES, 'UTF-8');
         }
         return $this->urlResponsive;

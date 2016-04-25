@@ -1,23 +1,27 @@
 <?php if ($this->plant instanceof Model_Plant_Container): ?>
     <<?php echo $this->htag; ?> class="plant-title">
-    <a class="plant-url" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
+    <?php /*<a class="plant-url" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
         <span itemprop="name"><?php echo $this->plant->getName(); ?></span>
-    </a>
-    </<?php echo $this->htag; ?>>
-    <?php if ($this->plant->getGallery()->getItems()->count() > 0): ?><!-- @todo dopisac warunki-->
-
-        <figure class="plant-thumb"> 
-            <a class="plant-thumb-link" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
-                <?php $photo = $this->plant->getGallery()->getItems()->current(); ?>
-                <img class="plant-image" src="/img/p.gif" data-src="<?php echo $photo->getFile()->getUrlResponsive(true); ?>" itemprop="image">
-                <?php if ($photo->getDescription()): ?>
-                    <figcaption><?php echo $photo->getDescription(); ?></figcaption>
-                <?php endif; ?>
-            </a>         
-        </figure>
+    </a>*/ ?>
+        <span itemprop="name"><?php echo $this->plant->getName(); ?></span>
+    </<?php echo $this->htag; ?>>    
     
-
-
+    <?php if ($this->plant->getGallery()->getItems()->count() > 0): ?><!-- @todo dopisac warunki-->
+        <?php 
+        $photo = $this->plant->getGallery()->getItems()->current();
+        $imgSrc = $photo->getFile()->getUrlResponsive(true); 
+        ?>
+        <?php if($imgSrc):?>
+            <figure class="plant-thumb"> 
+                <a class="plant-thumb-link" href="<?php echo $this->plant->getUrl(); ?>" itemprop="url">
+                    <?php  ?>
+                    <img class="plant-image" src="/img/p.gif" data-src="<?php echo $imgSrc; ?>" itemprop="image">
+                    <?php if ($photo->getDescription()): ?>
+                        <figcaption><?php echo $photo->getDescription(); ?></figcaption>
+                    <?php endif; ?>
+                </a>         
+            </figure>
+        <?php endif; ?>
     <?php endif; ?>    
     <<?php echo $this->dtag; ?> class="plant-details" name="<?php echo $this->plant->getName(); ?>">
     <span class="plant-detail plant-id">

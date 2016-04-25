@@ -30,11 +30,13 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
     }
 
     public function getData() {
+        
+        $errors = array();
 
         $list = new Model_Collection();
 
         if (Manager_Config::isDev()) {
-            $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog-v1.csv', 'r');
+            $csv = new SplFileObject($_SERVER['DOCUMENT_ROOT'] . 'katalog/katalog-v3.csv', 'r');
         } else {
             $csv = new SplFileObject('../public/katalog/katalog-v1.csv', 'r');
         }
@@ -81,8 +83,14 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
                   } */
 
                 $plant->setStatus($this->getStatus($data[5]));
+                
+                if (isset($data[2]) && $data[2]) {
+                    $description = $data[7] . ' Kolor:'. $data[2] . '.';
+                } else {
+                    $description = $data[7];
+                }
 
-                $plant->setDescription(Model_Tool_String::escape(Model_Tool_String::utf8($data[7])));
+                $plant->setDescription(Model_Tool_String::escape(Model_Tool_String::utf8($description)));
 
 
 
@@ -155,12 +163,18 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
                 $list->append($plant);
             } catch (Exception $e) {
                 echo $e->getMessage();
+                
+                $errors[] = $data;
             }
         }
         // exit;
         // print_r($list);exit;
         //fclose(self::$hand);
         //}
+        
+        if(count($errors) > 0) {
+            print_r($errors);
+        }
 
         return $list;
     }
@@ -250,7 +264,7 @@ class Model_Plant_Source_File_CsvAd implements Model_Plant_Source_Interface {
 
     private function getPotId($name) {
 
-        $tmp = array('P11' => '1', 'P13' => '3', 'P15' => '5', 'P16' => '6', 'P17' => '7', 'P18' => '8', 'P19' => '9', 'P20' => '10');
+        $tmp = array('P11' => '1', 'P13' => '3', 'P15' => '5', 'P16' => '6', 'P17' => '7', 'P18' => '8', 'P19' => '9', 'P20' => '10', 'C5' => 11, 'F15' => '12', 'F16' => '13', 'F17' => '14', 'F18' => '15', 'F19' => '16', 'F20' => '17');
 
         return isset($tmp[$name]) ? $tmp[$name] : null;
     }

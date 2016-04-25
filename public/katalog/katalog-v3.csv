@@ -1,0 +1,509 @@
+L.p;katoria;kolor;odmiana;Nazwa polska;dostępmość;nazwa łacińska;opis;Foto;wielkość(cm);doniczka;cena;kATEGORIA
+1;00316/3/JBN;;Jodła balsamiczna;Jodła balsamiczna;N;"Abies balsamea ""Nana"" ";Odmiana karłowa o pokroju kopulastym, igły krótkie o ciemnozielonej barwie, gęsto osadzone na pędzie.;zdjcia\ABIES- BALSAMEA-NANA.jpg;;P13;16,00 zł;3
+2;00316/3/CLA;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Alumigold"" ";Pokrój stożkowy, barwa zielonożółta, jesienią pędy nieznacznie zielenieją.;zdjcia\CHAMAECYPARIS-LAWSONIANA-ALUMI-I-GOLD.jpg;40-55;P13;7,00 zł;3
+3;00316/3/CLAL;;Cyprysik Lawsona ;Cyprysik Lawsona ;P;"Chamaecyparis lawsoniana ""Alumii"" ";Pokrój stożkowy, pędy lekko przewisające, barwa niebieska, dobra odmiana na żywopłoty.;zdjcia\Ch.law.Alumii.jpg;40-60;P13;7,00 zł;3
+4;00316/3/CLB;;Cyprysik Lawsona ;Cyprysik Lawsona ;D;"Chamaecyparis lawsoniana ""Bautchensis"" ";Pokrój jajowaty, zwarty, wzrost wolny, barwa łusek niebieska.;zdjcia\Ch.laws.Boutchensis.jpg;30-40;P13;7,00 zł;3
+5;00316/3/CLBL;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Blue Ribbon"" ";Forma wąskokolumnowa, łuski o intensywnej niebieskiej barwie.;zdjcia\Chamaecyparis-lawsoniana-Blue Ribbon.jpg;;P13;7;3
+6;00316/3/CLC;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Columnaris""";Pokrój kolumnowy, barwa jasnoniebieska, wzrost dość silny. Odmiana o kolumnowym pokroju, mocne niebieskie wybarwienie łusek.;zdjcia\Ch.laws.Columnaris.jpg;;P13;7;3
+7;00316/3/CLEE;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Ellwood’s Empire"" ";Pokrój kolumnowy, gęsty, średnia siła wzrostu, pędy z drobnymi igiełkami o żółtej barwie.;zdjcia\Cham.laws.Ellwoods-Empire.jpg;;P13;7;3
+8;00316/3/CLEG;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Ellwood’s Gold"" ";Pokrój kolumnowy, gęsty, średnia siła wzrostu, pędy igiełkowe, barwa złota do jasnozielonej.;zdjcia\Cham.laws.Ellwods-Gold.jpg;;P13;7;3
+9;00316/3/CLER;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Erecta Viridis"" ";Forma kolumnowa, zwarta, wzrost średni, barwa igieł zielona.;;;P13;7;3
+10;00316/3/CLF;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Forsteckensis"" ";Pokrój kulisty, zwarty, młode przyrosty krótkie, po 10 latach osiąga wysokość ok. 40 centymetrów, igły o barwie ciemnoszarej.;;;P13;7;3
+11;00316/3/CLG;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Globe"" ";Pokrój kulisty, zwarty, pędy przewisające, wachlarzowate, barwa igieł niebieskozielona.;;;P13;7;3
+12;00316/3/CLGO;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Golden King"" ";Pokrój stożkowy, szeroki, igły o intensywnie żółtym zabarwieniu, wzrost silny, pędy silniej przewisające niż u „Golden Wonder”.;;;P13;7;3
+13;00316/3/CIGW;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Golden Wonder"" ";Pokrój stożkowy, igły o intensywnie złotym zabarwieniu, wzrost silny, pędy przewisające.;;;P13;7;3
+14;00316/3/CII;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Ivonne"" ";Nowość, odmiana o pokroju stożkowym, wzrost silny, pędy wzniesione do góry, wałeczkowate, barwa żółta.;;;P13;7;3
+15;00316/3/CIKS;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Konijns Silver"" ";Odmiana o pokroju stożkowym, pędy lekko przewisające z kremowymi przebarwieniami, średnia siła wzrostu.;;;P13;7;3
+16;00316/3/CIMN;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Mini Nova"" ";Nowość, forma kulista, wzrost wolny, dorasta do ok. 50-70 cm wysokości, łuski o żółtej barwie.;;;P13;7;3
+17;00316/3/CIMG;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Minima Glauca"" ";Ciekawa odmiana o wolnym wzroście, forma szerokostożkowa, łuski niebieskie.;;;P13;7;3
+18;00316/3/CIP;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Parsons"" ";Nowość, odmiana o średniej sile wzrostu, pokrój kulisty, regularny, pędy przewisające, barwa zielonoszara.;;;P13;7;3
+19;00316/3/CIPB;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Pembury Blue"" ";Pokrój stożkowy, średnia siła wzrostu, wyjątkowo mocne, jasnoniebieskie wybarwienie łusek.;;;P13;7;3
+20;00316/3/CIPA;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Pygmaea Argentea"" ";Odmiana wolnorosnąca, forma szerokostożkowa, łuski szaroniebieskie, szczyty pędów o kremowej barwie.;;;P13;7;3
+21;00316/3/CISW;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Snow White"" ";Pokrój kolumnowy, wąski, pędy z delikatnymi igłami o barwie stalowoniebieskiej, wiosenne przyrosty kremowe.;;;P13;7;3
+22;00316/3/CIST;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Spring Time"" ";Nowość, odmiana o pokroju kolumnowym, pędy z delikatnymi igłami o barwie oliwkowożółtej.;;;P13;7;3
+23;00316/3/CISS;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Summer Snow"" ";Nowość, odmiana o pokroju stożkowym, pędy lekko przewisające o szarej barwie, młode przyrosty o intensywnie kremowobiałej barwie, kolor ten długo utrzymuje się na roślinie.;;;P13;7;3
+24;00316/3/CIS;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Sunkist"" ";Odmiana o pokroju początkowo kulistym, później pokrój szerokostożkowy, wzrost wolny, pędy przewisające, barwa żółta.;;;P13;7;3
+25;00316/3/CITC;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Tharandtensis Caesia"" ";Odmiana o pokroju kopulastym, bardzo zwarta budowa, wzrost wolny, odmiana bardzo rzadko spotykana w produkcji, barwa stalowo zielona.;;;P13;7;3
+26;00316/3/CIVPB;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Van Pets Blue"" ";Odmiana kolumnowa, wąska, wzrost szybki, łuski o mocnej niebieskiej barwie, pędy wzniesione.;;;P13;7;3
+27;00316/3/CIWS;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""White Spot"" ";Forma wąskostożkowa, barwa łusek jasnoniebieska, końce młodych przyrostów posiadają kremowe przebarwienia, bardzo dobra odmiana żywopłotowa.;;;P13;7;3
+28;00316/3/CIW;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Witzeliana"" ";Pokrój wąskokolumnowy, gęsty, średnia siła wzrostu, barwa jasnozielona, po 10 latach dorasta do ok. 1,3 metra wysokości.;;;P13;7;3
+29;00316/3/CIYT;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Yellow Transparent"" ";Forma kolumnowa, wzrost średniosilny, barwa igieł żółtokremowa.;;;P13;7;3
+30;00316/3/CIZ;;Cyprysik Lawsona ;Cyprysik Lawsona ;N;"Chamaecyparis lawsoniana ""Złotówka"" ";Nowość, odmiana o pokroju stożkowym, bardzo zwartym, barwa żółta, średnia siła wzrostu.;;;P13;7;3
+31;00316/3/COC;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Coralliformis"" ";Pokrój stożkowy, nieregularny, wzrost wolny, pędy wałeczkowe, mocno pokręcone.;;;P13;7;3
+32;00316/3/COCr;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;N;"Chamaecyparis obtusa ""Crippsii"" ";Pokrój szerokostożkowy, luźny, łuski o intensywnie złotej barwie, tempo wzrostu silne.;;;P13;7;3
+33;00316/3/COD;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Dilatush"" ";Odmiana o pokroju nieregularnym, pędy podobne do liści paproci, barwa łusek intensywnie zielona, wzrost wolny.;;;P13;7;3
+34;00316/3/CODr;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Draht"" ";Pokrój kolumnowy, pędy wałeczkowate, barwa intensywnie zielona.;;;P13;7;3
+35;00339/3/COF;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Filicoides"" ";Odmiana o pokroju stożkowym, luźnym, pędy podobne do liści paproci, barwa łusek intensywnie zielona.;;;P13;7;3
+36;00316/3/COGB;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Gimborns Beauty"" ";Pokrój nieregularny, stożkowy, średnia siła wzrostu, na roślinie występują łuski i igły, barwa niebieska.;;;P13;7;3
+37;00316/3/COG;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Gitte"" ";Nowość, odmiana wolnorosnąca, pędy wałeczkowe,dość grube, poskręcane podobnie jak u odmiany Tsatsumi. Barwa żółta, pokrój kulisty, nieregularny.;;;P13;7;3
+38;00316/3/COGr;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;N;"Chamaecyparis obtusa ""Gracilis"" ";Pokrój nieregularny, stożkowy, średnia siła wzrostu, barwa łusek zielona.;;;P13;7;3
+39;00316/3/COGA;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;N;"Chamaecyparis obtusa ""Gracilis Aurea"" ";Odmiana o pokroju stożkowym, nieregularnym, luźnym, łuski o barwie żółtej, wzrost wolny.;;;P13;7;3
+40;00316/3/COK;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Kamarachiba"" ";Pokrój zwarty, spłaszczony, niski, pędy lekko przewisające, złotomiedziane wybarwienie łusek.;;;P13;7;3
+41;00316/3/COKe;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Kerdalo"" ";Nowość, odmiana o pokroju kulistym, pędy lekko przewisające, barwa żółta, średnia siła wzrostu.;;;P13;7;3
+42;00316/3/COSS;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Safron Spray"" ";Forma nieregularna, kopulasta, pędy z zielonymi igłami, roślina pokryta drobnymi żółtymi plamkami.;;;P13;7;3
+43;00316/3/COSF;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Snow Flake"" ";Forma nieregularna, kopulasta, pędy z jasnozielonymi igłami, roślina pokryta drobnymi kremowymi plamkami.;;;P13;7;3
+44;00316/3/COS-H;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Suiroya - Hiba"" ";Pokrój stożkowy, nieregularny, barwa łusek ciemnozielona.;;;P13;7;3
+45;00316/3/COT;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Torulosa"" ";Pokrój stożkowy, nieregularny, pędy wałeczkowe, powykręcane, barwa soczystozielona, wzrost wolny.;;;P13;7;3
+46;00316/3/COTs;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;D;"Chamaecyparis obtusa ""Tsatsumi"" ";Wzrost wolny, nieregularny, pędy wałeczkowe poskręcane, barwa ciemnozielona.;;;P13;7;3
+47;00316/3/COTG;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;N;"Chamaecyparis obtusa ""Tsatsumi Gold"" ";Wzrost wolny, nieregularny, pędy wałeczkowe, poskręcane, żółta barwa łusek.;;;P13;7;3
+48;00316/3/COYaWV;;Cyprysik tępołuskowy ;Cyprysik tępołuskowy ;N;"Chamaecyparis obtusa ""Yellow and White Variegata"" ";Pokrój kulisty, dość luźny, pędy wałeczkowate o zielonej barwie z kremowymi przebarwieniami, wzrost wolny, dorasta do ok. 50 cm po 10 latach.;;;P13;7;3
+49;00316/3/CPBB;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Baby Blue"" ";Nowość, forma szerokostożkowa, zwarta, wzrost wolny, igły drobne, niebieskie, jest to karłowa mutacja odmiany ‘Bouleward’.;;;P13;7;3
+50;00316/3/CPBD;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Blue Dwarf"" ";Pokrój nieregularny, bardzo krępy, wzrost wolny, barwa ciemnoniebieska.;;;P13;7;3
+51;00316/3/CPB;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Bouleward"" ";Pokrój szerokostożkowy, igła delikatna o jasnoniebieskim wybarwieniu, średnia siła wzrostu.;;40-60;P13;7;3
+52;00316/3/CPCA;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Compressa Aurea"" ";Odmiana karłowa, kopulasta, gęsta, igły, łuski o barwie złotej.;;;P13;7;3
+53;00316/3/CPCT;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Curly Tops"" ";Nowość, forma szerokostożkowa, zwarta, wzrost wolny, pędy i igły mocno poskręcane o barwie jasnoniebieskiej.;;;P13;7;3
+54;00316/3/CPFAN;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Filifera Aurea Nana"" ";Pokrój szeroko stożkowy, pędy nitkowate o złotej barwie, wzrost wolny.;;;P13;7;3
+55;00316/3/CPFA;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Filifera Aureovariegata"" ";Forma kopulasta, pędy wałeczkowe z wieloma złotymi przebarwieniami.;;;P13;7;3
+56;00316/3/CPFN;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Filifera Nana"" ";Pokrój kopulasty, bardzo zwarty, pędy wydłużone, wałeczkowe o zielonej barwie łusek, wzrost bardzo wolny.;;;P13;7;3
+57;00316/3/CPF;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Flavescens"" ";Pokrój szerokostożkowy o intensywnie jasnożółtym wybarwieniu igieł.;;;P13;7;3
+58;00316/3/CPFl;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Fuiri-Tsukumo"" ";Pokrój kulisty, bardzo zwarty, wzrost wolny, barwa popielatobiała.;;;P13;7;3
+59;00316/3/CPGD;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Gold Dust"" ";Odmiana karłowa, forma kopulasta, łuski zielone, na całej roślinie znajdują sią żółte plamki.;;;P13;7;3
+60;00316/3/CPGM;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Golden Mop"" ";Karłowa odmiana cyprysika o pędach nitkowych, barwa łusek żółta.;;;P13;7;3
+61;00316/3/CPH-H;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Hime-Savara"" ";Bardzo wolno rosnąca odmiana o pokroju kopulastym, łuski ciemnozielone.;;;P13;7;3
+62;00316/3/CPJN;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Juniperoides Nana"" ";Forma nieregularna, wzrost wolny, igły krótkie, jasnozielonożółte, po 10 latach dorasta do ok. 50 cm wysokości.;;;P13;7;3
+63;00316/3/CPK;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Kristof"" ";"Odmiana o pokroju stożkowym, nieregularnym, posiada pędy młodociane (igiełkowe) tworzące ""pompony"" oraz łuski na długich nitkowatych pędach.";;;P13;7;3
+64;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Lombards"" ";Pokrój stożkowy, zwarty, igły delikatne o sinoniebieskiej barwie.;;;P13;7;3
+65;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;P;"Chamaecyparis pisifera ""Miko"" ";Odmiana karłowa, podobna do ‘Snow’, początkowo kulista w późniejszym czasie z wypiętrzającym się środkiem.;;30-50;P13;7;3
+66;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Nana"" ";Odmiana karłowa, zwarta, forma kopulasta, barwa ciemnozielona, po 10 latach osiąga ok. 15 cm wysokości.;;;P13;7;3
+67;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Nana Argenteovariegata"" ";Odmiana karłowa, kopulasta, łuski ciemnozielone z białymi cętkami.;;;P13;7;3
+68;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Nana Aurea"" ";Odmiana karłowa, zwarta, forma kopulasta, łuski wiosną lekko żółte, później jasnozielone, po 10 latach osiąga ok. 30 cm wysokości.;;;P13;7;3
+69;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Nana Aureovariegata"" ";Pokrój kopulasty, zwarty, wzrost bardzo wolny, pędy z żółtymi przebarwieniami.;;;P13;7;3
+70;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Parslori"" ";Odmiana karłowa o regularnej, kopulastej formie, wybarwienie ciemnozielone, wzrost bardzo wolny.;;;P13;7;3
+71;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Pygmea"" ";Forma karłowa, bardzo zwarta, wolniej rosnąca od odmiany ‘Nana’, barwa ciemnozielona, po 10 latach dorasta do ok. 30 cm wysokości.;;;P13;7;3
+72;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Rogersi"" ";Odmiana wolnorosnąca, o pokroju szerokostożkowym, barwa igieł żółtosiarkowa.;;;P13;7;3
+73;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Silver Lode"" ";Karłowa odmiana o pokroju poduchowatym, pędy pokryte drobnymi białymi plamkami.;;;P13;7;3
+74;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;P;"Chamaecyparis pisifera ""Snow"" ";Pokrój kulisty, bardzo zwarty, wzrost karłowy, wybarwienie białozielone.;;30-50;P13;7;3
+75;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Spaan’s Cannonball"" ";Forma nieregularnie kulista, wolnorosnąca, dość zwarta, igły delikatne, złote i jasnozielone, po 10 latach dorasta do ok. 50 cm wysokości.;;;P13;7;3
+76;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Squarrosa Aurea Nana"" ";Pokrój szerokostożkowy, raczej zwarty, pędy wydłużone, lekko przewisające, igły delikatne o barwie złotej.;;;P13;7;3
+77;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Squarrosa Sulphurea"" ";Pokrój stożkowy, zwarty, siarkowożółte zabarwienie młodych przyrostów.;;;P13;7;3
+78;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""Sungold"" ";Forma gniazdowa, niska, pędy wałeczkowe, długie o złotym wybarwieniu.;;;P13;7;3
+79;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""True Blue"" ";Nowość,odmiana o pokroju szerokostożkowym, wzrost dość wolny, pędy z długimi, lekko skręconymi niebieskimi igłami.;;;P13;7;3
+80;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;N;"Chamaecyparis pisifera ""Wawel"" ";Nowość, Polska odmiana, wyselekcjonowana w Krakowie przez dr. Murasa pokrój kopulasty, bardzo zwarty, pędy nitkowate, barwa żółta.;;;P13;7;3
+81;00316/3/;;Cyprysik groszkowy ;Cyprysik groszkowy ;D;"Chamaecyparis pisifera ""White Beauty"" ";Odmiana o średniej sile wzrostu, pokrój krzaczasty, zwarty, łuski zielone z delikatnymi białymi plamkami, wiosenne przyrosty o intensywnej jasnokremowej barwie.;;;P13;7;3
+82;00316/3/;;"Cyprysik
+ żywotnikowy ";"Cyprysik
+ żywotnikowy ";N;"Chamaecyparis thyoides ""Compressa"" ";Forma nieregularna, bardzo zwarta, igły delikatne zielononiebieskie, gęsto osadzone na pędach, wzrost wolny.;;;P13;7;3
+83;00316/3/;;"Cyprysik
+ żywotnikowy ";"Cyprysik
+ żywotnikowy ";N;"Chamaecyparis thyoides ""Rubicon"" ";Forma kolumnowa, wzrost wolny, igły delikatne, zielone, zimą fioletowe.;;;P13;7;3
+84;00316/3/;;"Cyprysik
+ żywotnikowy ";"Cyprysik
+ żywotnikowy ";N;"Chamaecyparis thyoides ""Top Point"" ";Nowość, forma stożkowa, wzrost wolny, igły zielone, barwa utrzymuje się cały rok.;;;P13;7;3
+85;00316/3/;;" Kryptomeria
+ japońska  ";" Kryptomeria
+ japońska  ";N;"Cryptomeria japonica ""Compressa"" ";Odmiana karłowa, wzrost bardzo wolny, pokrój kulisty, igły zielone.;;;P13;7;3
+86;00316/3/;;" Kryptomeria
+ japońska  ";" Kryptomeria
+ japońska  ";N;"Cryptomeria japonica ""Vilmorin Gold"" ";Szydlica o pokroju kulistym, wzrost bardzo wolny, igły żółte.;;;P13;7;3
+87;00316/3/;;" Jałowiec
+ chiński  ";" Jałowiec
+ chiński  ";N;"Juniperus chinensis ""Blue Alps"" ";Pokrój krzaczasty, dość zwarty, igły kłujące o barwie srebrzystoniebieskiej.;;;P13;7;3
+88;00316/3/;;" Jałowiec
+ chiński  ";" Jałowiec
+ chiński  ";N;"Juniperus chinensis ""Izabelin"" ";Nowość, odmiana o pokroju krzaczastym, barwa zielona na roślinie dużo kremowych przebarwień, wzrost dość silny.;;;P13;7;3
+89;00316/3/;;" Jałowiec
+ chiński  ";" Jałowiec
+ chiński  ";N;"Juniperus chinensis ""Kuriwao Gold"" ";Pokrój kolumnowy, dość szeroki, wzrost silny, igły o barwie złotozielonej.;;;P13;7;3
+90;00316/3/;;" Jałowiec
+ chiński  ";" Jałowiec
+ chiński  ";D;"Juniperus chinensis ""Obelisk"" ";Pokrój stożkowy, igły intensywnie szaroniebieskie, dobra na żywopłoty.;;;P13;7;3
+91;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Arnold"" ";Pokrój wąskokolumnowy, igły o barwie szarozielonej.;;;P13;7;3
+92;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";P;"Juniperus communis ""Effusa"" ";Odmiana płożąca, dość wolno rosnąca, igła delikatna o barwie zielonej.;;5-20;P13;7;3
+93;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Gold Cone"" ";Pokrój kolumnowy, zwarty, igły jasnozielone, młode przyrosty jasnożółte.;;;P13;7;3
+94;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Goldschatz"" ";Nowość, Odmiana o pokroju płożącym, wysokość ok. 20-30 cm średnica 100-130 cm, średnia siła wzrostu, barwa igieł żółta.;;;P13;7;3
+95;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Hibernica"" ";Pokrój kolumnowy, bardzo zwarty, igły kłujące o barwie stalowozielonej, wzrost średniosilny, po 10 latach osiąga ok. 1.50 metra.;;;P13;7;3
+96;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";D;"Juniperus communis ""Hornibrookii"" ";Odmiana płożąca, niska, gęsta, silnie rosnąca, igły niebieskozielone.;;5-30;P13;7;3
+97;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Hornibrookii Gold"" ";Nowość, odmiana o pokroju płożącym, igły krótkie o barwie żółtej do jasnozielonej, średnia siła wzrostu.;;;P13;7;3
+98;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Mayer"" ";Pokrój kolumnowy, igły dość długie o srebrzysto-zielonej barwie.;;;P13;7;3
+99;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Sentinel"" ";Pokrój kolumnowy, bardzo zwarty, wąski, średnia siła wzrostu.;;;P13;7;3
+100;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Suecica Aurea"" ";Odmiana kolumnowa, zwarta o intensywnie złotej barwie igieł, wzrost wolny, po 10 latach osiąga ok. 80-90 cm wysokości.;;;P13;7;3
+101;00316/3/;;" Jałowiec
+ pospolity  ";" Jałowiec
+ pospolity  ";N;"Juniperus communis ""Suecica Nana"" ";Pokrój kolumnowy, wąski, wzrost dość wolny, igły stalowozielone.;;;P13;7;3
+102;00316/3/;;"Jałowiec
+ nadbrzeżny  ";"Jałowiec
+ nadbrzeżny  ";N;"Juniperus conferta ""Blue Pacific"" ";Pokrój płożący, wzrost silny, igły długie, kłujące, zielonosrebrzyste.;;;P13;7;3
+103;00316/3/;;"Jałowiec
+ nadbrzeżny  ";"Jałowiec
+ nadbrzeżny  ";N;"Juniperus conferta ""Schlager"" ";Odmiana płożąca, zwarta, igły długie, kłujące, barwa zielonoszara, średnie tempo wzrostu.;;;P13;7;3
+104;00316/3/;;" Jałowiec
+ dawurski ";" Jałowiec
+ dawurski ";N;"Juniperus davurica ""Avasi"" ";Nowość, węgierska odmiana, płożąca, niska, wzrost silny, barwa igieł zielononiebieska.;;;P13;7;3
+105;00316/3/;;" Jałowiec
+ dawurski ";" Jałowiec
+ dawurski ";D;"Juniperus davurica ""Expansa Variegata"" ";Odmiana płożąca, dorasta do 40 cm wysokości, posiada białe przebarwienia.;;;P13;7;3
+106;00316/3/;;" Jałowiec
+ dawurski ";" Jałowiec
+ dawurski ";N;"Juniperus davurica ""Leningrad"" ";Nowość, odmiana płożąca, gęsta, średnia siła wzrostu, igły długie, delikatne, miękkie, zielone.;;;P13;7;3
+107;00316/3/;;" Jałowiec
+ dawurski ";" Jałowiec
+ dawurski ";N;"Juniperus davurica ""Parsonsi"" ";Odmiana płożąca, gęsta, pędy młodociane z igłami i wałeczkowe, barwa igieł i łusek zielonoszara, wzrost silny.;;;P13;7;3
+108;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Alpina"" ";Dość nietypowy jałowiec płożący, pędy wyrastają do ok. 70-80 cm wysokości igły o barwie niebieskoszarej.;;;P13;7;3
+109;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Andora Compacta Variegata"" ";Forma rozłożysta, igły przylegają do pędów, posiada kremowe przebarwienia.;;;P13;7;3
+110;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Bar Harbor"" ";Odmiana płożąca, wzrost silny, wysokość do ok. 15 cm, igły niebieskozielone.;;;P13;7;3
+111;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Blue Chip"" ";Odmiana płożąca, pędy lekko wzniesione, barwa igieł niebieska.;;;P13;7;3
+112;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Blue Moon"" ";Nowość, odmiana płożąca, pędy lekko wzniesione, barwa igieł intensywnie niebieska, średnia siła wzrostu.;;;P13;7;3
+113;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Coast of Maine"" ";Odmiana płożąca, wysokość ok. 40-50 cm, wzrost silny, barwa łusek srebrzystoszara.;;;P13;7;3
+114;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Douglasii"" ";Odmiana płożąca, pędy lekko wzniesione, barwa niebieska.;;;P13;7;3
+115;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Glacier"" ";Nowość, odmiana płożąca, niska, zwarta, barwa łusek jasnoniebieska.;;5-20;P13;7;3
+116;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Golden Carpet"" ";Nowość, odmiana ścieląca, niska, zwarta, barwa od złotej do jasnozielonej.;;5-20;P13;7;3
+117;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Grey Pearl"" ";Odmiana wolnorosnąca, igły niebieskie, pędy wznoszą się do ok. 20 cm wysokości.;;;P13;7;3
+118;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Hughes"" ";Odmiana płożąca, zwarta, wzrost silny, igły o barwie stalowej.;;;P13;7;3
+119;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Jade River"" ";Odmiana silnie rosnąca, igły o barwie zielonostalowej, zimą z fioletowym odcieniem.;;;P13;7;3
+120;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Lime Glow"" ";Nowość, odmiana płożąca, zwarta, dorasta do ok. 40-50 cm wysokości i 1 metra średnicy, barwa igieł intensywnie żółta.;;;P13;7;3
+121;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Montana"" ";Odmiana ścieląca, niska, dorasta do ok. 10 cm wysokości, pędy wałeczkowe o barwie niebieskiej.;;;P13;7;3
+122;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Plumosa"" ";Pędy wznoszą się do 50 cm, wzrost dość silny, barwa zielona, zimą z purpurowym nalotem, po 10 latach ok. 1 m średnicy.;;;P13;7;3
+123;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Prince of Wales"" ";Odmiana niska, dywanowa, gęsta, igły ciemnozielone.;;;P13;7;3
+124;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Prostrata"" ";Odmiana niska, całkowicie ścieląca się po ziemi, gęsta, igły ciemnozielone, wzrost silny.;;;P13;7;3
+125;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Variegata"" ";Odmiana silnie rosnąca, część przyrostów posiada kremowe przebarwienia.;;;P13;7;3
+126;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";D;"Juniperus horizontalis ""Wiltoni"" ";Odmiana niska, dywanowa, gęsta, igły srebrzystoniebieskie.;;5-20;P13;7;3
+127;00316/3/;;"Jałowiec
+ płożący ";"Jałowiec
+ płożący ";N;"Juniperus horizontalis ""Yukon Belle"" ";Odmiana o średniej sile wzrostu, wysokość ok. 15 cm, barwa jasnoniebieska.;;;P13;7;3
+128;00316/3/;;"Jałowiec
+ rozesłany ";"Jałowiec
+ rozesłany ";D;"Juniperus procumbens ""Kishiogima"" ";Nowość, Odmiana niska, ścieląca, wzrost silny, barwa żółta.;;;P13;7;3
+129;00316/3/;;"Jałowiec
+ sabiński ";"Jałowiec
+ sabiński ";N;"Juniperus sabina ""Blue Danube"" ";Rozłożysty krzew dorastający do ok. 1 m  wysokości, igły szaroniebieskie.;;;P13;7;3
+130;00316/3/;;"Jałowiec
+ sabiński ";"Jałowiec
+ sabiński ";N;"Juniperus sabina ""Broadmoor"" ";Odmiana niska, płożąca, igły o soczystozielonej barwie.;;;P13;7;3
+131;00316/3/;;"Jałowiec
+ sabiński ";"Jałowiec
+ sabiński ";N;"Juniperus sabina ""Rockery Gem"" ";Odmiana niska, płożąca, wzrost silny, dorasta do ok. 50 cm wysokości, igły posiadają szarozieloną barwę.;;;P13;7;3
+132;00316/3/;;"Jałowiec
+ sabiński ";"Jałowiec
+ sabiński ";N;"Juniperus sabina ""Tamariscifolia"" ";Odmiana rozłożysta, gęsta, środek krzewu wypiętrza się, pędy wyrastają poziomo, igły o intensywnie zielonej barwie.;;;P13;7;3
+133;00316/3/;;"Jałowiec
+ sabiński ";"Jałowiec
+ sabiński ";D;"Juniperus sabina ""Variegata"" ";Forma krzaczasta z kremowymi plamkami, dorasta do ok.0,5 m wysokości i 1 m szerokości.;;;P13;7;3
+134;00316/3/;;" Jałowiec
+ skalny  ";" Jałowiec
+ skalny  ";N;"Juniperus scopulorum ""Blue Arrow"" ";Odmiana wąskokolumnowa, wzrost dość silny, barwa igieł ciemnoniebieska.;;;P13;7;3
+135;00316/3/;;" Jałowiec
+ skalny  ";" Jałowiec
+ skalny  ";N;"Juniperus scopulorum ""Skyrocket"" ";Pokrój wąskokolumnowy, wzrost silny, barwa stalowoniebieska.;;;P13;7;3
+136;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";D;"Juniperus squamata ""Blue Carpet"" ";Odmiana ścieląca o intensywnie niebieskim zabarwieniu igieł, środek rośliny z czasem wypiętrza się.;;5-20;P13;7;3
+137;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";N;"Juniperus squamata ""Blue Star"" ";Forma kopulasta, karłowa, zwarta, igły o intensywnie niebieskim zabarwieniu.;;;P13;7;3
+138;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";D;"Juniperus squamata ""Blue Swede"" ";Pokrój krzaczasty, bardzo zwarty, wzrost wolny, pędy krótkie z gęsto osadzonymi igłami o barwie niebieskiej.;;;P13;7;3
+139;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";D;"Juniperus squamata ""Dream Joy"" ";"Nowość, odmiana o pokroju krzaczastym, zwartym, wzrost wolny, pochodzi od odmiany ""Holger"", łuski niebieskie, młode przyrosty kremowożółte.";;;P13;7;3
+140;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";N;"Juniperus squamata ""Gold Tip"" ";Nowość, odmiana o pokroju krzaczastym, średnia siła wzrostu, łuski szaroniebieskie, młode przyrosty kremowożółte.;;;P13;7;3
+141;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";D;"Juniperus squamata ""Holger"" ";Pokrój krzaczasty, młode przyrosty siarkowożółte, później niebieskie.;;;P13;7;3
+142;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";N;"Juniperus squamata ""Loderi"" ";Pokrój stożkowy, bardzo zwarty, wzrost wolny, barwa stalowoniebieska, po 10 latach osiąga ok. 50 cm wysokości.;;;P13;7;3
+143;00316/3/;;"Jałowiec
+ łuskowy  ";"Jałowiec
+ łuskowy  ";N;"Juniperus squamata ""Mayeri"" ";Pokrój krzaczasto-kolumnowy, zwarty, igły intensywnie niebieskie.;;;P13;7;3
+144;00316/3/;;"Jałowiec
+ wirginijski ";"Jałowiec
+ wirginijski ";N;"Juniperus virginiana ""Grey Owl"" ";Pokrój krzaczasty, gęsty, odmiana silnie rosnąca, barwa stalowoniebieska.;;;P13;7;3
+145;00316/3/;;"Jałowiec
+ wirginijski ";"Jałowiec
+ wirginijski ";D;"Juniperus virginiana ""Tripartita"" ";Forma krzaczasta, niska, zwarta, pędy wyrastają poziomo, igły szarozielone.;;;P13;7;3
+146;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Blue and Gold"" ";Forma krzaczasta, wzrost silny, barwa niebieska ze złotymi przebarwieniami.;;;P13;7;3
+147;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Gold Coast"" ";Odmiana krzaczasta, dość niska i zwarta, barwa ciemnożółta.;;;P13;7;3
+148;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Gold Star"" ";Pokrój krzaczasty, zwarty, niski, młode przyrosty intensywnie złote, średnie tempo wrzostu.;;;P13;7;3
+149;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";N;"Juniperus x media ""Golden Joy"" ";Odmiana krzaczasta, niska i zwarta, barwa żółta, wzrost wolny.;;;P13;7;3
+150;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";N;"Juniperus x media ""Golden Saucer"" ";Pokrój krzaczasty, igły o barwie intensywnie złotej, po 10 latach dorasta do ok. 60 cm wysokości.;;;P13;7;3
+151;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";N;"Juniperus x media ""Goldkissen"" ";Odmiana krzaczasta, niska, wzrost średni, żółtozielona barwa igieł.;;;P13;7;3
+152;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";N;"Juniperus x media ""King of Spring"" ";Nowość, forma krzaczasta, niska, intensywnie jasnożółte wybarwienie wiosenne.;;;P13;7;3
+153;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Mint Julep"" ";Pokrój krzaczasty, zwarty, posiada ładne, zielone wybarwienie igieł.;;;P13;7;3
+154;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Mordigan Gold"" ";Pokrój krzaczasty, spłaszczony, igły o barwie żółtej i żółtozielonej, wzrost średni.;;;P13;7;3
+155;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Old Gold"" ";Pokrój krzaczasty, zwarty, pędy wałeczkowe oraz z igłami, barwa ciemnozłocista.;;;P13;7;3
+156;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Pfitzeriana Aurea"" ";Pokrój krzaczasty, dość zwarty, barwa od jasnozielonej do złotej.;;;P13;7;3
+157;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Pfitzeriana Compacta"" ";Pokrój krzaczasty, zwarty, barwa igieł zielononiebieska, średnia siła wzrostu.;;;P13;7;3
+158;00316/3/;;" Jałowiec
+ pośredni  ";" Jałowiec
+ pośredni  ";D;"Juniperus x media ""Saybrook Gold"" ";Pokrój krzaczasty, dość zwarty, barwa intensywnie żółta, średnie tempo wzrostu.;;;P13;7;3
+159;00316/3/;;Mikrobiota syberyjska ;Mikrobiota syberyjska ;N;"Microbiota decussata """" ";Ciekawy, rozłożysty krzew, dorastający do 0.5 m wysokości, zimą mocno rudzieje.;;;P13;7;3
+160;00316/3/;;Mikrobiota syberyjska ;Mikrobiota syberyjska ;N;"Microbiota decussata ""Gold Spot"" ";Nowość, pokrój krzaczasty, niski, część pędów posiada kremowe przebarwienia, odmiana o średniej sile wzrostu.;;;P13;7;3
+161;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""A.A.V.A"" ";"Nowość z Belgi,pełna nazwa to : ""Assosiation Arboretum Vallee Aubonne"" odmiana o pokroju kulistym, nieregularnym, wzrost bardzo wolny ok. 2-3 cm rocznie, igły krótkie o barwie zielonej.";;;P13;7;3
+162;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Barryi"" ";Karłowa odmiana, pokrój kopulasty w starszym wieku wyrasta w stożek.;;;P13;7;3
+163;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Compacta"" ";Odmiana szerokostożkowa, bardzo zwarta forma świerka pospolitego, wzrost wolny, igły ciemnozielone.;;;P13;7;3
+164;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Dan’s Dwarf"" ";Nowość, odmiana o pokroju kopulastym, zwartym, igła krótka o ciemnozielonej barwie, wzrost bardzo wolny.;;;P13;7;3
+165;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Gregoryana"" ";Bardzo wolno rosnący świerk o pokroju kopulastym, igły zielone.;;;P13;7;3
+166;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Hystrix"" ";Odmiana karłowa, pokrój początkowo kopulasty później stożkowy.;;;P13;7;3
+167;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Luua"" ";Nowość z Estonii, odmiana o pokroju szerokostożkowym, zwartym, igła krótka o ciemnozielonej barwie, wzrost wolny ok. 3-4 cm na rok.;;;P13;7;3
+168;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Maxwellii"" ";Odmiana wolnorosnąca, zwarta, szerokostożkowa, igły dość długie, soczystozielone.;;;P13;7;3
+169;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Nidiformis"" ";Forma płaska, regularna, bez przewodnika, igły krótkie, ciemnozielone, po 10 latach osiąga ok. 30-40 cm wysokości.;;;P13;7;3
+170;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Ohlendorfii"" ";Odmiana początkowo o pokroju kopulastym, później szerokostożkowa, zwarta, wolnorosnąca, igły ciemnozielone.;;;P13;7;3
+171;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Pumila Glauca"" ";Pokrój kulisty, spłaszczony, wzrost wolny, barwa igieł sinozielona.;;;P13;7;3
+172;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Pumila Nigra"" ";Odmiana karłowa, kulistostożkowa, igły bardzo ciemnozielone.;;;P13;7;3
+173;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Tabuliformis"" ";Podobny do ‘Nidiformis’, jednak zdecydowanie bardziej spłaszczony.;;;P13;7;3
+174;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Tompa"" ";Pokrój szerokostożkowy, bardzo zwarty, igła zielona, wzrost wolny.;;;P13;7;3
+175;00316/3/;;Świerk pospolity ;Świerk pospolity ;N;"Picea abies ""Veitchii"" ";Odmiana o pokroju regularnym, kulistym, wzrost wolny, igły kłujące, zielone.;;;P13;7;3
+176;00316/3/;;Świerk pospolity ;Świerk pospolity ;D;"Picea abies ""Will’s Zwerg"" ";Pokrój stożkowy, zwarty, igły krótkie, jasnozielone, wzrost średniosilny.;;;P13;7;3
+177;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Alberta Globe"" ";Karłowa odmiana, pokrój kulisty, barwa igieł zielona.;;;P13;7;3
+178;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Biesenthaler Frühling"" ";Odmiana o pokroju stożkowym, wąskim, młode przyrosty o żółtej barwie.;;;P13;7;3
+179;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Conica"" ";Roślina formowana w kulę na pniu ok. 60 cm wysokości, korona o średnicy ok. 25-35 cm.;;;P13;7;3
+180;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Conica Compacta"" ";Odmiana karłowa o pokroju stożkowym, bardzo zwarta, igły o barwie ciemnozielonej, przyrost roczny ok. 2-3 cm.;;;P13;7;3
+181;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Conica Sport"" ";Odmiana karłowa o pokroju stożkowym, bardzo zwarta, igły grube, krótkie o barwie ciemnozielonej, przyrost roczny do ok. 2 cm.;;;P13;7;3
+182;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Cupido"" ";Wąskostożkowa, bardzo wolno rosnąca odmiana świerka białego, igły krótkie, ciemnozielone.;;;P13;7;3
+183;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Daisy’s White"" ";Pokrój jak ‘Conica’, przyrosty wiosenne złotokremowe, później zielenieją.;;;P13;7;3
+184;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Echiniformis"" ";Niska, gęsta, kopulasta odmiana o krótkich, szaroniebieskich igłach.;;;P13;7;3
+185;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Jalako Gold"" ";Nowość, odmiana o pokroju kulistym, bardzo zwartym, trochę nieregularnym, igły o barwie kremowej podczas przyrostu.;;;P13;7;3
+186;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Liliput"" ";Kolejna karłowa odmiana świerka o pokroju wąskostożkowym, igły krótkie, grube, ciemnozielone.;;;P13;7;3
+187;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Maigold"" ";Pokrój stożkowy, wzrost zbliżony do odmiany Conica, przyrosty wiosenne żółtokremowe, później zielenieją.;;;P13;7;3
+188;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Nana"" ";Pokrój kopulasty, przyrosty ok. 5 cm długości, barwa igieł ciemnoniebieska, odmiana podobna do ‘Echiniformis’, jednak silniej rosnąca.;;;P13;7;3
+189;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Piccolo"" ";Forma regularna, stożkowa, igły zielone, wzrost wolny, ok. 2-4 cm na rok.;;;P13;7;3
+190;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Pinochio"" ";Bardzo wolno rosnąca odmiana o pokroju wąskostożkowym, igły zielone.;;;P13;7;3
+191;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Pyramidalis Compacta"" ";Odmiana o pokroju kolumnowym, wąskim, wzrost ok. 20 cm rocznie, igły delikatne o barwie szaroniebieskiej.;;;P13;7;3
+192;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Rainbows End"" ";Pokrój i siła wzrostu jak w odmianie Conica, wiosenny przyrost o barwie zielonej, drugi przyrost, letni o barwie żółtej.;;;P13;7;3
+193;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Witch-s Broom"" ";Odmiana karłowa, pokrój kopulasty, nieregularny, podobny do Alberta Globe, igły zielone.;;;P13;7;3
+194;00316/3/;;Świerk biały ;Świerk biały ;N;"Picea glauca ""Zuckerhut"" ";Odmiana karłowa, wzrost ok. 2-4 cm rocznie, pokrój wąskostożkowy, regularny.;;;P13;7;3
+195;00316/3/;;Świerk serbski ;Świerk serbski ;N;"Picea omorica ""Karel"" ";Odmiana karłowa, pokrój kulisty, spłaszczony, igły o barwie niebieskozielonej, przyrost roczny 5-7 cm.;;;P13;7;3
+196;00316/3/;;Świerk kłujący ;Świerk kłujący ;N;"Picea pungens ""Sonia"" ";Selekt z naszej szkółki, wzrost karłowy, pokrój kopulasty, igły niebieskie.;;;P13;7;3
+197;00316/3/;;Cis pospolity ;Cis pospolity ;N;"Taxus baccata ""Amersfoort"" ";Bardzo wolno rosnący krzew o luźnej budowie, po 10 latach osiąga ok. 50 cm wysokości, igły jajowate, krótkie 5-7 mm.;;;P13;7;3
+198;00316/3/;;Cis pospolity ;Cis pospolity ;N;"Taxus baccata ""Dovastoniana"" ";Forma krzaczasta, luźna, barwa ciemnozielona, dorasta do 2 metrów wysokości.;;;P13;7;3
+199;00316/3/;;Cis pospolity ;Cis pospolity ;N;"Taxus baccata ""Ellegantissima"" ";Odmiana krzaczasta, wzrost bujny, igły żółte, później z białym nalotem.;;;P13;7;3
+200;00316/3/;;Cis pospolity ;Cis pospolity ;N;"Taxus baccata ""Goud Elsje"" ";Odmiana pokładająca się, dorasta do ok. 50-70 cm wysokości, igły żółtozielone, wiosną i latem mocniejsze żółte wybarwienie.;;;P13;7;3
+201;00316/3/;;Cis pospolity ;Cis pospolity ;N;"Taxus baccata ""Summergold"" ";Pokrój krzaczasty, igły latem żółte, zimą jasnozielone, dorasta do ok. 60-80 cm wysokości.;;;P13;7;3
+202;00316/3/;;Cis pośredni ;Cis pośredni ;N;"Taxus media ""Hicksii"" ";Forma kolumnowa, dość silnie rosnąca, igły długie o ciemnozielonej barwie, dobra na żywopłoty.;;;P13;7;3
+203;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Abel Twa"" ";Nowość, odmiana o pokroju szerokostożkowym, wzrost wolny, pędy wałeczkowe, barwa zielonoszara.;;;P13;7;3
+204;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Amber Glow"" ";Nowość, forma kulista, wzrost wolny, barwa bursztynowożółta.;;;P13;7;3
+205;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Ania"" ";Nowość, Odmiana o pokroju kolumnowym, wąskojajowatym, średnia siła wzrostu, barwa zielona jednak wszystkie końce pędów mają barwę kremową.;;;P13;7;3
+206;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Anniek ®"" ";Nowość, pokrój kulisty, regularny, igły delikatne, miękkie, barwa żółta. W cenę rośliny ( sadzonki ) wliczona jest opłata licencyjna oraz kolorowa etykieta.;;;P13;7;3
+207;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Aurea Kordusi"" ";Odmiana stożkowa, silnie rosnąca, barwa łusek ciemnożółta.;;;P13;7;3
+208;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Aureospicata"" ";Odmiana o pokroju kolumnowym, silny wzrost, złote wybarwienie na końcach pędów, idealna na żywopłot.;;;P13;7;3
+209;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Aurescens"" ";Forma wąskostożkowa, zwarta, barwa jasnożółta.;;;P13;7;3
+210;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;P;"Thuja occidentalis ""Brabant"" ";Odmiana kolumnowa, silnie rosnąca, barwa intensywnie zielona, idealna na żywopłoty.;;30-50;P11;5;3
+211;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Champion"" ";Odmiana o średnim tempie wzrostu, forma kulista, zwarta, barwa matowozielona.;;;P13;7;3
+212;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Cloth of Gold"" ";Pokrój kopulasty, wzrost raczej wolny, przewaga pędów młodocianych, igły złotopomarańczowe.;;;P13;7;3
+213;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Columna"" ";Forma kolumnowa, barwa ciemnozielona, odmiana dobra na żywopłoty.;;;P13;7;3
+214;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Compacta"" ";Odmiana żywopłotowa, szorokokolumnowa, zwarta, łuski ciemnozielone.;;;P13;7;3
+215;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Coppergold"" ";Nowość, odmiana o pokroju stożkowym, wzrost wolny, pędy i łuski o barwie oliwkowożółtej.;;;P13;7;3
+216;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Danica"" ";Odmiana o pokroju kulistym, zwarta, ładne, żywozielone wybarwienie łusek.;;;P13;7;3
+217;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Danica Aurea"" ";Nowość, forma kulista, wzrost średni, rośnie szybciej i jest mniej zwarta od odmiany Danica, barwa jasnozielona.;;;P13;7;3
+218;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Dawid ®"" ";Nowość, pierwszy raz w ofertach !, bardzo obiecująca odmiana pochodząca od odmiany Danica, forma kulista, bardzo zwarta, regularna, wzrost wolny, barwa żółtooliwkowa utrzymuje się przez cały rok.;;;P13;7;3
+219;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Degroot-s Spire"" ";Nowość, Odmiana o bardzo zwartym, wąskostożkowym pokroju, wzrost wolny, barwa ciemnozielona.;;;P13;7;3
+220;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Europe Gold"" ";Odmiana wąskostożkowa, zwarta, wzrost silny, łuski złocistożółte, dobra na żywopłoty.;;;P13;7;3
+221;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Filiformis"" ";Ciekawa odmiana, wszystkie pędy nitkowe, mocno przewisające, zielone.;;;P13;7;3
+222;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Flevoland"" ";Odmiana o pokroju wąskostożkowym, bardzo zwartym, wzrost dość silny, barwa ciemnozielona.;;;P13;7;3
+223;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Globosa"" ";Pokrój kulisty, zwarty, dorasta do ok. 1 metra wysokości po 10 latach, barwa ciemnozielona.;;;P13;7;3
+224;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Globosa Aurea"" ";Odmiana kulista, zielonocytrynowe wybarwienie łusek, średnie tempo wzrostu, po 10 latach osiąga ok. 50-60 cm wysokości.;;;P13;7;3
+225;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Gold Pearl"" ";Nowość, pokrój kulisty, zwarty, końcówki pędów o intensywnym kremowym zabarwieniu, szczególnie w okresie wzrostu.;;;P13;7;3
+226;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Golden Brabant ®"" ";Odmiana kolumnowa, silnie rosnąca, barwa żółta, idealna na żywopłoty. W cenę sadzonki wliczona jest opłata licencyjna oraz kolorowa etykieta.;;;P13;7;3
+227;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Golden Globe"" ";Pokrój kulisty, barwa od złotej do jasnozielonej.;;;P13;7;3
+228;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Golden Smaragd ®Janed Gold (S)"" ";Pokrój i siła wzrostu jak u odmiany Smaragd, złota barwa łusek utrzymuje się przez cały rok. W cenę sadzonki wliczona jest opłata licencyjna oraz kolorowa etykieta.Sadzonka produkowana w multipalecie.;;;P13;7;3
+229;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Golden Tuffet"" ";Nowość, pokrój kopulasty, pędy wałeczkowe, lekko przewisające, barwa igieł ciemnożółta.;;20-35;P13;6;3
+230;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Hetty"" ";Odmiana o pokroju kolumnowym, wzrost silny, podobna do Brabant, barwa jasnozielona.;;;P13;7;3
+231;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Holmstrup"" ";Forma wąskostożkowa, bardzo zwarta, wzrost dość wolny, łuski zielone.;;;P13;7;3
+232;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Holmstrup Yellow"" ";Odmiana o pokroju stożkowym, zdecydowanie mniej zwarta niż odmiana ‘Holmstrup’, łuski o żółtopomarańczowej barwie.;;;P13;7;3
+233;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Hoseri"" ";Forma kulista o powolnym wzroście, po 10 latach osiąga ok. 30 cm wysokości, barwa ciemnozielona.;;;P13;7;3
+234;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Hovei"" ";Pokrój regularny, jajowaty, łuski ciemnozielone, wzrost średniosilny.;;;P13;7;3
+235;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Hubner"" ";Pokrój regularny, stożkowy, łuski ciemnozielone, średnie tempo wzrostu, świetna odmiana żywopłotowa.;;;P13;7;3
+236;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Jantar ®"" ";Nowość, pokrój kolumnowy, regularny, zwarty, barwa żółta. W cenę rośliny ( sadzonki ) wliczona jest opłata licencyjna oraz kolorowa etykieta.;;;P13;7;3
+237;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Konfetti"" ";Nowość, pokrój stożkowy, zwarty, barwa ciemnozielona z drobnymi kremowymi przebarwieniami, wzrost wolny.;;;P13;7;3
+238;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Litomysl"" ";Pokrój stożkowy, zwarty, wzrost raczej wolny, pędy z białokremowymi smugami.;;;P13;7;3
+239;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Little Champion"" ";Wzrost wolny, pokrój kulisty, nieregularny, łuski zielone.;;;P13;7;3
+240;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Little Dorrit"" ";Odmiana karłowa o pokroju kulistym, nieregularnym, barwa ciemnozielona.;;;P13;7;3
+241;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Little Gem"" ";Pokrój nieregularny, kopulasty, zwarty, wzrost wolny, po 10 latach osiąga ok. 30 cm wysokości, łuski zielone.;;;P13;7;3
+242;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Little Giant"" ";Nowość, forma regularnie kulista, barwa ciemnozielona, pędy mocne, dość grube. Po 10 latach dorasta do ok. 1 metra wysokości.;;;P13;7;3
+243;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Lutea"" ";Forma stożkowa, gęsta, młode przyrosty intensywnie złote, wzrost silny.;;;P13;7;3
+244;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Magdalena"" ";Nowość, odmiana pochodzi ze szkółki państwa Szmit, forma kulista, barwa żółta z kremowym upstrzeniem, średnia siła wzrostu.;;;P13;7;3
+245;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Maja"" ";Nowość, mutacja T.o.Micky. Selekt pochodzi z naszej szkółki. Forma stożkowa, bardzo zwarta, gęsta, wzrost wolny ok. 10-15 cm na rok, barwa ciemnozielona.;;;P13;7;3
+246;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Malonyana"" ";Pokrój wąskokolumnowy, barwa zielona, dobra żywopłotowa odmiana.;;;P13;7;3
+247;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Meinecke’s Zwerg"" ";Pokrój stożkowy, zwarty, wzrost wolny, często wielostożkowa, łuski zielone, na końcach pędów kremowe przebarwienia.;;;P13;7;3
+248;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Miky"" ";Forma piramidalna, zwarta, wzrost wolny, pędy ostro wzniesione do góry, łuski ciemnozielone.;;;P13;7;3
+249;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Mirjam ®"" ";Nowość, odmiana o zwartej kulistej formie i jasnozielonym wybarwieniu szczególnie w okresie wiosennym, wzrost wolny.W cenę rośliny ( sadzonki ) wliczona jest opłata licencyjna oraz kolorowa etykieta.;;;P13;7;3
+250;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Moloch"" ";Odmiana o pokroju stożkowym, szerokim, łuski wyjątkowo duże o barwie ciemnozielonej, wzrost średniosilny.;;;P13;7;3
+251;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;P;"Thuja occidentalis ""Mr. Bowling Ball"" ";Odmiana wolnorosnąca, forma kulista, na roślinie występują pędy młodociane i wałeczkowe, wybarwienie stalowozielone.;;30-40;P13;7;3
+252;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Parade"" ";Pokrój stożkowy, zwarty, wzrost silny, końce pędów w czasie przyrostu kremowe, odmiana żywopłotowa.;;;P13;7;3
+253;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Picadilly"" ";Odmiana o średniej sile wzrostu, pokrój stożkowy, zwarty, pędy krótkie o jasnozielonej barwie, młode przyrosty o kremowym zabarwieniu.;;40-60;P13;7;3
+254;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Pyramidalis Compacta"" ";Odmiana wąskostożkowa, bardzo zwarta, żywopłotowa, łuski ciemnozielone.;;;P13;7;3
+255;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Rain Pearl"" ";Pokrój szerokostożkowy, barwa złotozielona, końcówki pędów złote.;;40-60;P13;7;3
+256;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Recurva Nana"" ";Pokrój kulisty, gałązki krótkie z lekko skręconymi końcami, wzrost wolny.;;;P13;7;3
+257;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Rheingold"" ";Odmiana szerokostożkowa, przeważają pędy młodociane z delikatnymi igłami, barwa od złotej do pomarańczowozłotej.;;;P13;7;3
+258;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Salland"" ";Nowość, pokrój kolumnowy, wzrost silny, wszystkie cechy jak Brabant, barwa żółta.;;;P13;7;3
+259;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Selena"" ";Pokrój kulisty, zwarty, średnia siła wzrostu, barwa cytrynowa.;;;P13;7;3
+260;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Smaragd"" ";Forma stożkowa, bardzo gęsta, barwa ciemnozielona, odmiana żywopłotowa.;;40-60;P13;7;3
+261;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Smaragd Light"" ";Nowość, odmiana o wąskostożkowej formie, wzrost średni, młode przyrosty o kremowobiałej barwie, jasna barwa utrzymuje się na pedach przez cały rok.;;;P13;7;3
+262;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Smaragd Variegata"" ";Nowość, odmiana o stożkowej formie , wzrost średni, cała roślina pokryta jest drobnymi kremowymi plamkami.;;;P13;7;3
+263;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Smaragd Witbond"" ";Średnia siła wzrostu, pokrój regularny, stożkowy, wiosenne przyrosty kremowe, później zielenieją, końce pędów pozostają kremowo zabarwione.;;;P13;7;3
+264;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Spiralis"" ";Forma kolumnowa, wąska, zwarta, gałązki spiralnie osadzone na pędach, wzrost silny, kolor matowozielony.;;;P13;7;3
+265;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Stolwijk"" ";Pokrój stożkowy, gęsty, barwa jasnozielona z kremowymi przebarwieniami.;;;P13;7;3
+266;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Sunkist"" ";Pokrój stożkowy, wzrost średniosilny, ładne złotozielone wybarwienie łusek.;;;P13;7;3
+267;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Teddy"" ";Nowość, wzrost wolny, pokrój regularnie kulisty, gęsty, igły delikatne, stalowozielone.;;;P13;7;3
+268;00316/3/;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Tiny Tim"" ";Pokrój kulisty, później nieregularny, wzrost wolny, wybarwienie zielone.;;;P13;7;3
+269;00316/3/TOTT;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Tip Top"" ";Nowość, odmiana o pokroju szerokostożkowym, barwa jasnozielona, wzrost wolny.;;;P13;7;3
+270;00316/3/TOU;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Umbraculifera"" ";Pokrój szerokokulisty, później poduchowaty, ładne, żywozielone wybarwienie łusek, wzrost silny.;;;P13;7;3
+271;00316/3/tTOWag;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Wagneri"" ";Pokrój jajowaty, pędy wzniesione, roślina wielopniowa, barwa zielona.;;;P13;7;3
+272;00316/3/TOWai;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Waimar"" ";Pokrój stożkowy, zwarty, średnia siła wzrostu, barwa ciemnozielona.;;;P13;7;3
+273;00316/3/TOWat;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Waterfield"" ";Nowość, Odmiana o pokroju kulistym, wzrost wolny, barwa ciemnozielona, końce przyrostów cały rok jasno zabarwione.;;;P13;7;3
+274;00316/3/TOWax;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Waxen"" ";Odmiana silnie rosnąca, pędy mocne, wzniesione, barwa jasnozielona, młode przyrosty jaśniejsze.;;;P13;7;3
+275;00316/3/TOWT;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""White Top"" ";Pokrój stożkowy, młode wiosenne przyrosty posiadają intensywnie jasnokremową barwę, wzrost silny.;;;P13;7;3
+276;00316/3/TOW;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Woodwardii"" ";Forma karłowa, szerokokulista, zwarta, barwa zielona.;;;P13;7;3
+277;00316/3/TOYG;;Żywotnik zachodni ;Żywotnik zachodni ;D;"Thuja occidentalis ""Yellow Globe"" ";Nowość, odmiana kulista , zielono cytrynowa barwa łusek, średnia siłą wzrostu.;;;P13;7;3
+278;00316/3/TOYR;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Yellow Ribbon"" ";Odmiana o pokroju stożkowym, barwa łusek żółta, średnie tempo wzrostu.;;;P13;7;3
+279;00316/3/TOZS;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Zákány Sövény"" ";Nowość z Węgier, forma stożkowa, bardzo gęsta,dość wąska,średnia siła wzrostu, barwa ciemnozielona.;;;P13;7;3
+280;00316/3/TOZ;;Żywotnik zachodni ;Żywotnik zachodni ;N;"Thuja occidentalis ""Zmatlik"" ";Nowość, pokrój stożkowy, zwarta forma, pędy lekko poskręcane jak w odmianie Spiralis, wzrost wolny, barwa ciemnozielona.;;;P13;7;3
+281;00316/3/TOAN;;Żywotnik wschodni ;Żywotnik wschodni ;N;"Thuja orientalis ""Aurea Nana"" ";Odmiana o pokroju jajowatym, wzrost wolny, barwa żółta.;;;P13;7;3
+282;00316/3/TOFA;;Żywotnik wschodni ;Żywotnik wschodni ;N;"Thuja orientalis ""Fastigiata Aurea"" ";Selekt z naszej szkółki, odmiana o pokroju kolumnowym, posiada intensywne żółte wybarwienie łusek, zimą intensywnie rudzieje.;;;P13;7;3
+283;00316/3/TOFNF;;Żywotnik wschodni ;Żywotnik wschodni ;N;"Thuja orientalis ""Filip-s New Future"" ";Nowość, pokrój wąskokolumnowy, zwarta forma, średnia siła wzrostu, barwa ciemnozielona.;;;P13;7;3
+284;00316/3/TOM;;Żywotnik wschodni ;Żywotnik wschodni ;N;"Thuja orientalis ""Marjolein"" ";Nowość, odmiana wolnorosnąca o pokroju jajowatym, igły zielone dużą ilością kremowych przebarwień.;;;P13;7;3
+285;00316/3/TPA;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Atrovierens"" ";Pokrój szerokostożkowy, intensywnie ciemnozielona barwa łusek, wzrost bardzo silny, odmiana żywopłotowa.;;;P13;7;3
+286;00316/3/TPC;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;D;"Thuja plicata ""CanCan"" ";Pokrój stożkowy, wzrost średniosilny, pędy na roślinie wyrastają jakby w pęczkach, barwa zielona, końce pędów kremowe.;;;P13;7;3
+287;00316/3/TPCG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Collyers Gold"" ";Nowość, wzrost średniosilny, pokrój stożkowy, barwa żółtozielona, końce pędów żółte.;;;P13;7;3
+288;00316/3/TPCK;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Copper Kettle"" ";Nowość, odmiana wolnorosnąca, bardzo gęsta, pokrój wąskostożkowy, barwa oliwkowożółta.;;;P13;7;3
+289;00316/3/TPD;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;D;"Thuja plicata ""Dura"" ";Odmiana stożkowa, zwarta, szybkorosnąca, barwa łusek ciemnozielona.;;;P13;7;3
+290;00316/3/TPEGK;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;D;"Thuja plicata ""Eschrich’s Grune Kugel"" ";Nowość, odmiana wolnorosnąca o pokroju kulistym, barwa łusek ciemnoszmaragdowa, dorasta do ok. 60 cm wysokości.;;;P13;7;3
+291;00316/3/TPF;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Frislandia"" ";Pokrój stożkowy, ciemnozielona barwa łusek, wzrost silny.;;;P13;7;3
+292;00316/3/TPG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Gelderland"" ";Pokrój kolumnowy, ciemnozielona barwa łusek, wzrost bardzo silny, odmiana żywopłotowa.;;;P13;7;3
+293;00316/3/TPIG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;D;"Thuja plicata ""Irish Gold"" ";Nowość, silnie rosnąca odmiana o pokroju stożkowym, barwa łusek jasnozielona, wiosenne przyrosty intensywnie złoto wybarwione.;;;P13;7;3
+294;00316/3/TPKB;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Kagers Beauty"" ";Nowość, Forma szerokostożkowa, nieregularna, pędy nitkowate, spłaszczone, barwa ciemnozielona, wzrost raczej wolny.;;;P13;7;3
+295;00316/3/TPK;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Kórnik"" ";Odmiana żywopłotowa, pokrój kolumnowy, wzrost silny, barwa ciemnozielona, pędy mocno wzniesione do góry.;;;P13;7;3
+296;00316/3/TPK3;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Kórnik III"" ";Pokrój stożkowy, odmiana o średniej sile wzrostu, gęsta, pędy wzniesione, pokryte drobnymi jasnymi plamkami.;;;P13;7;3
+297;00316/3/TPM;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Martin"" ";Odmiana o pokroju stożkowym, barwa zielona, błyszcząca, pędy wyrastają pod kątem ostrym do góry, wzrost silny.;;;P13;7;3
+298;00316/3/TPR;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Rogersi"" ";Forma stożkowa, zwarta, wolnorosnąca, po 10 latach osiąga wielkość ok. 1 metra, łuski o barwie zielonobrązowej.;;;P13;7;3
+299;00316/3/TPSG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Stonehem Gold"" ";Nowość, wolnorosnąca odmiana o pokroju stożkowym, pędy szczytowe jak i łuski posiadają pomarańczowożółtą barwę.;;;P13;7;3
+300;00316/3/TPTG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Tiger Gold"" ";Żywotnik o pokroju kolumnowym, igły intensywnie żółte, średnia siła wzrostu.;;;P13;7;3
+301;00316/3/TPWP;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Winter Pink"" ";Forma stożkowa, zwarta, średnia siła wzrostu, barwa jasnozielona, zimą nabiera delikatnego różowego odcienia.;;;P13;7;3
+302;00316/3/TPZ;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Zebrina"" ";Pokrój stożkowy, posiada żółtokremowe prążki, wzrost bardzo silny, idealna odmiana na żywopłot.;;;P13;7;3
+303;00316/3/TPZEG;;Żywotnik olbrzymi ;Żywotnik olbrzymi ;N;"Thuja plicata ""Zebrina Extra Gold"" ";Odmiana o średniej sile wzrostu, pokrój stożkowy, pędy posiadają dużą ilość intensywnie żółtych przebarwień.;;;P13;7;3
+304;00316/3/;;Żywotnik japoński ;Żywotnik japoński ;D;"Thuja sthandishii """" ";Żywotnik japoński, forma stożkowa, wzrost bardzo silny, pędy boczne przewisające ku dołowi, barwa ciemnozielona.;;;P13;7;3
+305;00316/3/;;Żywotnikowiec japoński ;Żywotnikowiec japoński ;D;"Thujopsis dolobrata """" ";Żywotnikowiec rosnący początkowo kuliście, później stożkowo, wzrost średniosilny, łuski duże, ciemnozielone.;;;P13;7;3
+306;00316/3/TDA;;Żywotnikowiec japoński ;Żywotnikowiec japoński ;N;"Thujopsis dolobrata ""Aurea"" ";Odmiana o pokroju szerokostożkowym, średnia siła wzrostu, łuski duże o żółtozielonej barwie.;;;P13;7;3
+307;00316/3/TDH;;Żywotnikowiec japoński ;Żywotnikowiec japoński ;N;"Thujopsis dolobrata ""Hondai"" ";Odmiana karłowa, spłaszczona, gęsta, łuski drobne o barwie jasnozielonej.;;;P13;7;3
+308;00316/3/TDN;;Żywotnikowiec japoński ;Żywotnikowiec japoński ;D;"Thujopsis dolobrata ""Nana"" ";Pokrój zwarty, krzaczasty, wzrost wolny, barwa łusek żywozielona.;;;P13;7;3
+309;00316/3/TDV;;Żywotnikowiec japoński ;Żywotnikowiec japoński ;N;"Thujopsis dolobrata ""Variegata"" ";Pokrój szerokostożkowy, łuski duże, pędy z kremowymi przebarwieniami.;;;P13;7;3
+310;00316/3/TCF;;Choina kanadyjska ;Choina kanadyjska ;N;"Tsuga canadensis ""Fantana"" ";Odmiana o pokroju krzaczastym, regularnym, zwartym, średnia siła wzrostu, barwa ciemnozielona.;;;P13;7;3
+311;00316/3/TCJ;;Choina kanadyjska ;Choina kanadyjska ;N;"Tsuga canadensis ""Jeddeloh"" ";Odmiana karłowa, zwarta, pokrój kopulasty, po 10 latach osiąga wysokość ok. 30-40 cm, jasnozielona barwa igieł.;;;P13;7;3
+312;00316/3/TCP;;Choina kanadyjska ;Choina kanadyjska ;N;"Tsuga canadensis ""Popelski"" ";Nowość, odmiana karłowa, zwarta, pokrój kopulasty, pędy krótkie, sztywne, po 10 latach osiąga wysokość ok. 20-30 cm, ciemnozielona barwa igieł.;;;P13;7;3
+313;00316/3/RHAb;pomarańczowoczerwony;różanecznik miniaturowy;różanecznik miniaturowy;N;"RHODODENDRON HYBRIDUM ""Abendsonne""              ";Kwiaty dzwonkowate, pomarańczowoczerwone. W tej grupie kolorystycznej jedna                 z najwartościowszych odmian.  Kwiaty rozwijają się sukcesywnie, co znacznie ;;30-60;C5;35;5
+314;00316/3/RHA;fioletowy;różanecznik miniaturowy;różanecznik miniaturowy;N;"RHODODENDRON HYBRIDUM ""Alfred"" ";Odmiana o fryzowanych, fioletowych kwiatach z oliwkową plamką. Dno kwiatu jaśniejsze. Kwitnie w drugiej połowie maja. Odporność na mróz -25ºC.;;30-60;C5;35;5
+315;00316/3/RHPE;fioletowy;różanecznik miniaturowy;różanecznik miniaturowy;D;"RHODODENDRON HYBRIDUM P.J.M. ""Elite""";Odmiana o małych, fioletowo-różowych kwiatach i ciemnozielonych, błyszczących, niedużych  liściach, które zimą przybierają barwę brązową. Kwitnie bardzo wcześnie        w drugiej połowie kwietnia. Wysoka mrozoodporność i duża odporność na suszę.;;30-60;C5;35;5
+316;00316/4/BTA;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Atropurpurea""";wzrost silny, liście purpurowoczerwone, błyszczące, świetna na żywopłoty ;FOTO ;10-30;P11;5;4
+317;00316/5/BTAN;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Atropurpurea Nana""";odmiana karłowa, liście purpurowe ;FOTO ;10-30;P11;5;4
+318;00316/5/BTAU;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Aurea""";wzrost średni, liście żółte ;FOTO ;10-30;P11;5;4
+319;00316/5/BTC;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Carlo""";Nowość, nasz selekt, pokrój krzaczasty, zwarty, liście purpurowe z zieloną obwódka. ;FOTO ;10-30;P11;5;4
+320;00316/5/BTCH;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Chiquita""";Nowość, pokrój kolumnowy, średnia siła wzrostu, liście ciemnoróżowe z żółtą obwódką. ;FOTO ;10-30;P11;5;4
+321;00316/5/BTCHO;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Chocolate ®""";Nowość, pokrój kolumnowy, średnia siła wzrostu, liście purpurowoczekoladowe. ;FOTO ;10-30;P11;5;4
+322;00316/5/BTCO;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Concorde""";Nowość, wzrost wolny, pokrój kulisty, liście ciemnopurpurowe. ;FOTO ;10-30;P11;5;4
+323;00316/5/BTCOR;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Coral ®""";Nowość, Odmiana z naszej szkółki, krzew zwarty, liście ciemnoczerwone z żółtą obwódką. Cena z etykietą i licencją. ;FOTO ;10-30;P11;5;4
+324;00316/5/BTCORO;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Coronita""";Forma płożąca, niska, liście purpurowe z żółtą obwódką, średnia siła wzrostu. ;FOTO ;10-30;P11;5;4
+325;00316/5/BTD;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Dariusz""";Nowość, pokrój kolumnowy, sztywny, liście ciemnopurpurowe ;FOTO ;10-30;P11;5;4
+326;00316/5/BTDA;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Darts Red Lady""";pokrój krzaczasty, zwarty, liście średniej wielkości o purpurowej barwie. ;FOTO ;10-30;P11;5;4
+327;00316/5/BTDI;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Diabolicum""";Wzrost średni, pokrój krzaczasty, lekko płożący, bardzo zwarty, liście żółte, jesienią karminowe. ;FOTO ;10-30;P11;5;4
+328;00316/5/BTE;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Erecta""";liście zielone, pokrój kolumnowy ;FOTO ;10-30;P11;5;4
+329;00316/5/BTG;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Golden Carpet""";liście żółte, wzrost dość silny, forma płożąca  ;FOTO ;10-30;P11;5;4
+330;00316/5/BTGO;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Golden Devine""";Odmiana wolnorosnąca, bardzo zwarta, liście żółte ;FOTO ;10-30;P11;5;4
+331;00316/5/BTGR;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Golden Ring""";liście purpurowe z żółtą obwódką, forma krzaczasta ;FOTO ;10-30;P11;5;4
+332;00316/5/BTGT;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Golden Tower""";forma kolumnowa, liście żółte. ;FOTO ;10-30;P11;5;4
+333;00316/5/BTGZ;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Golden Zwerg""";Karłowa odmiana o pokroju kulistym, liście drobne lekko karbowane. ;FOTO ;10-30;P11;5;4
+334;00316/5/BTGC;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Green Carpet""";odmiana płożąca, liście zielone, jesienią barwa pomarańczowa. ;FOTO ;10-30;P11;5;4
+335;00316/5/BTH;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Harlequin""";liście purpurowe w kremowo-różowe smugi ;FOTO ;10-30;P11;5;4
+336;00316/5/BTK;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Kobold""";odmiana karłowa, liście zielone, forma kulista ;FOTO ;10-30;P11;5;4
+337;00316/5/BTOP;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Orange Pillar""";Pokrój kolumnowy, szeroki, liście pomarańczowoczerwone. ;FOTO ;10-30;P11;5;4
+338;00316/5/BTPW;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Pow Wow""";liście zielone z kremowymi smugami, forma kolumnowa ;FOTO ;10-30;P11;5;4
+339;00316/5/BTRC;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Red Carpet""";liście ciemnoczerwone, odmiana płożąca ;FOTO ;10-30;P11;5;4
+340;00316/5/BTRR;;Berberys tunberga ;Berberys tunberga ;D;"Berberis thunbergii ""Red Rocket""";liście czerwonopurpurowe, pokrój kolumnowy ;FOTO ;10-30;P11;5;4
+341;00316/5/BTSM;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Silver Miles""";liście purpurowe ze srebrzystymi smugami, forma krzaczasta ;FOTO ;10-30;P11;5;4
+342;00316/5/BTSM;;Berberys tunberga ;Berberys tunberga ;N;"Berberis thunbergii ""Sunsation""";Nowość, wolno rosnąca odmiana o żółtych liściach przebarwiająca się na intensywnie pomarańczowy kolor, pokrój rozłożysty ;FOTO ;10-30;P11;5;4
+343;00316/5/BXMRJ;;Berberys tunberga ;Berberys media;D;"Berberis x media ""Red Jewel""";liście purpurowe w cieniu zielenieją, wzrost wolny. ;.;10-30;P11;5;4
+344;00316/5/BXO;zielony;Berberys tunberga ;Berberys ottawski;D;"Berberis x ottawensis """"";Silnie rosnący krzew o dużych zielonych liściach przebarwiających się jesienią na pomarańczowo. ;FOTO ;10-30;P11;5;4
+345;00316/5/BXOA;purpurowy;Berberys tunberga ;Berberys ottawski;N;"Berberis x ottawensis ""Auricoma""";liście purpurowe, duże, wzrost silny ;FOTO ;10-30;P11;5;4
+346;00316/5/BXOIS;zielony,pomarańczowy;Berberys tunberga ;Berberys ottawski;N;"Berberis x ottawensis ""Indian Summer""";Forma krzaczasta, liście bardzo duże, liście zielone, jesienią pomarańczowe. ;FOTO ;10-30;P11;5;4
+347;00316/5/BXOS;purpurowy;Berberys tunberga ;Berberys ottawski;D;"Berberis x ottawensis ""Superba""";liście purpurowe, duże ;FOTO ;10-30;P11;5;4
+348;00316/5/BXRB;zielony;Berberys tunberga ;Berberys ottawski;N;"Berberis × rubrostilla  ""Buccaneer""";Pokrój krzaczasty, gęsty, duża ilość kolców, liście zielone. ;;10-30;P11;5;4
+349;00316/5/RR;niebieski;różanecznik miniaturowy;Różanecznik miniaturowy;D;"Rhododendron x ""Ramapo"" ";bardzo słabym wzrostem, dlatego też w założeniach ogrodowych powinny znaleźć się na pierwszym planie. Dorastają do wysokości 30 – 50 cm, ale niektóre z nich w starszym wieku mogą osiągnąć 1m. Kwitnienie od maja do czerwca;;15-20;F15;10;5
+350;00316/5/RHPA;żółty;różanecznik miniaturowy;Różanecznik miniaturowy;D;"Rhododendron hanceanum ""Princess Ann"" ";bardzo słabym wzrostem, dlatego też w założeniach ogrodowych powinny znaleźć się na pierwszym planie. Dorastają do wysokości 30 – 50 cm, ale niektóre z nich w starszym wieku mogą osiągnąć 1m. Kwitnienie od maja do czerwca;;15-20;F16;10;5
+351;00316/5/AJR;różowy pełny;azalia japońska;Azalia japońska;D;"Azalia japońska ""Rosebud"" ";Jest to grupa karłowych, bardzo obficie kwitnących i częściowo zimozielonych krzewów. Ze względu na mniejszą mrozoodporność powinny być zabezpieczane na zimę. Kwitną od początku maja do pierwszych dni czerwca. Dorastają do wysokości 30-60 cm.;;20-30;F17;9;5
+352;00316/5/AJRO;czrwone, pełne ;azalia japońska;Azalia japońska;D;"Azalia japońska ""Rokoko"" ";Jest to grupa karłowych, bardzo obficie kwitnących i częściowo zimozielonych krzewów. Ze względu na mniejszą mrozoodporność powinny być zabezpieczane na zimę. Kwitną od początku maja do pierwszych dni czerwca. Dorastają do wysokości 30-60 cm.;;20-30;F18;9;5
+353;00316/5/AJG;pomarańczowoczerwone, duże ;azalia japońska;Azalia japońska;D;"Azalia japońska ""Geisha Fumiko""";Jest to grupa karłowych, bardzo obficie kwitnących i częściowo zimozielonych krzewów. Ze względu na mniejszą mrozoodporność powinny być zabezpieczane na zimę. Kwitną od początku maja do pierwszych dni czerwca. Dorastają do wysokości 30-60 cm.;;20-30;F19;9;5
+354;00316/5/AJB;fioletowy ;azalia japońska;Azalia japońska;D;"Azalia japońska ""Blaue Donau""";Jest to grupa karłowych, bardzo obficie kwitnących i częściowo zimozielonych krzewów. Ze względu na mniejszą mrozoodporność powinny być zabezpieczane na zimę. Kwitną od początku maja do pierwszych dni czerwca. Dorastają do wysokości 30-60 cm.;;20-30;F20;9;5

@@ -14,7 +14,7 @@
             <ul class="offer-list">
                 <?php foreach ($this->list as $plant): ?>
                     <?php if ($plant instanceof Model_Plant_Container): ?>
-                        <li class="offer-item plant small-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
+                        <li class="offer-item plant big-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
                             <?php
                             $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
                                 'htag' => 'h2',
