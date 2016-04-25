@@ -6,7 +6,7 @@
         <span itemprop="name"><?php echo $this->plant->getName(); ?></span>
     </<?php echo $this->htag; ?>>    
     
-    <?php if ($this->plant->getGallery()->getItems()->count() > 0): ?><!-- @todo dopisac warunki-->
+    <?php /*if ($this->plant->getGallery()->getItems()->count() > 0): ?><!-- @todo dopisac warunki-->
         <?php 
         $photo = $this->plant->getGallery()->getItems()->current();
         $imgSrc = $photo->getFile()->getUrlResponsive(true); 
@@ -22,7 +22,7 @@
                 </a>         
             </figure>
         <?php endif; ?>
-    <?php endif; ?>    
+    <?php endif; */?>    
     <<?php echo $this->dtag; ?> class="plant-details" name="<?php echo $this->plant->getName(); ?>">
     <span class="plant-detail plant-id">
         <<?php echo $this->ltag; ?> class="plant-label">identyfikator:</<?php echo $this->ltag; ?>> 
