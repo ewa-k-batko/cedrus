@@ -5,13 +5,13 @@
 .company {
     margin-top: 15px;
     @media @media-sm {
-         margin-top: 55px;       
+        margin-top: 55px;       
     }
-   @media @media-md {
+    @media @media-md {
         margin-top: 50px;       
     }
     @media @media-lg {
-         margin-top: 40px;
+        margin-top: 40px;
     }
     .container-fluid > .container-fluid {           
         max-width: 90%;
@@ -23,9 +23,11 @@
         color:@c-white;
         /*position: absolute;*/
         bottom:0;
-        font-size: 22px;
-        padding: 33% 20px 16px;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 33% 0 0;
         width: 100%;
+        letter-spacing: 1px;
         @media @media-xs {
             font-size: 14px;
         }
@@ -60,19 +62,34 @@
 }
 
 .no-touch.svg .gradient {
-    background: -moz-linear-gradient(bottom, #b3b3b3, transparent);
-    /*Moz*/
-    background: -webkit-gradient(linear, center bottom, center bottom, from(#b3b3b3), color-stop(transparent));
-    /*Webkit*/
-    background: -o-linear-gradient(bottom, #b3b3b3 0%, transparent);
-    /*Opera*/
-    background: -ms-linear-gradient(bottom, #b3b3b3 0%, transparent);
-    /*IE 10+*/
-    background: linear-gradient(bottom, #b3b3b3 0%, transparent);
-    /*W3C*/
     background-size: 100% 20%;
     background-position: left bottom;
     background-repeat: no-repeat;
+    &-text {
+        /* background: -moz-linear-gradient(bottom, #b3b3b3, transparent);
+ 
+         background: -webkit-gradient(linear, center bottom, center bottom, from(#b3b3b3), color-stop(transparent));
+ 
+         background: -o-linear-gradient(bottom, #b3b3b3 0%, transparent);
+ 
+         background: -ms-linear-gradient(bottom, #b3b3b3 0%, transparent);
+ 
+         background: linear-gradient(bottom, #b3b3b3 0%, transparent);*/
+        background-color: @c-darkn-brown;
+        border-top: 1px solid @c-darkn-brown;
+        .opacity( 0.7);
+        padding: 16px 40px;
+        
+        .label {
+            font-size: 12px;
+            letter-spacing: 0;
+            color: @c-grey;
+        }
+
+    }
+
+
+
 }
 
 @media @media-xs { 

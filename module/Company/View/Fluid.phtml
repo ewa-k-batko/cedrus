@@ -2,30 +2,39 @@
         <!-- <span itemprop="rating" class="hide">5</span> img-fluid-->
     <div class="review-photo-1 img-fluid">
         <div class="review-about gradient">
-            <time itemprop="dtreviewed" datetime="2016-04-02">2 kwietnia,</time>
-            <span itemprop="reviewer">"Mirage" o swojej działalności:</span>
+            <p class="gradient-text">
+            <time class="label" itemprop="dtreviewed" datetime="2016-04-02">2 kwietnia,</time>
+            <span class="label" itemprop="reviewer">"Mirage" o swojej działalności:</span>
+            <span>Jesteśmy firmą rodzinną a ogrodnictwo było i jest naszą pasją. <br>Zajmujemy się profesjonalnie produkcją szadzonek od kilku lat. Cały czas rozwijamy oferowany przez nas asortyment.</span>
+            </p>
         </div>
     </div>
+
     <div class="review-text row">
         <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-9">
             <h2 itemprop="itemreviewed" class="head-title review-title">Szkółka ogrodnicza</h2>
-            <p itemprop="description" class="p-text review-description">Zajmujemy się produkcją i sprzedażą drzew i krzewów ozdobnych oraz innych roślin.</p>
+            <p itemprop="description" class="p-text review-description">Obecnie produkujemy wysokiej jakości krzewy liściaste, iglaste oraz rośliny z rodziny wrzosowatych.</p>
         </div>
     </div>
     <div class="review-photo-2 img-fluid">
         <div class="review-about gradient">                
-            <span>W naszym ogrodzie znajdziesz: </span>
+            <p class="gradient-text">Z nami stworzysz swój niepowtarzalny ogród. </p>
         </div>
     </div>
     <div class="review-text row">
         <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-9">
             <h3 class="head-title review-title">Oferujemy w sprzedaży:</h3>
-            <p itemprop="summary" class="p-text review-description">Wysokiej jakości drzewa i krzewy iglaste, liściaste, szczepione, wrzosowe, byliny oraz rośliny jednoroczne.</p>
+            <p itemprop="summary" class="p-text review-description">Obok roślin, które znajdują się w naszym <a href="http://<?php echo Manager_Config::PDF_CATALOG; ?>">katalogu</a>, oferujemy również sadzonki które nie są jeszcze skatalogowane.
+                <br> W celu zapoznania się z naszą pełną ofertą <b>zapraszamy do naszego <a href="/kontakt">punktu sprzedaży.</a> </b>
+                
+            </p>
         </div>
     </div>
     <div class="review-photo-3 img-fluid">
         <div class="review-about gradient"> 
+            <p class="gradient-text">
             <?php $this->partial('Offer/View/Partial/Pdf.phtml', array('class' =>'review-link'));?>
+            </p>
         </div>
     </div>
 

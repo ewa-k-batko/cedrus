@@ -70,6 +70,7 @@
         top: 0;
         text-align: right;
         display: block;
+        clear: both;
         padding-right: 10px;
         b {
             font-weight: bold;
@@ -84,6 +85,21 @@
             top: 0;
             margin: 5px 0 0 5px;
             border-color: @c-pink;
+        }
+        
+        &.link-pdf {
+           background-color: @c-darkn-brown;
+           color:@c-white;
+           padding: 8px;
+           margin: 0;
+           border-radius: 5px;
+           .opacity(0.6);
+           float: right; 
+           letter-spacing: 1px;
+           text-transform: uppercase;
+           &:after {
+               display: none;
+           }
         }
     }
 
@@ -128,4 +144,8 @@
             border-color: @c-pink;
         }
     }
+}
+
+.box-pdf {
+    clear: both;
 }
