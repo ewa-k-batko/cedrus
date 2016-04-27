@@ -14,7 +14,7 @@
                     <h5 class="s-text">Wybrane z oferty:</h5>
                     <?php foreach ($category->getItems() as $plant): ?>
                         <?php if ($plant instanceof Model_Plant_Container): ?>
-                            <li class="offer-item plant small-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
+                            <li class="offer-item plant big-view" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"> 
                                 <?php
                                 $this->partial('Offer/View/Partial/Plant.phtml', array('plant' => $plant,
                                     'htag' => 'h2',
@@ -36,7 +36,7 @@
                 <?php endforeach; ?>
             </ul>
         <?php else: ?>
-            <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
+            <?php $this->partial('Offer/View/Partial/Empty.phtml', array());?>
         <?php endif; ?>      
 
     </div>

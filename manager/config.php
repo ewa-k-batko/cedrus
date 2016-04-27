@@ -14,8 +14,8 @@ class Manager_Config {
     const TYPE_ROUTE_DEFAULT = self::TYPE_ROUTE_ROUTE;
     const ROOT_PAGE = '/index';
     const ROOT_MAP_CONFIG = 'Route/Map.php';
-    const PDF_CATALOG = '//serwer1512258.home.pl/pub/katalog-szkolki-ogrodniczej-mirage160425.pdf';    
-    const PDF_ADVERT = '//serwer1512258.home.pl/pub/ulotka-informacyjna-szkolki-ogrodniczej-mirage160420.pdf'; 
+    const PDF_CATALOG = '//serwer1512258.home.pl/pub/katalog-szkolki-ogrodniczej-mirage160427.pdf';    
+    const PDF_ADVERT = '//serwer1512258.home.pl/pub/ulotka-informacyjna-szkolki-ogrodniczej-mirage160427.pdf'; 
 
 
     //const LAYOUT = 'common/view/layout.phtml';

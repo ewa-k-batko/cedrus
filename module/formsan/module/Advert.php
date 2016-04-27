@@ -35,9 +35,9 @@ class Formsan_Module_Advert extends Module_Abstract {
             $pdf->properties['Title'] = 'Ulotak informacyjna szkółki ogrodniczej "Mirage"';
 
             if (Manager_Config::isDev()) {
-                $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'opensansregular.ttf');
+                $this->font = Zend_Pdf_Font::fontWithPath($_SERVER['DOCUMENT_ROOT'] . 'fonts/robotocondensed-regular.ttf');
             } else {
-                $this->font = Zend_Pdf_Font::fontWithPath('../public/fonts/opensansregular.ttf');
+                $this->font = Zend_Pdf_Font::fontWithPath('../public/fonts/robotocondensed-regular.ttf');
             }
 
             $this->pdf->pages = array();

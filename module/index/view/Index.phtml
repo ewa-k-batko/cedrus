@@ -1,7 +1,7 @@
 <section class="promote" itemtype="http://schema.org/ItemList">
 
     
-        <h1 class="head-title">Wybrane rośliny z naszej oferty:            
+        <h1 class="head-title">Wybrane promocyjne sadzonki z naszej oferty:            
         <?php $this->partial('Offer/View/Partial/Pdf.phtml', array());?>
         </h1>
     <br> 
@@ -25,11 +25,26 @@
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
+                        <li class="promote-item middle-view col-xs-12 col-rs-12 col-sm-12 col-md-6 col-lg-4">
+                                <div class="promote-container">
+                                    <div class="promote-info">
+                                        <p class="p-text"> 
+                                            <br>
+                                            W chwili obecnej nie wszystkie rośliny dostępne w naszym <a href="/kontakt">Punkcie Sprzedaży</a> są obecne w katalogu firmowym.<br><br>
+                                            Pełną ofertę możemy przesłać mailowo lub przekazać telefonicznie. <br><br>
+                                            <b>Zapraszamy Państwa do naszego Punktu Sprzedaży oraz do zapoznania się z poniższym katalogiem:</b>
+                                            <br><br>
+                                            <?php $this->partial('Offer/View/Partial/Pdf.phtml', array()); ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
             </ul>
-        <?php $this->partial('Offer/View/Partial/Advert.phtml', array());?>
+    
+        
         <?php $this->partial('Common/View/Partial/Pagination.phtml', array('list' => $this->list, 'url' => '/'));?>
         <?php else: ?>
-            <p>Pod podanym adresem brak wyszukania oferty w bazie. Sprawdź adres czy jest poprawny.</p>
+            <?php $this->partial('Offer/View/Partial/Empty.phtml', array());?>
         <?php endif; ?> 
     
     <?php $this->partial('Index/View/Partial/Contact.phtml'); ?> 
