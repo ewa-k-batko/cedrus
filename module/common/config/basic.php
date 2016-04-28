@@ -36,17 +36,18 @@ class Module_Common_Config_Basic extends Module_Config {
          */
         $nav = new Model_Collection();
         $link = new Model_Link_Container();
-        $link->setUrl('/')->setTitle('Start')->setClass('front-page');
+        $link->setId(1)->setUrl('/ofirmie')->setTitle('O firmie')->setClass('company-page');
+        $nav->append($link);
+        $link = new Model_Link_Container();
+        $link->setId(2)->setUrl('/')->setTitle('Promocje')->setClass('front-page');
         $nav->append($link);
         
         $link = new Model_Link_Container();
-        $link->setUrl('/oferta')->setTitle('Oferta')->setClass('offer-page');
+        $link->setId(3)->setUrl('/oferta')->setTitle('Oferta')->setClass('offer-page');
         $nav->append($link);
+        
         $link = new Model_Link_Container();
-        $link->setUrl('/ofirmie')->setTitle('O firmie')->setClass('front-page');
-        $nav->append($link);
-        $link = new Model_Link_Container();
-        $link->setUrl('/kontakt')->setTitle('Kontakt')->setClass('contact-page');
+        $link->setId(4)->setUrl('/kontakt')->setTitle('Kontakt')->setClass('contact-page');
         $nav->append($link);
        /* $link = new Model_Link_Container();
         $link->setUrl('/galeria-kwiatow')->setTitle('Galeria ')->setClass('gallery-page');

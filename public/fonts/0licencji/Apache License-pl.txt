@@ -1,0 +1,204 @@
+Apache License
+†††††††††††††††††††††††††††Wersja 2.0, styczeÒ 2004
+††††††††††††††††††††††††http://www.apache.org/licenses/
+
+†††WARUNKI STOSOWANIA, reprodukcji i dystrybucji
+
+†††1. Definicje.
+
+††††††"Licencja" oznacza warunki do wykorzystania, powielanie,
+††††††i dystrybucji, jak okreúlono w punktach od 1 do 9 niniejszego dokumentu.
+
+††††††"Licencjodawca" oznacza w≥aúciciela praw autorskich lub podmiot upowaøniony przez
+††††††w≥aúciciel praw autorskich, ktÛra jest udzielenie licencji.
+
+††††††"Podmiot prawny" oznacza Zwiπzku dzia≥ajπcego podmiotu i wszystkich
+††††††inne podmioty, ktÛre kontrolujπ, sπ kontrolowane przez lub sπ pod wspÛlnπ
+††††††sterowania z tej jednostki. Dla celÛw tej definicji
+††††††"kontrola" oznacza (i) moc, bezpoúredniπ lub poúredniπ, aby spowodowaÊ
+††††††kierunek lub zarzπdzanie takim podmiotem, czy to w drodze umowy lub
+††††††w przeciwnym razie, lub (ii) w≥asnoúÊ piÍÊdziesiπt procent (50%) lub wiÍcej z
+††††††zaleg≥ych akcji, lub (iii) korzystne posiadanie takiego podmiotu.
+
+††††††"Ty" (lub "Twoje") oznacza indywidualnego lub prawna
+††††††wykonywanie uprawnieÒ przyznanych niniejszym Licencji.
+
+††††††"èrÛd≥o" forma oznacza preferowanπ formπ dokonywania modyfikacji,
+††††††w tym, ale nie ograniczajπc siÍ do kodu ürÛd≥owego oprogramowania, dokumentacja
+††††††ürÛd≥owe i pliki konfiguracyjne.
+
+††††††Formularz "Obiekt" oznacza kaødπ formÍ wynikajπcπ z mechanicznym
+††††††Transformacja lub t≥umaczenie formularza ürÛd≥owy, w tym
+††††††Nie ogranicza siÍ do skompilowanego kodu wynikowego, generowana dokumentacja,
+††††††oraz konwersji do innych typÛw noúnikÛw.
+
+††††††"Praca" oznacza pracÍ autorstwa, czy w ürÛdle lub
+††††††Forma obiektu, udostÍpniane na licencji, wskazane przez
+††††††Prawa autorskie, ktÛre sπ zawarte w lub przymocowane do pracy
+††††††(Przyk≥ad znajduje siÍ w za≥πczniku poniøej).
+
+††††††"Pochodne Works" oznacza kaødπ pracÍ, czy w ürÛdle lub przedmiot
+††††††PostaÊ, ktÛra opiera siÍ na (lub pochodnπ) praca, dla ktÛrego
+††††††redakcyjne przeglπdy, adnotacje, opracowaÒ, lub inne modyfikacje
+††††††stanowiπ, jako ca≥oúÊ, oryginalnego dzie≥a autorstwa. Dla celÛw
+††††††niniejszej Licencji, pochodne utworÛw nie obejmuje prace, ktÛre pozostajπ
+††††††oddzieliÊ od, lub po prostu zwiπzek (lub wiπøπ siÍ z nazwy) do interfejsÛw,
+††††††dzie≥a i jego pochodna Works.
+
+††††††"Wk≥ad" oznacza kaødπ pracÍ autorstwa, w tym
+††††††oryginalna wersja pracy i wszelkie modyfikacje lub uzupe≥nienia
+††††††do tego utworu lub jego Utworu, ktÛry jest celowo
+††††††przekazane Licencjodawcy do w≥πczenia w Dziele przez w≥aúciciela praw autorskich
+††††††lub przez osobÍ fizycznπ lub prawna upowaøniona do sk≥adania w imieniu
+††††††w≥aúciciel praw autorskich. Dla celÛw tej definicji, "z≥oøony"
+††††††oznacza kaødπ formÍ elektronicznπ, s≥ownej lub pisemnej komunikacji wys≥any
+††††††Licencjodawcy lub jego przedstawicieli, w tym, lecz nie ograniczajπc siÍ do
+††††††Komunikacja na listach dyskusyjnych, elektroniczne systemy kontroli kodu ürÛd≥owego,
+††††††i kwestia systemÛw, ktÛre sπ zarzπdzane przez úledzenie lub w jego imieniu
+††††††Licencjodawcy w celu omÛwienia i poprawy pracy, ale
+††††††z wy≥πczeniem komunikacji, ktÛry jest widoczny sposÛb oznakowane lub w inny sposÛb
+††††††wyznaczony na piúmie przez w≥aúciciela praw autorskich, jak ", a nie finansowej."
+
+††††††"Specjalista" oznacza kaødπ osobÍ fizycznπ i LicencjodawcÍ lub prawnej
+††††††w imieniu ktÛrej dotacjÍ zosta≥ odebrany przez LicencjodawcÍ i
+††††††nastÍpnie w≥πczona w Pracy.
+
+†††2. Przyznanie prawa autorskiego licencji. Z zastrzeøeniem warunkÛw
+††††††Licencja ta, kaødy specjalista udziela Uøytkownikowi wieczystej,
+††††††na ca≥ym úwiecie, niewy≥πcznej, nieodp≥atnej, nieodp≥atnej, nieodwo≥alnej
+††††††licencji praw autorskich do reprodukcji, przygotowania Prace pochodne od,
+††††††publicznie odtwarzaÊ, publicznie wykonywaÊ, sublicencji i rozpowszechniaÊ
+††††††Praca i takie pochodne Prace w Source lub postaci obiektÛw.
+
+†††3. Udzielenie licencji Patentowym. Z zastrzeøeniem warunkÛw
+††††††Licencja ta, kaødy specjalista udziela Uøytkownikowi wieczystej,
+††††††na ca≥ym úwiecie, niewy≥πcznej, nieodp≥atnej, nieodp≥atnej, nieodwo≥alnej
+††††††(Z wyjπtkiem przypadkÛw okreúlonych w niniejszej sekcji) licencji patentowej, aby, sprawi≥y,
+††††††uøywaÊ, oferujπ do sprzedaøy, sprzedaøy, importu oraz w inny sposÛb przekazywaÊ pracy,
+††††††gdzie stosuje siÍ takie pozwolenia tylko tym, patent twierdzi licencjonowaniu
+††††††przez taki specjalista, ktÛre muszπ byÊ naruszone przez swojego
+††††††Wk≥ad (e) sam lub przez po≥πczenie ich wk≥adu (e)
+††††††z pracy, do ktÛrej zosta≥ z≥oøony taki wk≥ad (s). Jeúli ty
+††††††Instytut patentowe spory wobec jakiegokolwiek podmiotu (w tym
+††††††cross-roszczenie lub roszczenie w pozwie) stwierdzajπ, øe praca
+††††††lub Wk≥ad w≥πczone w dzie≥o, stanowi bezpoúredniπ
+††††††lub wspÛ≥naruszenia patentu, potem wszelkie licencje patentowe
+††††††przyznane Uøytkownikowi w ramach niniejszej licencja dla tych prac wygasa
+††††††z dniem takich sporÛw jest z≥oøony.
+
+†††4. redystrybucji. moøe reprodukowaÊ i rozpowszechniaÊ kopie
+††††††Pracy lub jego pochodnπ Dzia≥a na kaødym noúniku, z lub bez
+††††††modyfikacje oraz w ürÛdle lub w postaci obiektÛw, pod warunkiem, øe
+††††††spe≥niaÊ nastÍpujπce warunki:
+
+††††††(A) musi podaÊ øadnych innych odbiorcÛw pracy lub
+††††††††††Prace pochodne kopiÍ niniejszej Licencji; i
+
+††††††(B) musi powodowaÊ øadnych zmodyfikowanych plikach widocznej informacji
+††††††††††stwierdzajπce, øe zmieni≥eú pliki; i
+
+††††††(C) Musisz zachowaÊ w postaci ürÛd≥a ewentualnego Utworu
+††††††††††ktÛre rozpowszechniaÊ, wszystkie prawa autorskie, patenty, znaki towarowe, a
+††††††††††Anonse atrybucji z formularza èrÛd≥o w pracy,
+††††††††††z wy≥πczeniem tych powiadomieÒ, ktÛre nie odnoszπ siÍ do kaødej czÍúci
+††††††††††Pochodna prac; i
+
+††††††(D) Jeúli praca zawiera "Zawiadomienie" plik tekstowy jako czÍúÊ swojej
+††††††††††dystrybucja, wtedy kaøda utworÛw zaleønych, ktÛre moøna rozpowszechniaÊ moszczu
+††††††††††zawieraÊ czytelnπ kopiÍ zawiadomienia atrybucji zawartych
+††††††††††w takim pliku wypowiedzenia, z wyjπtkiem tych og≥oszeÒ, ktÛre NIE
+††††††††††odnosiÊ siÍ do dowolnej czÍúci, pochodna dzia≥a, co najmniej jeden
+††††††††††w nastÍpujπcych miejscach: w pliku tekstowym rozdzielone UWAGA
+††††††††††jako czÍúci Utworu; w formie ürÛd≥a lub
+††††††††††dokumentacji, jeøeli zosta≥ dostarczony wraz z Utworu; lub,
+††††††††††w wyúwietlaczu generowanego przez Dzie≥ pochodnych, jeúli i
+††††††††††zwykle pojawiajπ siÍ tam takie og≥oszenia osÛb trzecich. Zawartoúci
+††††††††††pliku UWAGA sπ jedynie w celach informacyjnych i
+††††††††††nie zmieniajπ licencjÍ. Moøesz dodaÊ w≥asne ujÍcie
+††††††††††zawiadomienia w Utworu, ktÛre rozpowszechniaÊ, obok
+††††††††††lub jako dodatek do tekstu zawiadomienie od pracy, pod warunkiem
+††††††††††øe takie dodatkowe zawiadomienia atrybucji nie mogπ byÊ interpretowane
+††††††††††modyfikowanie licencji.
+
+††††††Moøesz dodaÊ w≥asne oúwiadczenie o prawach autorskich do Twoich modyfikacji i
+††††††mogπ zapewniÊ dodatkowe lub odmienne warunki licencji
+††††††za uøytkowanie, reprodukcja lub rozpowszechniania lub modyfikacji,
+††††††za takie Utworu jako ca≥oúci, pod warunkiem ich uøywania,
+††††††reprodukcji i dystrybucji utworu w inny sposÛb zgodny z
+††††††z warunkami okreúlonymi w niniejszej Licencji.
+
+†††5. Sk≥adanie treúci. Chyba øe wyraünie nie stanowiπ inaczej,
+††††††Kaødy wk≥ad celowo zg≥oszony do umieszczenia w Dziele
+††††††przez Uøytkownika do Licencjodawcy przeprowadza siÍ w warunkach
+††††††Licencja ta, bez øadnych dodatkowych warunkÛw.
+††††††Niezaleønie od powyøszego, nic tu zastÍpujπ lub modyfikowaÊ
+††††††warunki jakiejkolwiek odrÍbnej umowy licencyjnej moøe byÊ realizowane
+††††††z Licencjodawcy dotyczπcych takich wk≥adÛw.
+
+†††6. Znaki towarowe. Niniejsza Licencja nie przyznaje uprawnienie do korzystania z handlu
+††††††nazwy, znaki towarowe, znaki us≥ug i nazwy produktÛw licencjodawcy,
+††††††wyjπtkiem przypadkÛw uzasadnionego i zwyczajowo przyjÍtego opisu
+††††††powstania utworu i odtwarzania zawartoúci pliku powiadomienia.
+
+†††7. Wy≥πczenie gwarancji. O ile wymagane przez obowiπzujπce przepisy prawa lub
+††††††zgodzi≥ siÍ na piúmie, Licencjodawca zapewnia dzia≥a (i kaødy
+††††††Specjalista zapewnia jego treúci) na zasadzie "jak jest",
+††††††BEZ GWARANCJI LUB WARUNK”W wszelkiego rodzaju, zarÛwno wyraünych lub
+††††††dorozumianych, w tym, bez ograniczeÒ, wszelkie gwarancje lub warunki
+††††††TITLE, nienaruszalnoúci, SPRZEDAØY, lub przydatnoúci do
+††††††SZCZEG”LNY POW”D. Uøytkownik ponosi wy≥πcznπ odpowiedzialnoúÊ za okreúlania
+††††††stosownoúÊ uøywania lub redystrybucjÍ dzie≥ i ponoszπ øadnej
+††††††Ryzyko zwiπzane z Twojego wykonywania uprawnieÒ wynikajπcych z niniejszej Licencji.
+
+†††8. Ograniczenie odpowiedzialnoúci. W øadnym wypadku i pod øadnym teorii prawa,
+††††††czy deliktowa (w tym zaniedbania), umowy lub w inny sposÛb,
+††††††o ile wymagane przez obowiπzujπce przepisy prawa (takich jak celowe i raøπce
+††††††akty zaniedbania) lub uzgodnione w formie pisemnej, powinny byÊ dowolny specjalista
+††††††odpowiedzialnoúci wobec Uøytkownika za szkody, w tym bezpoúrednie, poúrednie, specjalne,
+††††††przypadkowe lub wtÛrne szkody wynikajπce z jakiegokolwiek charakteru jako
+††††††Wynikiem tej Licencji lub z korzystania lub niemoønoúci korzystania z
+††††††Dzia≥a (w tym, lecz nie ograniczajπc siÍ do odszkodowania za utratÍ wartoúci firmy,
+††††††zatrzymanie pracy, awaria lub wadliwe dzia≥anie komputera lub wszelkich
+††††††inne szkody handlowe lub straty), nawet jeúli takie specjalista
+††††††zosta≥a poinformowana o moøliwoúci wystπpienia takich szkÛd.
+
+†††9. PrzyjÍcie gwarancja lub dodatkowego zobowiπzania. Podczas redystrybucji
+††††††obiektu budowlanego lub jego pochodne Works, moøe wybraÊ do zaoferowania,
+††††††i pobieraÊ op≥aty za, akceptacji wsparcia, gwarancji, odszkodowania,
+††††††lub innych zobowiπzaÒ, odpowiedzialnoúci i / lub praw zgodnych z niniejszπ
+††††††Licencja. Jednakøe, przyjmujπc takie zobowiπzania, moøe dzia≥aÊ tylko
+††††††na swoim w≥asnym imieniu i na w≥asnπ odpowiedzialnoúÊ, a nie w imieniu
+††††††jakiegokolwiek innego specjalista i tylko jeúli zgadzasz siÍ zabezpieczaÊ
+††††††broniÊ i kaødy specjalista nieszkodliwe dla wszelkiej odpowiedzialnoúci
+††††††poniesione przez lub roszczenia wniesione przeciwko, taki specjalista z powodu
+††††††o swojej akceptacji takich gwarancji lub dodatkowego zobowiπzania.
+
+†††KONIEC WARUNK”W
+
+†††Za≥πcznik: Jak zastosowaÊ licencjÍ Apache do pracy.
+
+††††††Aby zastosowaÊ licencji Apache do pracy, naleøy do≥πczyÊ nastÍpujπce
+††††††boilerplate wypowiedzenia, z polami zamkniÍtych nawiasach "[]"
+††††††zastπpione w≥asnym informacji identyfikujπcych. (Nie obejmuje
+††††††wsporniki!) Tekst powinien byÊ ujÍty w odpowiedni
+††††††komentarz sk≥adniÍ dla formatu plikÛw. Zalecamy rÛwnieø, øe
+††††††nazwa pliku lub klasy oraz opis celÛw umieszczane na
+††††††same "wydrukowana strona" jako o prawach autorskich dla ≥atwiejszego
+††††††Identyfikacja ciπgu archiwum trzecich.
+
+†††Prawa autorskie [rrrr] [nazwa w≥aúciciela praw autorskich]
+
+†††Licencjonowany na licencji Apache w wersji 2.0 ( "Licencja");
+†††Uøytkownik nie moøe uøywaÊ tego pliku poza warunkami Licencji.
+†††Moøesz otrzymaÊ kopiÍ licencji na
+
+†††††††http://www.apache.org/licenses/LICENSE-2.0
+
+†††O ile wymagane przez obowiπzujπce prawo lub zgodzi≥ siÍ na piúmie, oprogramowanie
+†††rozpowszechniane na licencji jest rozpowszechniany na zasadzie "jak jest",
+†††BEZ GWARANCJI LUB WARUNK”W jakiegokolwiek rodzaju, wyraünych lub dorozumianych.
+†††Zobacz licencjÍ na konkretnych uprawnieÒ kierowniczych i jÍzyk
+†††Ograniczenia pod pozwolenie.
+Google Translate for Business:Translator ToolkitWebsite TranslatorGlobal Market Finder
+
+https://github.com/FontFaceKit/roboto  ????
